@@ -1,20 +1,27 @@
 import { Dialog, Transition } from "@headlessui/react";
-import {
-  XMarkIcon,
-  ClipboardDocumentListIcon,
-} from "@heroicons/react/24/outline";
+import { XMarkIcon, DocumentTextIcon } from "@heroicons/react/24/outline";
 import { Fragment, useContext, useRef, useState } from "react";
 import { PopUpContext } from "../../contexts/popUpContext";
-
-export default function TextAreaModal({
+import { darkContext } from "../../contexts/darkContext";
+import { checkPrompt } from "../../controllers/API";
+import { alertContext } from "../../contexts/alertContext";
+export default function PromptAreaModal({
   value,
   setValue,
+  buttonText,
+  modalTitle,
 }: {
   setValue: (value: string) => void;
-  value: string | string[];
+  value: string;
+  buttonText: string;
+  modalTitle: string;
 }) {
+  const [myButtonText, setmyButtonText] = useState(buttonText);
+  const [myModalTitle, setMyModalTitle] = useState(modalTitle);
   const [open, setOpen] = useState(true);
   const [myValue, setMyValue] = useState(value);
+  const { dark } = useContext(darkContext);
+  const { setErrorData, setSuccessData } = useContext(alertContext);
   const { closePopUp } = useContext(PopUpContext);
   const ref = useRef();
   function setModalOpen(x: boolean) {
@@ -25,6 +32,7 @@ export default function TextAreaModal({
       }, 300);
     }
   }
+
   return (
     <Transition.Root show={open} appear={true} as={Fragment}>
       <Dialog
@@ -72,7 +80,7 @@ export default function TextAreaModal({
                 <div className="h-full w-full flex flex-col justify-center items-center">
                   <div className="flex w-full pb-4 z-10 justify-center shadow-sm">
                     <div className="mx-auto mt-4 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-blue-100 dark:bg-gray-900 sm:mx-0 sm:h-10 sm:w-10">
-                      <ClipboardDocumentListIcon
+                      <DocumentTextIcon
                         className="h-6 w-6 text-blue-600"
                         aria-hidden="true"
                       />
@@ -82,13 +90,13 @@ export default function TextAreaModal({
                         as="h3"
                         className="text-lg font-medium dark:text-white leading-10 text-gray-900"
                       >
-                        Edit text
+                        {myModalTitle}
                       </Dialog.Title>
                     </div>
                   </div>
-                  <div className="h-full w-full bg-gray-200 dark:bg-gray-900 p-4 gap-4 flex flex-row justify-center items-center">
+                  <div className="h-full w-full bg-gray-200 overflow-auto dark:bg-gray-900 p-4 gap-4 flex flex-row justify-center items-center">
                     <div className="flex h-full w-full">
-                      <div className="overflow-hidden px-4 py-5 sm:p-6 w-full rounded-lg bg-white dark:bg-gray-800 shadow">
+                      <div className="overflow-hidden px-4 py-5 sm:p-6 w-full h-full rounded-lg bg-white dark:bg-gray-800 shadow">
                         <textarea
                           ref={ref}
                           className="form-input h-full w-full rounded-lg border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-white"
@@ -106,10 +114,39 @@ export default function TextAreaModal({
                       type="button"
                       className="inline-flex w-full justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:ml-3 sm:w-auto sm:text-sm"
                       onClick={() => {
-                        setModalOpen(false);
+                        checkPrompt(myValue)
+                          .then((apiReturn) => {
+                            if (apiReturn.data) {
+                              let inputVariables =
+                                apiReturn.data.input_variables;
+                              if (inputVariables.length === 0) {
+                                setErrorData({
+                                  title:
+                                    "The template you are attempting to use does not contain any variables for data entry.",
+                                });
+                              } else {
+                                setSuccessData({
+                                  title: "Prompt is ready",
+                                });
+                                setModalOpen(false);
+                                setValue(myValue);
+                              }
+                            } else {
+                              setErrorData({
+                                title: "Something went wrong, please try again",
+                              });
+                            }
+                          })
+                          .catch((error) => {
+                            return setErrorData({
+                              title:
+                                "There is something wrong with this prompt, please review it",
+                              list: [error.response.data.detail],
+                            });
+                          });
                       }}
                     >
-                      Finish editing
+                      {myButtonText}
                     </button>
                   </div>
                 </div>
