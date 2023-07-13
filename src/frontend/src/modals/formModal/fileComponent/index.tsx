@@ -1,6 +1,6 @@
 import * as base64js from "base64-js";
-import { useState } from "react";
 import { DownloadCloud, File } from "lucide-react";
+import { useState } from "react";
 
 export default function FileCard({ fileName, content, fileType }) {
   const handleDownload = () => {
@@ -26,24 +26,22 @@ export default function FileCard({ fileName, content, fileType }) {
   if (fileType === "image") {
     return (
       <div
-        className="relative w-1/4 h-1/4"
+        className="relative h-1/4 w-1/4"
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
         <img
           src={`data:image/png;base64,${content}`}
           alt="generated image"
-          className="rounded-lg  w-full h-full"
+          className="h-full  w-full rounded-lg"
         />
         {isHovered && (
-          <div
-            className={`absolute top-0 right-0 bg-muted text-gray-700 rounded-bl-lg px-1 text-sm font-bold dark:bg-gray-700 dark:text-gray-300`}
-          >
+          <div className={`file-card-modal-image-div `}>
             <button
-              className="text-gray-500 py-1 px-2 dark:bg-gray-700 dark:text-gray-300"
+              className="file-card-modal-image-button "
               onClick={handleDownload}
             >
-              <DownloadCloud className="hover:scale-110 w-5 h-5 text-current" />
+              <DownloadCloud className="h-5 w-5 text-current hover:scale-110" />
             </button>
           </div>
         )}
@@ -52,27 +50,24 @@ export default function FileCard({ fileName, content, fileType }) {
   }
 
   return (
-    <button
-      onClick={handleDownload}
-      className="bg-muted shadow rounded w-1/2 text-gray-700 hover:drop-shadow-lg px-2 py-2 flex justify-between items-center border border-gray-300"
-    >
-      <div className="flex gap-2 text-current items-center w-full mr-2">
+    <button onClick={handleDownload} className="file-card-modal-button">
+      <div className="file-card-modal-div">
         {" "}
         {fileType === "image" ? (
           <img
             src={`data:image/png;base64,${content}`}
             alt=""
-            className="w-8 h-8"
+            className="h-8 w-8"
           />
         ) : (
-          <File className="w-8 h-8" />
+          <File className="h-8 w-8" />
         )}
-        <div className="flex flex-col items-start">
+        <div className="file-card-modal-footer">
           {" "}
-          <div className="truncate text-sm text-current">{fileName}</div>
-          <div className="truncate text-xs  text-gray-500">{fileType}</div>
+          <div className="file-card-modal-name">{fileName}</div>
+          <div className="file-card-modal-type">{fileType}</div>
         </div>
-        <DownloadCloud className="w-6 h-6 text-current ml-auto" />
+        <DownloadCloud className="ml-auto h-6 w-6 text-current" />
       </div>
     </button>
   );
