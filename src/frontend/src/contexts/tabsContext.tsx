@@ -1,5 +1,5 @@
 import { AxiosError } from "axios";
-import _, { cloneDeep } from "lodash";
+import _ from "lodash";
 import {
   ReactNode,
   createContext,
@@ -21,20 +21,10 @@ import {
 } from "../controllers/API";
 import { APIClassType, APITemplateType } from "../types/api";
 import { tweakType } from "../types/components";
-import {
-  FlowType,
-  NodeDataType,
-  NodeType,
-  sourceHandleType,
-  targetHandleType,
-} from "../types/flow";
-import { FlowsContextType, TabsState } from "../types/tabs";
+import { FlowType, NodeDataType, NodeType } from "../types/flow";
+import { TabsContextType, TabsState } from "../types/tabs";
 import {
   addVersionToDuplicates,
-  checkOldEdgesHandles,
-  scapeJSONParse,
-  scapedJSONStringfy,
-  updateEdgesHandleIds,
   updateIds,
   updateTemplate,
 } from "../utils/reactflowUtils";
@@ -45,13 +35,13 @@ import { typesContext } from "./typesContext";
 
 const uid = new ShortUniqueId({ length: 5 });
 
-const FlowsContextInitialValue: FlowsContextType = {
+const TabsContextInitialValue: TabsContextType = {
   tabId: "",
   setTabId: (index: string) => {},
   isLoading: true,
   flows: [],
   removeFlow: (id: string) => {},
-  addFlow: async (newProject: boolean, flowData?: FlowType) => "",
+  addFlow: async (flowData?: any) => "",
   updateFlow: (newFlow: FlowType) => {},
   incrementNodeId: () => uid(),
   downloadFlow: (flow: FlowType) => {},
@@ -75,8 +65,8 @@ const FlowsContextInitialValue: FlowsContextType = {
   ) => {},
 };
 
-export const FlowsContext = createContext<FlowsContextType>(
-  FlowsContextInitialValue
+export const TabsContext = createContext<TabsContextType>(
+  TabsContextInitialValue
 );
 
 export function TabsProvider({ children }: { children: ReactNode }) {
@@ -144,18 +134,14 @@ export function TabsProvider({ children }: { children: ReactNode }) {
         if (!flow.data) {
           return;
         }
-        processDataFromFlow(flow, false);
+        processFlowEdges(flow);
+        processFlowNodes(flow);
       } catch (e) {}
     });
   }
 
   function processFlowEdges(flow: FlowType) {
     if (!flow.data || !flow.data.edges) return;
-    if (checkOldEdgesHandles(flow.data.edges)) {
-      const newEdges = updateEdgesHandleIds(flow.data);
-      flow.data.edges = newEdges;
-    }
-    //update edges colors
     flow.data.edges.forEach((edge) => {
       edge.className = "";
       edge.style = { stroke: "#555" };
@@ -173,7 +159,6 @@ export function TabsProvider({ children }: { children: ReactNode }) {
   function processFlowNodes(flow: FlowType) {
     if (!flow.data || !flow.data.nodes) return;
     flow.data.nodes.forEach((node: NodeType) => {
-      if (node.data.node?.flow) return;
       if (skipNodeUpdate.includes(node.data.type)) return;
       const template = templates[node.data.type];
       if (!template) {
@@ -183,7 +168,6 @@ export function TabsProvider({ children }: { children: ReactNode }) {
       if (Object.keys(template["template"]).length > 0) {
         updateDisplay_name(node, template);
         updateNodeBaseClasses(node, template);
-        //update baseclasses in edges
         updateNodeEdges(flow, node, template);
         updateNodeDescription(node, template);
         updateNodeTemplate(node, template);
@@ -203,12 +187,11 @@ export function TabsProvider({ children }: { children: ReactNode }) {
   ) {
     flow.data!.edges.forEach((edge) => {
       if (edge.source === node.id) {
-        let sourceHandleObject: sourceHandleType = scapeJSONParse(
-          edge.sourceHandle!
-        );
-        sourceHandleObject.baseClasses = template["base_classes"];
-        edge.data.sourceHandle = sourceHandleObject;
-        edge.sourceHandle = scapedJSONStringfy(sourceHandleObject);
+        edge.sourceHandle = edge.sourceHandle
+          ?.split("|")
+          .slice(0, 2)
+          .concat(template["base_classes"])
+          .join("|");
       }
     });
   }
@@ -260,6 +243,9 @@ export function TabsProvider({ children }: { children: ReactNode }) {
 
     // simulate a click on the link element to trigger the download
     link.click();
+    setNoticeData({
+      title: "Warning: Critical data, JSON file may include API keys.",
+    });
   }
 
   function downloadFlows() {
@@ -288,7 +274,7 @@ export function TabsProvider({ children }: { children: ReactNode }) {
    * The resulting JSON object is passed to the addFlow function.
    */
   async function uploadFlow(
-    newProject: boolean,
+    newProject?: boolean,
     file?: File
   ): Promise<String | undefined> {
     let id;
@@ -297,13 +283,13 @@ export function TabsProvider({ children }: { children: ReactNode }) {
       let fileData = JSON.parse(text);
       if (fileData.flows) {
         fileData.flows.forEach((flow: FlowType) => {
-          id = addFlow(newProject, flow);
+          id = addFlow(flow, newProject);
         });
       }
       // parse the text into a JSON object
       let flow: FlowType = JSON.parse(text);
 
-      id = await addFlow(newProject, flow);
+      id = await addFlow(flow, newProject);
     } else {
       // create a file input
       const input = document.createElement("input");
@@ -318,7 +304,7 @@ export function TabsProvider({ children }: { children: ReactNode }) {
             const currentfile = (e.target as HTMLInputElement).files![0];
             let text = await currentfile.text();
             let flow: FlowType = JSON.parse(text);
-            const flowId = await addFlow(newProject, flow);
+            const flowId = await addFlow(flow, newProject);
             resolve(flowId);
           }
         };
@@ -369,6 +355,7 @@ export function TabsProvider({ children }: { children: ReactNode }) {
    * Add a new flow to the list of flows.
    * @param flow Optional flow to add.
    */
+
   function paste(
     selectionInstance: { nodes: Node[]; edges: Edge[] },
     position: { x: number; y: number; paneX?: number; paneY?: number }
@@ -417,28 +404,19 @@ export function TabsProvider({ children }: { children: ReactNode }) {
     });
     reactFlowInstance!.setNodes(nodes);
 
-    selectionInstance.edges.forEach((edge: Edge) => {
+    selectionInstance.edges.forEach((edge) => {
       let source = idsMap[edge.source];
       let target = idsMap[edge.target];
-      const sourceHandleObject: sourceHandleType = scapeJSONParse(
-        edge.sourceHandle!
-      );
-      let sourceHandle = scapedJSONStringfy({
-        ...sourceHandleObject,
-        id: source,
-      });
-      sourceHandleObject.id = source;
-
-      edge.data.sourceHandle = sourceHandleObject;
-      const targetHandleObject: targetHandleType = scapeJSONParse(
-        edge.targetHandle!
-      );
-      let targetHandle = scapedJSONStringfy({
-        ...targetHandleObject,
-        id: target,
-      });
-      targetHandleObject.id = target;
-      edge.data.targetHandle = targetHandleObject;
+      let sourceHandleSplitted = edge.sourceHandle!.split("|");
+      let sourceHandle =
+        sourceHandleSplitted[0] +
+        "|" +
+        source +
+        "|" +
+        sourceHandleSplitted.slice(2).join("|");
+      let targetHandleSplitted = edge.targetHandle!.split("|");
+      let targetHandle =
+        targetHandleSplitted.slice(0, -1).join("|") + "|" + target;
       let id =
         "reactflow__edge-" +
         source +
@@ -453,13 +431,12 @@ export function TabsProvider({ children }: { children: ReactNode }) {
           sourceHandle,
           targetHandle,
           id,
-          data: cloneDeep(edge.data),
           style: { stroke: "#555" },
           className:
-            targetHandleObject.type === "Text"
+            targetHandle.split("|")[0] === "Text"
               ? "stroke-gray-800 "
               : "stroke-gray-900 ",
-          animated: targetHandleObject.type === "Text",
+          animated: targetHandle.split("|")[0] === "Text",
           selected: false,
         },
         edges.map((edge) => ({ ...edge, selected: false }))
@@ -469,16 +446,19 @@ export function TabsProvider({ children }: { children: ReactNode }) {
   }
 
   const addFlow = async (
-    newProject: Boolean,
-    flow?: FlowType
+    flow?: FlowType,
+    newProject?: Boolean
   ): Promise<String | undefined> => {
     if (newProject) {
-      let flowData = flow
-        ? processDataFromFlow(flow)
-        : { nodes: [], edges: [], viewport: { zoom: 1, x: 0, y: 0 } };
+      let flowData = extractDataFromFlow(flow!);
+      if (flowData.description == "") {
+        flowData.description = getRandomDescription();
+      }
 
       // Create a new flow with a default name if no flow is provided.
       const newFlow = createNewFlow(flowData, flow!);
+      processFlowEdges(newFlow);
+      processFlowNodes(newFlow);
 
       const flowName = addVersionToDuplicates(newFlow, flows);
 
@@ -506,37 +486,31 @@ export function TabsProvider({ children }: { children: ReactNode }) {
     }
   };
 
-  const processDataFromFlow = (flow: FlowType, refreshIds = true) => {
+  const extractDataFromFlow = (flow: FlowType) => {
     let data = flow?.data ? flow.data : null;
+    const description = flow?.description ? flow.description : "";
+
     if (data) {
-      processFlowEdges(flow);
-      //prevent node update for now
-      // processFlowNodes(flow);
-      //add animation to text type edges
       updateEdges(data.edges);
-      // updateNodes(data.nodes, data.edges);
-      if (refreshIds) updateIds(data, getNodeId); // Assuming updateIds is defined elsewhere
+      updateNodes(data.nodes, data.edges);
+      updateIds(data, getNodeId); // Assuming updateIds is defined elsewhere
     }
 
-    return data;
+    return { data, description };
   };
 
   const updateEdges = (edges: Edge[]) => {
     edges.forEach((edge) => {
-      const targetHandleObject: targetHandleType = scapeJSONParse(
-        edge.targetHandle!
-      );
       edge.className =
-        (targetHandleObject.type === "Text"
+        (edge.targetHandle!.split("|")[0] === "Text"
           ? "stroke-gray-800 "
           : "stroke-gray-900 ") + " stroke-connection";
-      edge.animated = targetHandleObject.type === "Text";
+      edge.animated = edge.targetHandle!.split("|")[0] === "Text";
     });
   };
 
   const updateNodes = (nodes: Node[], edges: Edge[]) => {
     nodes.forEach((node) => {
-      if (node.data.node?.flow) return;
       if (skipNodeUpdate.includes(node.data.type)) return;
       const template = templates[node.data.type];
       if (!template) {
@@ -546,13 +520,12 @@ export function TabsProvider({ children }: { children: ReactNode }) {
       if (Object.keys(template["template"]).length > 0) {
         node.data.node.base_classes = template["base_classes"];
         edges.forEach((edge) => {
-          let sourceHandleObject: sourceHandleType = scapeJSONParse(
-            edge.sourceHandle!
-          );
           if (edge.source === node.id) {
-            let newSourceHandle = sourceHandleObject;
-            newSourceHandle.baseClasses.concat(template["base_classes"]);
-            edge.sourceHandle = scapedJSONStringfy(newSourceHandle);
+            edge.sourceHandle = edge
+              .sourceHandle!.split("|")
+              .slice(0, 2)
+              .concat(template["base_classes"])
+              .join("|");
           }
         });
         node.data.node.description = template["description"];
@@ -565,12 +538,12 @@ export function TabsProvider({ children }: { children: ReactNode }) {
   };
 
   const createNewFlow = (
-    flowData: ReactFlowJsonObject | null,
+    flowData: { data: ReactFlowJsonObject | null; description: string },
     flow: FlowType
   ) => ({
-    description: flow?.description ?? getRandomDescription(),
+    description: flowData.description,
     name: flow?.name ?? getRandomName(),
-    data: flowData,
+    data: flowData.data,
     id: "",
   });
 
@@ -638,7 +611,7 @@ export function TabsProvider({ children }: { children: ReactNode }) {
   const [isBuilt, setIsBuilt] = useState(false);
 
   return (
-    <FlowsContext.Provider
+    <TabsContext.Provider
       value={{
         saveFlow,
         isBuilt,
@@ -667,6 +640,6 @@ export function TabsProvider({ children }: { children: ReactNode }) {
       }}
     >
       {children}
-    </FlowsContext.Provider>
+    </TabsContext.Provider>
   );
 }
