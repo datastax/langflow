@@ -5,6 +5,7 @@ on:
     branches:
       - ragstack-main
     paths:
+      - "./.github/workflows/**"
       - "src/frontend/**"
 
 env:
