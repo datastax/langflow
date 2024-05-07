@@ -1,0 +1,62 @@
+[tool.poetry]
+name = "ragstack-ai-langflow-integration-tests"
+version = "0.0.1.alpha"
+description = "RAGStack Langflow integration tests"
+license = "BUSL-1.1"
+authors = ["DataStax"]
+readme = "README.md"
+packages = [
+    { include = "langflow", from = "../../src/backend" },
+    { include = "ragstack", from = "../../" }
+]
+include = ["../../src/backend/langflow/*", "../../src/backend/langflow/**/*"]
+documentation = "https://docs.datastax.com/en/ragstack"
+
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.12"
+
+[tool.poetry.group.test.dependencies]
+ragstack-ai-langflow = { path = "../../", develop = true }
+pytest = "^8.1.0"
+pytest-cov = "^4.1.0"
+pytest-mock = "^3.12.0"
+pytest-xdist = "^3.5.0"
+pytest-instafail = "^0.5.0"
+pytest-asyncio = "^0.23.0"
+pytest-profiling = "^1.7.0"
+pytest-sugar = "^1.0.0"
+
+[tool.poetry.group.dev.dependencies]
+mypy = "^1.9.0"
+ruff = "^0.3.5"
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra"
+testpaths = ["integration_tests"]
+console_output_style = "progress"
+log_cli = true
+markers = ["async_test"]
+
+[tool.poetry.group.spelling]
+optional = true
+
+[tool.poetry.group.spelling.dependencies]
+codespell = "^2.2.6"
+
+[tool.codespell]
+skip = '.git,*.pdf,*.svg,*.pdf,*.yaml,*.ipynb,poetry.lock,*.min.js,*.css,package-lock.json,*.trig'
+# Ignore latin etc
+ignore-regex = '.*(Stati Uniti|Tense=Pres).*'
+
+[tool.ruff]
+line-length = 120
+
+[tool.mypy]
+plugins = ["pydantic.mypy"]
+follow_imports = "silent"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
