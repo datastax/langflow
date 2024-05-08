@@ -1,15 +1,15 @@
 [tool.poetry]
-name = "ragstack-ai-langflow-integration-tests"
+name = "ragstack-ai-langflow-core"
 version = "0.0.1.alpha"
-description = "RAGStack Langflow integration tests"
+description = "RAGStack Langflow"
 license = "BUSL-1.1"
 authors = ["DataStax"]
 readme = "README.md"
 packages = [
-    { include = "langflow", from = "../../src/backend" },
-    { include = "ragstack", from = "../../" }
+    { include = "langflow", from = "../src/backend" },
+    { include = "ragstack", from = "../" }
 ]
-include = ["../../src/backend/langflow/*", "../../src/backend/langflow/**/*"]
+include = ["../src/backend/langflow/*", "../src/backend/langflow/**/*"]
 documentation = "https://docs.datastax.com/en/ragstack"
 
 
@@ -17,7 +17,7 @@ documentation = "https://docs.datastax.com/en/ragstack"
 python = ">=3.10,<3.12"
 
 [tool.poetry.group.test.dependencies]
-ragstack-ai-langflow = { path = "../../", develop = true }
+ragstack-ai-langflow = { path = "../", develop = true }
 pytest = "^8.1.0"
 pytest-instafail = "^0.5.0"
 pytest-sugar = "^1.0.0"
@@ -29,7 +29,7 @@ ruff = "^0.3.5"
 [tool.pytest.ini_options]
 minversion = "6.0"
 addopts = "-ra"
-testpaths = ["integration_tests"]
+testpaths = ["tests/integration_tests"]
 console_output_style = "progress"
 log_cli = true
 
@@ -50,7 +50,7 @@ line-length = 120
 [tool.mypy]
 plugins = ["pydantic.mypy"]
 follow_imports = "silent"
-exclude = "integration_tests/conftest.py"
+exclude = "tests/integration_tests/conftest.py"
 
 [build-system]
 requires = ["poetry-core"]
