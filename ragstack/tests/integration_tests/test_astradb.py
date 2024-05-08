@@ -4,6 +4,10 @@ from typing import Callable
 
 from langchain_core.documents import Document
 from langflow.load import run_flow_from_json
+from langflow.schema import Record
+
+BASIC_COLLECTION = "test"
+EMBEDDING_FLOW_COLLECTION = "test_embedding_flow"
 
 
 def test_build_no_inputs(astradb_component: Callable):
@@ -11,18 +15,22 @@ def test_build_no_inputs(astradb_component: Callable):
 
 
 def test_build_with_inputs(astradb_component: Callable):
-    doc = Document("test")
-    inputs = [doc]
-    astradb_component(inputs=inputs)
+    record = Record.from_document(Document(page_content="test"))
+    record2 = Record.from_document(Document(page_content="test2"))
+    inputs = [record, record2]
+    astradb_component(collection=BASIC_COLLECTION, inputs=inputs)
 
 
-def test_astra_flow(embedding_flow: str):
+def test_astra_embedding_flow(embedding_flow: str):
+    """
+    Embeds the contents of a URL into AstraDB.
+    """
     flow = orjson.loads(embedding_flow)
     TWEAKS = {
         "AstraDB-s9tdG": {
             "token": os.environ["ASTRA_DB_APPLICATION_TOKEN"],
             "api_endpoint": os.environ["ASTRA_DB_API_ENDPOINT"],
-            "collection_name": "test",
+            "collection_name": EMBEDDING_FLOW_COLLECTION,
         },
         "SplitText-v9ZHX": {},
         "URL-vWSxt": {},
@@ -30,4 +38,5 @@ def test_astra_flow(embedding_flow: str):
     }
 
     result = run_flow_from_json(flow=flow, input_value="message", tweaks=TWEAKS)
-    print(result)
+    # Shouldn't have anything really specific to verify here, just checking that it runs
+    assert result is not None

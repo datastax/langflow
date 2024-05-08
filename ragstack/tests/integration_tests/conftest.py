@@ -6,6 +6,8 @@ from pathlib import Path
 
 from langchain_core.embeddings import Embeddings
 
+from astrapy.core.db import AstraDB, AstraDBCollection
+
 
 def pytest_configure():
     data_path = Path(__file__).parent.absolute() / "data"
@@ -16,11 +18,32 @@ def pytest_configure():
     for path in [
         pytest.EMBEDDING_PATH,
     ]:
-        assert path.exists(), f"File {path} does not exist. Available files: {list(data_path.iterdir())}"
+        assert (
+            path.exists()
+        ), f"File {path} does not exist. Available files: {list(data_path.iterdir())}"
 
 
 LOGGER = logging.getLogger(__name__)
 DIR_PATH = os.path.dirname(os.path.abspath(__file__))
+
+
+@pytest.fixture(scope="session", autouse=True)
+def setup_and_teardown():
+    print("Deleting existing collections")
+    astra = AstraDB(
+        token=os.getenv("ASTRA_DB_APPLICATION_TOKEN"),
+        api_endpoint=os.getenv("ASTRA_DB_API_ENDPOINT"),
+    )
+    collections = astra.get_collections().get("status").get("collections")
+    for c in collections:
+        astra.delete_collection(c)
+
+    yield
+
+    print("Cleaning up collections")
+    collections = astra.get_collections().get("status").get("collections")
+    for c in collections:
+        astra.delete_collection(c)
 
 
 def _load_env() -> None:
@@ -72,8 +95,8 @@ def astradb_component() -> Callable:
     from langflow.components.vectorstores import AstraDBVectorStoreComponent
 
     def component_builder(
+        collection: str,
         embedding: Optional[Embeddings] = None,
-        collection: str = "test",
         inputs: Optional[list] = None,
     ):
         if embedding is None:
