@@ -1,6 +1,8 @@
-.PHONY: format lint integ_tests
+.PHONY: format lint test integ_test
 
-integ_tests:
+test: integ_test
+
+integ_test:
 	poetry run pytest tests/integration_tests --instafail $(args)
 
 format:
