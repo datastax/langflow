@@ -1,6 +1,6 @@
 import os
 import logging
-from typing import Callable
+from typing import Callable, Optional
 import pytest
 from pathlib import Path
 
@@ -16,9 +16,7 @@ def pytest_configure():
     for path in [
         pytest.EMBEDDING_PATH,
     ]:
-        assert (
-            path.exists()
-        ), f"File {path} does not exist. Available files: {list(data_path.iterdir())}"
+        assert path.exists(), f"File {path} does not exist. Available files: {list(data_path.iterdir())}"
 
 
 LOGGER = logging.getLogger(__name__)
@@ -74,10 +72,16 @@ def astradb_component() -> Callable:
     from langflow.components.vectorstores import AstraDBVectorStoreComponent
 
     def component_builder(
-        embedding: Embeddings = MockEmbeddings,
+        embedding: Optional[Embeddings] = None,
         collection: str = "test",
-        inputs: list = [],
+        inputs: Optional[list] = None,
     ):
+        if embedding is None:
+            embedding = MockEmbeddings()
+
+        if inputs is None:
+            inputs = []
+
         token = get_env_var("ASTRA_DB_APPLICATION_TOKEN")
         api_endpoint = get_env_var("ASTRA_DB_API_ENDPOINT")
         return AstraDBVectorStoreComponent().build(
