@@ -50,7 +50,7 @@ def get_env_var(name: str) -> str:
 
 @pytest.fixture(scope="session", autouse=True)
 def setup_and_teardown():
-    print("Deleting existing collections")
+    LOGGER.info("Deleting existing collections")
     astra = AstraDB(
         token=get_env_var("ASTRA_DB_APPLICATION_TOKEN"),
         api_endpoint=get_env_var("ASTRA_DB_API_ENDPOINT"),
@@ -61,7 +61,7 @@ def setup_and_teardown():
 
     yield
 
-    print("Cleaning up collections")
+    LOGGER.info("Cleaning up collections")
     collections = astra.get_collections().get("status").get("collections")
     for c in collections:
         astra.delete_collection(c)
