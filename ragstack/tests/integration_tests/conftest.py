@@ -27,25 +27,6 @@ LOGGER = logging.getLogger(__name__)
 DIR_PATH = os.path.dirname(os.path.abspath(__file__))
 
 
-@pytest.fixture(scope="session", autouse=True)
-def setup_and_teardown():
-    print("Deleting existing collections")
-    astra = AstraDB(
-        token=os.getenv("ASTRA_DB_APPLICATION_TOKEN"),
-        api_endpoint=os.getenv("ASTRA_DB_API_ENDPOINT"),
-    )
-    collections = astra.get_collections().get("status").get("collections")
-    for c in collections:
-        astra.delete_collection(c)
-
-    yield
-
-    print("Cleaning up collections")
-    collections = astra.get_collections().get("status").get("collections")
-    for c in collections:
-        astra.delete_collection(c)
-
-
 def _load_env() -> None:
     dotenv_path = os.path.join(DIR_PATH, os.pardir, ".env")
     if os.path.exists(dotenv_path):
@@ -64,6 +45,25 @@ def get_env_var(name: str) -> str:
         pytest.skip(f"Missing environment variable: {name}")
 
     return value
+
+
+@pytest.fixture(scope="session", autouse=True)
+def setup_and_teardown():
+    print("Deleting existing collections")
+    astra = AstraDB(
+        token=get_env_var("ASTRA_DB_APPLICATION_TOKEN"),
+        api_endpoint=get_env_var("ASTRA_DB_API_ENDPOINT"),
+    )
+    collections = astra.get_collections().get("status").get("collections")
+    for c in collections:
+        astra.delete_collection(c)
+
+    yield
+
+    print("Cleaning up collections")
+    collections = astra.get_collections().get("status").get("collections")
+    for c in collections:
+        astra.delete_collection(c)
 
 
 class MockEmbeddings(Embeddings):

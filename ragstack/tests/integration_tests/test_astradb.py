@@ -11,7 +11,7 @@ EMBEDDING_FLOW_COLLECTION = "test_embedding_flow"
 
 
 def test_build_no_inputs(astradb_component: Callable):
-    astradb_component()
+    astradb_component(collection=BASIC_COLLECTION)
 
 
 def test_build_with_inputs(astradb_component: Callable):

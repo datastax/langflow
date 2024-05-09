@@ -5,11 +5,6 @@ description = "RAGStack Langflow"
 license = "BUSL-1.1"
 authors = ["DataStax"]
 readme = "README.md"
-packages = [
-    { include = "langflow", from = "../src/backend" },
-    { include = "ragstack", from = "../" }
-]
-include = ["../src/backend/langflow/*", "../src/backend/langflow/**/*"]
 documentation = "https://docs.datastax.com/en/ragstack"
 
 
