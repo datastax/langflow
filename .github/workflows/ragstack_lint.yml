@@ -4,7 +4,7 @@ on:
   push:
     branches: [ragstack-main]
     paths:
-      - "ragstack/**"
+      - "ragstack/tests/**"
   pull_request:
     paths:
       - "ragstack/poetry.lock"

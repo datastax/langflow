@@ -23,8 +23,8 @@ jobs:
           - "3.11"
     env:
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-      ASTRA_DB_API_KEY: ${{ secrets.ASTRA_DB_API_KEY }}
-      ASTRA_DB_APPLICATION_TOKEN: ${{ secrets.ASTRA_DB_APPLICATION_TOKEN }}
+      ASTRA_DB_API_ENDPOINT: ${{ secrets.ASTRA_DB_API_ENDPOINT_DEV }}
+      ASTRA_DB_APPLICATION_TOKEN: ${{ secrets.ASTRA_DB_APPLICATION_TOKEN_DEV }}
     steps:
       - uses: actions/checkout@v4
       - name: Set up Python ${{ matrix.python-version }} + Poetry ${{ env.POETRY_VERSION }}

@@ -1,4 +1,4 @@
-# RAGStack Langflow E2E Tests
+# RAGStack Langflow
 
 ## Documentation
 

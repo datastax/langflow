@@ -6,21 +6,22 @@ from pathlib import Path
 
 from langchain_core.embeddings import Embeddings
 
-from astrapy.core.db import AstraDB, AstraDBCollection
+from astrapy.core.db import AstraDB
 
 
 def pytest_configure():
     data_path = Path(__file__).parent.absolute() / "data"
 
+    # Uses a URL loader w/ OpenAIEmbeddings to embed into AstraDB.
     pytest.EMBEDDING_PATH = data_path / "embedding.json"
+    # Uses OpenAIEmbeddings w/ AstraDBSearch to search for similar documents.
+    pytest.VECTOR_STORE_SEARCH_PATH = data_path / "vector_search.json"
 
-    # validate that all the paths are correct and the files exist
     for path in [
         pytest.EMBEDDING_PATH,
+        pytest.VECTOR_STORE_SEARCH_PATH,
     ]:
-        assert (
-            path.exists()
-        ), f"File {path} does not exist. Available files: {list(data_path.iterdir())}"
+        assert path.exists(), f"File {path} does not exist. Available files: {list(data_path.iterdir())}"
 
 
 LOGGER = logging.getLogger(__name__)
@@ -87,6 +88,12 @@ class MockEmbeddings(Embeddings):
 @pytest.fixture
 def embedding_flow() -> str:
     with open(pytest.EMBEDDING_PATH, "r") as f:
+        return f.read()
+
+
+@pytest.fixture
+def vector_store_search_flow() -> str:
+    with open(pytest.VECTOR_STORE_SEARCH_PATH, "r") as f:
         return f.read()
 
 
