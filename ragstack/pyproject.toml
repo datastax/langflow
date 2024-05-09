@@ -49,6 +49,10 @@ plugins = ["pydantic.mypy"]
 follow_imports = "silent"
 exclude = "tests/integration_tests/conftest.py"
 
+[[tool.mypy.overrides]]
+module = "google.cloud.*"
+ignore_missing_imports = true
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
