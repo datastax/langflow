@@ -16,9 +16,6 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-      ASTRA_DB_TOKEN: ${{ secrets.TESTS_ASTRA_DEV_DB_TOKEN }}
     steps:
       - uses: actions/checkout@v4
       - name: Set up Python 3.11 + Poetry ${{ env.POETRY_VERSION }}
@@ -39,19 +36,20 @@ jobs:
       - uses: nicoloboschi/setup-astradb@v1
         id: astra
         with:
-          token: ${{ secrets.ASTRA_DB_TOKEN }}
+          token: ${{ secrets.TESTS_ASTRA_DEV_DB_TOKEN }}
           region: us-east-2
           cloud: aws
       - name: Run all tests
         env:
           ASTRA_DB_API_ENDPOINT: ${{ steps.astra.outputs.api-endpoint }}
-          ASTRA_DB_APPLICATION_TOKEN: ${{ secrets.ASTRA_DB_TOKEN }}
+          ASTRA_DB_APPLICATION_TOKEN: ${{ secrets.TESTS_ASTRA_DEV_DB_TOKEN }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
           make test
         working-directory: ragstack/
-      - uses: nicoloboschi/setup-astradb@v1
+      - uses: nicoloboschi/cleanup-astradb@v1
         if: ${{ always() }}
         with:
-          token: ${{ secrets.ASTRA_DB_TOKEN }}
+          token: ${{ secrets.TESTS_ASTRA_DEV_DB_TOKEN }}
           name: ${{ steps.astra.outputs.name }}
           wait: false
