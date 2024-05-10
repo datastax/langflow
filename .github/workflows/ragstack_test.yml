@@ -1,4 +1,4 @@
-name: ragstack-test
+name: RAGStack tests
 
 on:
   pull_request:
@@ -31,6 +31,10 @@ jobs:
         run: |
           poetry env use 3.11
           poetry install
+        working-directory: ragstack/
+      - name: Lint check
+        run: |
+          make lint
         working-directory: ragstack/
       - uses: nicoloboschi/setup-astradb@v1
         id: astra
