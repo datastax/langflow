@@ -44,7 +44,7 @@ jobs:
           cloud: aws
       - name: Run all tests
         env:
-          ASTRA_DB_API_ENDPOINT: ${{ astra.outputs.api-endpoint }}
+          ASTRA_DB_API_ENDPOINT: ${{ steps.astra.outputs.api-endpoint }}
           ASTRA_DB_APPLICATION_TOKEN: ${{ secrets.ASTRA_DB_TOKEN }}
         run: |
           make test
