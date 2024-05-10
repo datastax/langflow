@@ -16,29 +16,38 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python-version:
-          - "3.10"
-          - "3.11"
     env:
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-      ASTRA_DB_API_ENDPOINT: ${{ secrets.ASTRA_DB_API_ENDPOINT_DEV }}
-      ASTRA_DB_APPLICATION_TOKEN: ${{ secrets.ASTRA_DB_APPLICATION_TOKEN_DEV }}
+      ASTRA_DB_TOKEN: ${{ secrets.TESTS_ASTRA_DEV_DB_TOKEN }}
     steps:
       - uses: actions/checkout@v4
-      - name: Set up Python ${{ matrix.python-version }} + Poetry ${{ env.POETRY_VERSION }}
+      - name: Set up Python 3.11 + Poetry ${{ env.POETRY_VERSION }}
         uses: "./.github/actions/poetry_caching"
         with:
-          python-version: ${{ matrix.python-version }}
+          python-version: 3.11
           poetry-version: ${{ env.POETRY_VERSION }}
           cache-key: ${{ runner.os }}-poetry-${{ env.POETRY_VERSION }}-${{ hashFiles('ragstack/poetry.lock') }}
       - name: Install Python dependencies
         run: |
-          poetry env use ${{ matrix.python-version }}
+          poetry env use 3.11
           poetry install
         working-directory: ragstack/
+      - uses: nicoloboschi/setup-astradb@v1
+        id: astra
+        with:
+          token: ${{ secrets.ASTRA_DB_TOKEN }}
+          region: us-east-2
+          cloud: aws
       - name: Run all tests
+        env:
+          ASTRA_DB_API_ENDPOINT: ${{ astra.outputs.api-endpoint }}
+          ASTRA_DB_APPLICATION_TOKEN: ${{ secrets.ASTRA_DB_TOKEN }}
         run: |
           make test
         working-directory: ragstack/
+      - uses: nicoloboschi/setup-astradb@v1
+        if: ${{ always() }}
+        with:
+          token: ${{ secrets.ASTRA_DB_TOKEN }}
+          name: ${{ steps.astra.outputs.name }}
+          wait: false
