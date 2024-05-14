@@ -5,7 +5,8 @@ networks:
 services:
   backend:
     build:
-      context: ./backend
+      context: ./../..
+      dockerfile: ragstack/docker/backend/Dockerfile
     ports:
       - "7860:7860"
     networks:

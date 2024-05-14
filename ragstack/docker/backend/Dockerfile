@@ -1,4 +1,4 @@
-FROM python:3.11-slim-buster as builder
+FROM python:3.11-slim-bookworm as builder
 RUN pip install poetry==1.7.1
 
 ENV POETRY_VIRTUALENVS_IN_PROJECT=1
@@ -6,15 +6,16 @@ ENV POETRY_VIRTUALENVS_CREATE=1
 ENV POETRY_CACHE_DIR=/tmp/poetry_cache
 
 ARG DEBIAN_FRONTEND=noninteractive
-RUN echo 'Acquire::http::Timeout "30";\nAcquire::http::ConnectionAttemptDelayMsec "2000";\nAcquire::https::Timeout "30";\nAcquire::https::ConnectionAttemptDelayMsec "2000";\nAcquire::ftp::Timeout "30";\nAcquire::ftp::ConnectionAttemptDelayMsec "2000";\nAcquire::Retries "15";' > /etc/apt/apt.conf.d/99timeout_and_retries      && apt-get update      && apt-get -y dist-upgrade      && apt-get -y install gcc
+RUN echo 'Acquire::http::Timeout "30";\nAcquire::http::ConnectionAttemptDelayMsec "2000";\nAcquire::https::Timeout "30";\nAcquire::https::ConnectionAttemptDelayMsec "2000";\nAcquire::ftp::Timeout "30";\nAcquire::ftp::ConnectionAttemptDelayMsec "2000";\nAcquire::Retries "15";' > /etc/apt/apt.conf.d/99timeout_and_retries \
+  && apt-get update && apt-get -y dist-upgrade && apt-get -y install gcc
 RUN mkdir /app
 COPY pyproject.toml poetry.lock* README* /app/
 
 COPY src/backend /app/src/backend
 
-RUN cd /app && poetry install --no-interaction --no-ansi
+RUN cd /app && poetry install --no-interaction --no-ansi -E deploy
 
-FROM python:3.11-slim-buster as runtime
+FROM python:3.11-slim-bookworm as runtime
 
 LABEL org.opencontainers.image.title=ragstack-ai-langflow
 LABEL org.opencontainers.image.version=0.0.2
