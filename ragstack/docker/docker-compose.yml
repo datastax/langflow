@@ -25,6 +25,8 @@ services:
   frontend:
     build:
       context: ./frontend
+      args:
+        RAGSTACK_AI_LANGFLOW_VERSION: 0.0.2
     depends_on:
       - backend
     environment:

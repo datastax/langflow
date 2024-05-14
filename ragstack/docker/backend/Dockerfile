@@ -27,7 +27,10 @@ LABEL org.opencontainers.image.source=https://github.com/datastax/ragstack-ai-la
 ENV PATH="/app/.venv/bin:$PATH"
 ENV PYTHONUNBUFFERED=1
 
+RUN useradd ragstack -u 10000 -g 0 --no-create-home --home-dir /app/data
+USER 10000
 
 WORKDIR /app
-COPY --from=builder /app/ /app/
+COPY --from=builder --chown=10000 /app/ /app/
+
 ENV LANGFLOW_DATABASE_URL=sqlite:///$HOME/app/langflow.db
