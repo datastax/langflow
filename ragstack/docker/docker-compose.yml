@@ -21,6 +21,7 @@ services:
       - info
       - --workers
       - "1"
+    restart: on-failure
   frontend:
     build:
       context: ./frontend
