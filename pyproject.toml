@@ -138,7 +138,3 @@ follow_imports = "silent"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
-
-[tool.dockerize]
-extra-build-instructions = ["COPY src/backend /app/src/backend"]
-build-apt-packages = ["gcc"]

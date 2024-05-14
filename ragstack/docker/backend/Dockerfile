@@ -30,19 +30,3 @@ ENV PYTHONUNBUFFERED=1
 WORKDIR /app
 COPY --from=builder /app/ /app/
 ENV LANGFLOW_DATABASE_URL=sqlite:///$HOME/app/langflow.db
-FROM python:3.11-slim-buster as runtime
-
-LABEL org.opencontainers.image.title=ragstack-ai-langflow
-LABEL org.opencontainers.image.version=0.0.2
-LABEL org.opencontainers.image.authors=['DataStax']
-LABEL org.opencontainers.image.licenses=BUSL-1.1
-LABEL org.opencontainers.image.url=https://github.com/datastax/ragstack-ai-langflow
-LABEL org.opencontainers.image.source=https://github.com/datastax/ragstack-ai-langflow
-
-ENV PATH="/app/.venv/bin:$PATH"
-ENV PYTHONUNBUFFERED=1
-
-
-WORKDIR /app
-COPY --from=builder /app/ /app/
-ENV LANGFLOW_DATABASE_URL=sqlite:///$HOME/app/langflow.db
