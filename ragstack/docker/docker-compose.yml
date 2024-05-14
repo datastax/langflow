@@ -10,10 +10,19 @@ services:
       - "7860:7860"
     networks:
       - langflow
+    command:
+      - langflow
+      - run
+      - --host
+      - 0.0.0.0
+      - --backend-only
+      - --log-level
+      - info
+      - --workers
+      - "1"
   frontend:
     build:
       context: ./frontend
-
     depends_on:
       - backend
     environment:
