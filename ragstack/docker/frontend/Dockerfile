@@ -1,5 +1,6 @@
 FROM python:3.11-slim as builder
-RUN pip install --no-cache-dir ragstack-ai-langflow
+ARG RAGSTACK_AI_LANGFLOW_VERSION
+RUN pip install --no-cache-dir ragstack-ai-langflow==$RAGSTACK_AI_LANGFLOW_VERSION
 RUN pip show ragstack-ai-langflow | grep Location | cut -d ' ' -f 2 | xargs -I {} cp -r {}/langflow/frontend /tmp/frontend
 
 

@@ -4,11 +4,3 @@ cd $RAGSTACK_DIR/docker/backend
 echo "Building backend image"
 docker build -t ragstack-ai-langflow-backend:latest -f Dockerfile ../../..
 echo "Done ragstack-ai-langflow-backend:latest "
-
-cd ..
-cd frontend
-echo "Building frontend image"
-docker build -t ragstack-ai-langflow-frontend:latest .
-echo "Done ragstack-ai-langflow-frontend:latest"
-
-

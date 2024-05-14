@@ -18,10 +18,24 @@ runs:
         username: ${{ github.actor }}
         password: ${{ inputs.gh-token }}
 
+    - name: Wait for PIP package to be available
+      shell: bash
+      run: |
+        v="${{ inputs.version }}"
+        while true; do
+            if pip install ragstack-ai-langflow==${v}; then
+                break
+            else
+                echo "Package not available yet, retrying in 30 seconds"
+                sleep 30
+            fi
+        done
+
     - name: Build docker images
       shell: bash
       run: |
-        ./ragstack/docker/build.sh
+        ./ragstack/docker/build-backend.sh
+        ./ragstack/docker/build-frontend.sh "${{ inputs.version }}"
 
     - name: Deploy docker images
       shell: bash
