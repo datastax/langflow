@@ -63,7 +63,6 @@ jobs:
         run: ./ragstack/docker/build-backend.sh
       - name: Scan Docker image
         uses: snyk/actions/docker@master
-        continue-on-error: true
         with:
           image: ragstack-ai-langflow-backend:latest
           args: --severity-threshold=high
