@@ -24,6 +24,9 @@ LABEL org.opencontainers.image.licenses=BUSL-1.1
 LABEL org.opencontainers.image.url=https://github.com/datastax/ragstack-ai-langflow
 LABEL org.opencontainers.image.source=https://github.com/datastax/ragstack-ai-langflow
 
+# Update package list and install curl
+RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
+
 ENV PATH="/app/.venv/bin:$PATH"
 ENV PYTHONUNBUFFERED=1
 
