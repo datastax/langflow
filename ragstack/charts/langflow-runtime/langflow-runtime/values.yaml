@@ -1,13 +1,8 @@
-# Default values for langflow-runtime.
-# This is a YAML-formatted file.
-# Declare variables to be passed into your templates.
-
 replicaCount: 1
 
 image:
   repository: "ghcr.io/datastax/ragstack-ai-langflow-backend"
   pullPolicy: IfNotPresent
-  # Overrides the image tag whose default is the chart appVersion.
   tag: "latest"
 
 downloadFlows:
@@ -49,6 +44,12 @@ securityContext: {}
 env:
   - name: LANGFLOW_LOG_LEVEL
     value: "INFO"
+#  - name: openai_key_var
+#    valueFrom:
+#      secretKeyRef:
+#        name: openai-key
+#        key: openai-key
+
 
 service:
   type: ClusterIP

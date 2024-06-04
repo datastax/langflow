@@ -25,8 +25,8 @@ downloadFlows:
 ```
 helm install langflow ./langflow-runtime \
     --set "downloadFlows.flows[0].uuid=4ca07770-c0e4-487c-ad42-77c6039ce02e" \
-    --set "downloadFlows.flows[0].url=https://raw.githubusercontent.com/langflow-ai/langflow/dev/tests/data/basic_example.json" \
-    --set replicaCount=2
+    --set "downloadFlows.flows[0].url=https://raw.githubusercontent.com/nicoloboschi/langflow-flows/main/openai.json" \
+    --set replicaCount=1
 
 kubectl port-forward svc/langflow-langflow-runtime 7860:7860
 
