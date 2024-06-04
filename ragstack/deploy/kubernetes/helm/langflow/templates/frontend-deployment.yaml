@@ -70,7 +70,21 @@ spec:
               readOnly: true
             {{- end }}
           livenessProbe:
+            httpGet:
+              path: /index
+              port: {{ .Values.langflow.frontend.port | default 8080 }}
+            initialDelaySeconds: {{ .Values.langflow.frontend.initialDelaySeconds | default 60 }}
+            periodSeconds: {{ .Values.langflow.frontend.periodSeconds | default 15 }}
+            timeoutSeconds: {{ .Values.langflow.frontend.timeoutSeconds | default 5 }}
+            failureThreshold: {{ .Values.langflow.frontend.failureThreshold | default 2 }}
           readinessProbe:
+            httpGet:
+              path: /index
+              port: {{ .Values.langflow.frontend.port | default 8080 }}
+            initialDelaySeconds: {{ .Values.langflow.frontend.initialDelaySeconds | default 45 }}
+            periodSeconds: {{ .Values.langflow.frontend.periodSeconds | default 15 }}
+            timeoutSeconds: {{ .Values.langflow.frontend.timeoutSeconds | default 5 }}
+            failureThreshold: {{ .Values.langflow.frontend.failureThreshold | default 2 }}
           env:
             - name: ENVIRONMENT 
               value: "{{ .Values.environment | default "dev" }}"
