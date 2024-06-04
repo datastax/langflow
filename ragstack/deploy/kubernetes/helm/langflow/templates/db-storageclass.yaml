@@ -1,5 +1,4 @@
-{{- if and .Values.langflow.database .Values.langflow.database.type }}
-{{- if not .Values.default_storage.existingStorageClassName }}
+{{- if .Values.langflow.database.type }}
 apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
@@ -39,6 +38,5 @@ parameters:
   {{- if .Values.default_storage.extraParams }}
 {{ toYaml .Values.default_storage.extraParams | indent 2 }}
   {{- end }}
-{{- end }}
 {{- end }}
 {{- end }}

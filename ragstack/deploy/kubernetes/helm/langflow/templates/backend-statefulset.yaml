@@ -5,7 +5,8 @@ metadata:
   labels:
     {{- include "langflow.labels" . | nindent 4 }}
 spec:
-  replicas: {{ .Values.replicaCount }}
+  serviceName: "{{ include "langflow.fullname" . }}-service"
+  replicas: {{ .Values.langflow.replicaCount }}
   selector:
     matchLabels:
       {{- include "langflow.selectorLabels" . | nindent 6 }}
@@ -68,11 +69,15 @@ spec:
               mountPath: "/mnt/secrets"
               readOnly: true
             {{- end }}
+            {{- if eq .Values.langflow.database.type "sqlite" }}
+            - name: data
+              mountPath: /data
+            {{- end }}
           livenessProbe:
             httpGet:
               path: /health
               port: {{ .Values.langflow.backend.port | default 7860 }}
-            initialDelaySeconds: {{ .Values.langflow.backend.initialDelaySeconds | default 15 }}
+            initialDelaySeconds: {{ .Values.langflow.backend.initialDelaySeconds | default 60 }}
             periodSeconds: {{ .Values.langflow.backend.periodSeconds | default 15 }}
             timeoutSeconds: {{ .Values.langflow.backend.timeoutSeconds | default 5 }}
             failureThreshold: {{ .Values.langflow.backend.failureThreshold | default 2 }}   
@@ -80,7 +85,7 @@ spec:
             httpGet:
               path: /health
               port: {{ .Values.langflow.backend.port | default 7860 }}
-            initialDelaySeconds: {{ .Values.langflow.backend.initialDelaySeconds | default 15 }}
+            initialDelaySeconds: {{ .Values.langflow.backend.initialDelaySeconds | default 45 }}
             periodSeconds: {{ .Values.langflow.backend.periodSeconds | default 15 }}
             timeoutSeconds: {{ .Values.langflow.backend.timeoutSeconds | default 5 }}
             failureThreshold: {{ .Values.langflow.backend.failureThreshold | default 2 }}   
@@ -116,3 +121,14 @@ spec:
       tolerations:
         {{- toYaml . | nindent 8 }}
       {{- end }}
+  {{- if eq .Values.langflow.database.type "sqlite" }}
+  volumeClaimTemplates:
+  - metadata:
+      name: data
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      resources:
+        requests:
+          storage: {{ .Values.langflow.database.size }}
+      storageClassName: "langflow-sqlite"
+  {{- end }}
