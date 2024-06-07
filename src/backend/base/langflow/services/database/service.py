@@ -37,11 +37,26 @@ class DatabaseService(Service):
     def _create_engine(self) -> "Engine":
         """Create the engine for the database."""
         settings_service = get_settings_service()
+        connect_args = {}
         if settings_service.settings.database_url and settings_service.settings.database_url.startswith("sqlite"):
-            connect_args = {"check_same_thread": False}
-        else:
-            connect_args = {}
-        return create_engine(self.database_url, connect_args=connect_args)
+            connect_args = {
+                "check_same_thread": False
+            }
+
+        engine = create_engine(self.database_url, connect_args=connect_args)
+
+        if self.database_url.startswith("sqlite"):
+            @event.listens_for(engine, "connect")
+            def set_sqlite_pragma(dbapi_connection, connection_record):
+                cursor = dbapi_connection.cursor()
+                cursor.execute("PRAGMA synchronous = OFF")
+                cursor.execute("PRAGMA journal_mode = MEMORY")
+                cursor.execute("PRAGMA cache_size = 10000")
+                cursor.execute("PRAGMA temp_store = MEMORY")
+                cursor.execute("PRAGMA locking_mode = EXCLUSIVE")
+                cursor.close()
+
+        return engine
 
     def __enter__(self):
         self._session = Session(self.engine)
