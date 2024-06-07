@@ -7,7 +7,7 @@ import sqlalchemy as sa
 from alembic import command, util
 from alembic.config import Config
 from loguru import logger
-from sqlalchemy import inspect
+from sqlalchemy import event, inspect
 from sqlalchemy.exc import OperationalError
 from sqlmodel import Session, SQLModel, create_engine, select, text
 
@@ -55,6 +55,7 @@ class DatabaseService(Service):
                 cursor.execute("PRAGMA temp_store = MEMORY")
                 cursor.execute("PRAGMA locking_mode = EXCLUSIVE")
                 cursor.close()
+                logger.info("sqlite PRAGMA set")
 
         return engine
 
