@@ -9,6 +9,8 @@ from alembic.config import Config
 from loguru import logger
 from sqlalchemy import inspect
 from sqlalchemy.exc import OperationalError
+from sqlalchemy.engine import Engine
+from sqlalchemy import event
 from sqlmodel import Session, SQLModel, create_engine, select, text
 
 from langflow.services.base import Service
@@ -42,6 +44,18 @@ class DatabaseService(Service):
         else:
             connect_args = {}
         return create_engine(self.database_url, connect_args=connect_args)
+
+    @event.listens_for(Engine, "connect")
+    def on_connection(dbapi_connection, connection_record):
+        from sqlite3 import Connection as sqliteConnection
+        if isinstance(dbapi_connection,sqliteConnection):
+            cursor = dbapi_connection.cursor()
+            cursor.execute("PRAGMA synchronous = OFF")
+            cursor.execute("PRAGMA journal_mode = MEMORY")
+            cursor.execute("PRAGMA cache_size = 10000")
+            cursor.execute("PRAGMA temp_store = MEMORY")
+            cursor.execute("PRAGMA locking_mode = EXCLUSIVE")
+            cursor.close()
 
     def __enter__(self):
         self._session = Session(self.engine)
