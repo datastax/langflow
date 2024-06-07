@@ -49,6 +49,7 @@ class DatabaseService(Service):
     def on_connection(dbapi_connection, connection_record):
         from sqlite3 import Connection as sqliteConnection
         if isinstance(dbapi_connection,sqliteConnection):
+            logger.info("sqlite connected, setting pragmas")
             cursor = dbapi_connection.cursor()
             cursor.execute("PRAGMA synchronous = OFF")
             cursor.execute("PRAGMA journal_mode = MEMORY")
