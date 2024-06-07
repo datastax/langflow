@@ -53,7 +53,7 @@ class DatabaseService(Service):
                 cursor.execute("PRAGMA journal_mode = MEMORY")
                 cursor.execute("PRAGMA cache_size = 10000")
                 cursor.execute("PRAGMA temp_store = MEMORY")
-                cursor.execute("PRAGMA locking_mode = EXCLUSIVE")
+                # cursor.execute("PRAGMA locking_mode = EXCLUSIVE")
                 cursor.close()
                 logger.info("sqlite PRAGMA set")
 
