@@ -1,10 +1,9 @@
-import { useRef } from "react";
 import { TOOLTIP_EMPTY } from "../../../../constants/constants";
-import { groupByFamily } from "../../../../utils/utils";
-import TooltipRenderComponent from "../tooltipRenderComponent";
+import useFlowStore from "../../../../stores/flowStore";
 import { useTypesStore } from "../../../../stores/typesStore";
 import { NodeType } from "../../../../types/flow";
-import useFlowStore from "../../../../stores/flowStore";
+import { groupByFamily } from "../../../../utils/utils";
+import TooltipRenderComponent from "../tooltipRenderComponent";
 
 export default function HandleTooltips({
   left,

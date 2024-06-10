@@ -1,6 +1,8 @@
 import { cloneDeep } from "lodash";
 import { useUpdateNodeInternals } from "reactflow";
 import ForwardedIconComponent from "../../../../components/genericIconComponent";
+import ShadTooltip from "../../../../components/shadTooltipComponent";
+import { Button } from "../../../../components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -11,8 +13,6 @@ import useFlowStore from "../../../../stores/flowStore";
 import { outputComponentType } from "../../../../types/components";
 import { NodeDataType } from "../../../../types/flow";
 import { cn } from "../../../../utils/utils";
-import { Button } from "../../../../components/ui/button";
-import ShadTooltip from "../../../../components/shadTooltipComponent";
 
 export default function OutputComponent({
   selected,
@@ -40,7 +40,7 @@ export default function OutputComponent({
             size="xs"
             className={cn(
               frozen ? "text-ice" : "",
-              "items-center gap-1 pl-2 pr-1.5 align-middle text-xs font-normal",
+              "items-center gap-1 pl-2 pr-1.5 align-middle text-xs font-normal"
             )}
           >
             <span className="pb-px">{selected}</span>
