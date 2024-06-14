@@ -33,7 +33,6 @@ echo "Identified remote $remote_name"
 
 if git rev-parse $tag >/dev/null 2>&1; then
     echo "Git tag $tag already exists"
-    exit 1
 fi
 
 cd $directory
