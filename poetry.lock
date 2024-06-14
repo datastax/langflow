@@ -167,21 +167,13 @@ files = [
 
 [[package]]
 name = "anthropic"
-<<<<<<< HEAD
 version = "0.28.1"
-=======
-version = "0.28.0"
->>>>>>> 12fe36b99 (initial commit for ragstack-main)
 description = "The official Python library for the anthropic API"
 optional = false
 python-versions = ">=3.7"
 files = [
-<<<<<<< HEAD
     {file = "anthropic-0.28.1-py3-none-any.whl", hash = "sha256:c4773ae2b42951a6b747bed328b0d03fa412938c95c3a8b9dce70d69badb710b"},
     {file = "anthropic-0.28.1.tar.gz", hash = "sha256:e3a6d595bde241141bdc685edc393903ec95c7fa378013a71186cfb8f32b1793"},
-=======
-    {file = "anthropic-0.28.0-py3-none-any.whl", hash = "sha256:2b620b21aee3d20c5d8005483c34df239d53ae895687113b26b8a36892a7e20f"},
->>>>>>> 12fe36b99 (initial commit for ragstack-main)
 ]
 
 [package.dependencies]
@@ -480,30 +472,17 @@ files = [
 
 [[package]]
 name = "boto3"
-<<<<<<< HEAD
 version = "1.34.128"
-=======
-version = "1.34.116"
->>>>>>> 12fe36b99 (initial commit for ragstack-main)
 description = "The AWS SDK for Python"
 optional = false
 python-versions = ">=3.8"
 files = [
-<<<<<<< HEAD
     {file = "boto3-1.34.128-py3-none-any.whl", hash = "sha256:a048ff980a81cd652724a73bc496c519b336fabe19cc8bfc6c53b2ff6eb22c7b"},
     {file = "boto3-1.34.128.tar.gz", hash = "sha256:43a6e99f53a8d34b3b4dbe424dbcc6b894350dc41a85b0af7c7bc24a7ec2cead"},
 ]
 
 [package.dependencies]
 botocore = ">=1.34.128,<1.35.0"
-=======
-    {file = "boto3-1.34.116-py3-none-any.whl", hash = "sha256:e7f5ab2d1f1b90971a2b9369760c2c6bae49dae98c084a5c3f5c78e3968ace15"},
-    {file = "boto3-1.34.116.tar.gz", hash = "sha256:53cb8aeb405afa1cd2b25421e27a951aeb568026675dec020587861fac96ac87"},
-]
-
-[package.dependencies]
-botocore = ">=1.34.116,<1.35.0"
->>>>>>> 12fe36b99 (initial commit for ragstack-main)
 jmespath = ">=0.7.1,<2.0.0"
 s3transfer = ">=0.10.0,<0.11.0"
 
@@ -512,22 +491,13 @@ crt = ["botocore[crt] (>=1.21.0,<2.0a0)"]
 
 [[package]]
 name = "botocore"
-<<<<<<< HEAD
 version = "1.34.128"
-=======
-version = "1.34.116"
->>>>>>> 12fe36b99 (initial commit for ragstack-main)
 description = "Low-level, data-driven core of boto 3."
 optional = false
 python-versions = ">=3.8"
 files = [
-<<<<<<< HEAD
     {file = "botocore-1.34.128-py3-none-any.whl", hash = "sha256:db67fda136c372ab3fa432580c819c89ba18d28a6152a4d2a7ea40d44082892e"},
     {file = "botocore-1.34.128.tar.gz", hash = "sha256:8d8e03f7c8c080ecafda72036eb3b482d649f8417c90b5dca33b7c2c47adb0c9"},
-=======
-    {file = "botocore-1.34.116-py3-none-any.whl", hash = "sha256:ec4d42c816e9b2d87a2439ad277e7dda16a4a614ef6839cf66f4c1a58afa547c"},
-    {file = "botocore-1.34.116.tar.gz", hash = "sha256:269cae7ba99081519a9f87d7298e238d9e68ba94eb4f8ddfa906224c34cb8b6c"},
->>>>>>> 12fe36b99 (initial commit for ragstack-main)
 ]
 
 [package.dependencies]
@@ -1035,13 +1005,13 @@ numpy = "*"
 
 [[package]]
 name = "chromadb"
-version = "0.5.0"
+version = "0.5.2"
 description = "Chroma."
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "chromadb-0.5.0-py3-none-any.whl", hash = "sha256:8193dc65c143b61d8faf87f02c44ecfa778d471febd70de517f51c5d88a06009"},
-    {file = "chromadb-0.5.0.tar.gz", hash = "sha256:7954af614a9ff7b2902ddbd0a162f33f7ec0669e2429903905c4f7876d1f766f"},
+    {file = "chromadb-0.5.2-py3-none-any.whl", hash = "sha256:cccd307dbab2e1ff1383a125dd7ac2898762391ef2abb4b7ddfce1b7a60ebf63"},
+    {file = "chromadb-0.5.2.tar.gz", hash = "sha256:5db20a129ffe7cf16cf65da449a501015997d1a1ed6b37f0ba2bd1d5121e4ffa"},
 ]
 
 [package.dependencies]
@@ -1050,10 +1020,11 @@ build = ">=1.0.3"
 chroma-hnswlib = "0.7.3"
 fastapi = ">=0.95.2"
 grpcio = ">=1.58.0"
+httpx = ">=0.27.0"
 importlib-resources = "*"
 kubernetes = ">=28.1.0"
 mmh3 = ">=4.0.1"
-numpy = ">=1.22.5"
+numpy = ">=1.22.5,<2.0.0"
 onnxruntime = ">=1.14.1"
 opentelemetry-api = ">=1.2.0"
 opentelemetry-exporter-otlp-proto-grpc = ">=1.2.0"
@@ -2567,17 +2538,18 @@ examples = ["oauth2"]
 
 [[package]]
 name = "google-ai-generativelanguage"
-version = "0.4.0"
+version = "0.6.4"
 description = "Google Ai Generativelanguage API client library"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "google-ai-generativelanguage-0.4.0.tar.gz", hash = "sha256:c8199066c08f74c4e91290778329bb9f357ba1ea5d6f82de2bc0d10552bf4f8c"},
-    {file = "google_ai_generativelanguage-0.4.0-py3-none-any.whl", hash = "sha256:e4c425376c1ee26c78acbc49a24f735f90ebfa81bf1a06495fae509a2433232c"},
+    {file = "google-ai-generativelanguage-0.6.4.tar.gz", hash = "sha256:1750848c12af96cb24ae1c3dd05e4bfe24867dc4577009ed03e1042d8421e874"},
+    {file = "google_ai_generativelanguage-0.6.4-py3-none-any.whl", hash = "sha256:730e471aa549797118fb1c88421ba1957741433ada575cf5dd08d3aebf903ab1"},
 ]
 
 [package.dependencies]
-google-api-core = {version = ">=1.34.0,<2.0.dev0 || >=2.11.dev0,<3.0.0dev", extras = ["grpc"]}
+google-api-core = {version = ">=1.34.1,<2.0.dev0 || >=2.11.dev0,<3.0.0dev", extras = ["grpc"]}
+google-auth = ">=2.14.1,<2.24.0 || >2.24.0,<2.25.0 || >2.25.0,<3.0.0dev"
 proto-plus = ">=1.22.3,<2.0.0dev"
 protobuf = ">=3.19.5,<3.20.0 || >3.20.0,<3.20.1 || >3.20.1,<4.21.0 || >4.21.0,<4.21.1 || >4.21.1,<4.21.2 || >4.21.2,<4.21.3 || >4.21.3,<4.21.4 || >4.21.4,<4.21.5 || >4.21.5,<5.0.0dev"
 
@@ -2670,22 +2642,13 @@ httplib2 = ">=0.19.0"
 
 [[package]]
 name = "google-cloud-aiplatform"
-<<<<<<< HEAD
-version = "1.55.0"
-=======
-version = "1.53.0"
->>>>>>> 12fe36b99 (initial commit for ragstack-main)
+version = "1.56.0"
 description = "Vertex AI API client library"
 optional = false
 python-versions = ">=3.8"
 files = [
-<<<<<<< HEAD
-    {file = "google-cloud-aiplatform-1.55.0.tar.gz", hash = "sha256:aa87cb6c49ae5fde87fb831ce8ad4a853c4656fe04babe505e9144c7a9e09c1a"},
-    {file = "google_cloud_aiplatform-1.55.0-py2.py3-none-any.whl", hash = "sha256:c6cc76ca5537f4636a0c3f8c0288d2e0d2d86ef708e562d2654313e11d6ee46a"},
-=======
-    {file = "google-cloud-aiplatform-1.53.0.tar.gz", hash = "sha256:574cfad8ac5fa5d57ef717f5335ce05636a5fa9b8aeea0f5c325b46b9448e6b1"},
-    {file = "google_cloud_aiplatform-1.53.0-py2.py3-none-any.whl", hash = "sha256:9dfb1f110e6d4795b45afcfab79108fc5c8ed9aa4eaf899e433bc2ca1b76c778"},
->>>>>>> 12fe36b99 (initial commit for ragstack-main)
+    {file = "google-cloud-aiplatform-1.56.0.tar.gz", hash = "sha256:d4cfb085427dac01142915f523949ac2955d6c7f148d95017d3286a77caf5d5e"},
+    {file = "google_cloud_aiplatform-1.56.0-py2.py3-none-any.whl", hash = "sha256:ee1ab3bd115c3caebf8ddfd3e47eeb8396a3ec2fc5f5baf1a5c295c8d64333ab"},
 ]
 
 [package.dependencies]
@@ -2707,8 +2670,8 @@ cloud-profiler = ["tensorboard-plugin-profile (>=2.4.0,<3.0.0dev)", "tensorflow 
 datasets = ["pyarrow (>=10.0.1)", "pyarrow (>=14.0.0)", "pyarrow (>=3.0.0,<8.0dev)"]
 endpoint = ["requests (>=2.28.1)"]
 full = ["cloudpickle (<3.0)", "docker (>=5.0.3)", "explainable-ai-sdk (>=1.0.0)", "fastapi (>=0.71.0,<=0.109.1)", "google-cloud-bigquery", "google-cloud-bigquery-storage", "google-cloud-logging (<4.0)", "google-vizier (>=0.1.6)", "httpx (>=0.23.0,<0.25.0)", "immutabledict", "lit-nlp (==0.4.0)", "mlflow (>=1.27.0,<=2.1.1)", "nest-asyncio (>=1.0.0,<1.6.0)", "numpy (>=1.15.0)", "pandas (>=1.0.0)", "pandas (>=1.0.0,<2.2.0)", "pyarrow (>=10.0.1)", "pyarrow (>=14.0.0)", "pyarrow (>=3.0.0,<8.0dev)", "pyarrow (>=6.0.1)", "pydantic (<2)", "pyyaml (>=5.3.1,<7)", "ray[default] (>=2.4,<2.5.dev0 || >2.9.0,!=2.9.1,!=2.9.2,<=2.9.3)", "ray[default] (>=2.5,<=2.9.3)", "requests (>=2.28.1)", "setuptools (<70.0.0)", "starlette (>=0.17.1)", "tensorboard-plugin-profile (>=2.4.0,<3.0.0dev)", "tensorflow (>=2.3.0,<3.0.0dev)", "tensorflow (>=2.3.0,<3.0.0dev)", "tensorflow (>=2.4.0,<3.0.0dev)", "urllib3 (>=1.21.1,<1.27)", "uvicorn[standard] (>=0.16.0)", "werkzeug (>=2.0.0,<2.1.0dev)"]
-langchain = ["langchain (>=0.1.16,<0.3)", "langchain-core (<0.2)", "langchain-google-vertexai (<2)", "openinference-instrumentation-langchain (>=0.1.19,<0.2)"]
-langchain-testing = ["absl-py", "cloudpickle (>=2.2.1,<4.0)", "langchain (>=0.1.16,<0.3)", "langchain-core (<0.2)", "langchain-google-vertexai (<2)", "openinference-instrumentation-langchain (>=0.1.19,<0.2)", "opentelemetry-exporter-gcp-trace (<2)", "opentelemetry-sdk (<2)", "pydantic (>=2.6.3,<3)", "pytest-xdist"]
+langchain = ["langchain (>=0.1.16,<0.3)", "langchain-core (<0.2)", "langchain-google-vertexai (<2)", "openinference-instrumentation-langchain (>=0.1.19,<0.2)", "tenacity (<=8.3)"]
+langchain-testing = ["absl-py", "cloudpickle (>=3.0,<4.0)", "langchain (>=0.1.16,<0.3)", "langchain-core (<0.2)", "langchain-google-vertexai (<2)", "openinference-instrumentation-langchain (>=0.1.19,<0.2)", "opentelemetry-exporter-gcp-trace (<2)", "opentelemetry-sdk (<2)", "pydantic (>=2.6.3,<3)", "pytest-xdist", "tenacity (<=8.3)"]
 lit = ["explainable-ai-sdk (>=1.0.0)", "lit-nlp (==0.4.0)", "pandas (>=1.0.0)", "tensorflow (>=2.3.0,<3.0.0dev)"]
 metadata = ["numpy (>=1.15.0)", "pandas (>=1.0.0)"]
 pipelines = ["pyyaml (>=5.3.1,<7)"]
@@ -2718,7 +2681,7 @@ private-endpoints = ["requests (>=2.28.1)", "urllib3 (>=1.21.1,<1.27)"]
 rapid-evaluation = ["nest-asyncio (>=1.0.0,<1.6.0)", "pandas (>=1.0.0,<2.2.0)"]
 ray = ["google-cloud-bigquery", "google-cloud-bigquery-storage", "immutabledict", "pandas (>=1.0.0,<2.2.0)", "pyarrow (>=6.0.1)", "pydantic (<2)", "ray[default] (>=2.4,<2.5.dev0 || >2.9.0,!=2.9.1,!=2.9.2,<=2.9.3)", "ray[default] (>=2.5,<=2.9.3)", "setuptools (<70.0.0)"]
 ray-testing = ["google-cloud-bigquery", "google-cloud-bigquery-storage", "immutabledict", "pandas (>=1.0.0,<2.2.0)", "pyarrow (>=6.0.1)", "pydantic (<2)", "pytest-xdist", "ray[default] (>=2.4,<2.5.dev0 || >2.9.0,!=2.9.1,!=2.9.2,<=2.9.3)", "ray[default] (>=2.5,<=2.9.3)", "ray[train] (==2.9.3)", "scikit-learn", "setuptools (<70.0.0)", "tensorflow", "torch (>=2.0.0,<2.1.0)", "xgboost", "xgboost-ray"]
-reasoningengine = ["cloudpickle (>=2.2.1,<4.0)", "opentelemetry-exporter-gcp-trace (<2)", "opentelemetry-sdk (<2)", "pydantic (>=2.6.3,<3)"]
+reasoningengine = ["cloudpickle (>=3.0,<4.0)", "opentelemetry-exporter-gcp-trace (<2)", "opentelemetry-sdk (<2)", "pydantic (>=2.6.3,<3)"]
 tensorboard = ["tensorboard-plugin-profile (>=2.4.0,<3.0.0dev)", "tensorflow (>=2.3.0,<3.0.0dev)", "tensorflow (>=2.4.0,<3.0.0dev)", "werkzeug (>=2.0.0,<2.1.0dev)"]
 testing = ["bigframes", "cloudpickle (<3.0)", "docker (>=5.0.3)", "explainable-ai-sdk (>=1.0.0)", "fastapi (>=0.71.0,<=0.109.1)", "google-api-core (>=2.11,<3.0.0)", "google-cloud-bigquery", "google-cloud-bigquery-storage", "google-cloud-logging (<4.0)", "google-vizier (>=0.1.6)", "grpcio-testing", "httpx (>=0.23.0,<0.25.0)", "immutabledict", "ipython", "kfp (>=2.6.0,<3.0.0)", "lit-nlp (==0.4.0)", "mlflow (>=1.27.0,<=2.1.1)", "nest-asyncio (>=1.0.0,<1.6.0)", "numpy (>=1.15.0)", "pandas (>=1.0.0)", "pandas (>=1.0.0,<2.2.0)", "pyarrow (>=10.0.1)", "pyarrow (>=14.0.0)", "pyarrow (>=3.0.0,<8.0dev)", "pyarrow (>=6.0.1)", "pydantic (<2)", "pyfakefs", "pytest-asyncio", "pytest-xdist", "pyyaml (>=5.3.1,<7)", "ray[default] (>=2.4,<2.5.dev0 || >2.9.0,!=2.9.1,!=2.9.2,<=2.9.3)", "ray[default] (>=2.5,<=2.9.3)", "requests (>=2.28.1)", "requests-toolbelt (<1.0.0)", "scikit-learn", "setuptools (<70.0.0)", "starlette (>=0.17.1)", "tensorboard-plugin-profile (>=2.4.0,<3.0.0dev)", "tensorflow (==2.13.0)", "tensorflow (==2.16.1)", "tensorflow (>=2.3.0,<3.0.0dev)", "tensorflow (>=2.3.0,<3.0.0dev)", "tensorflow (>=2.4.0,<3.0.0dev)", "torch (>=2.0.0,<2.1.0)", "torch (>=2.2.0)", "urllib3 (>=1.21.1,<1.27)", "uvicorn[standard] (>=0.16.0)", "werkzeug (>=2.0.0,<2.1.0dev)", "xgboost"]
 vizier = ["google-vizier (>=0.1.6)"]
@@ -2895,17 +2858,18 @@ testing = ["pytest"]
 
 [[package]]
 name = "google-generativeai"
-version = "0.4.1"
+version = "0.5.4"
 description = "Google Generative AI High level API client library and tools."
 optional = false
 python-versions = ">=3.9"
 files = [
-    {file = "google_generativeai-0.4.1-py3-none-any.whl", hash = "sha256:89be3c00c2e688108fccefc50f47f45fc9d37ecd53c1ade9d86b5d982919c24a"},
+    {file = "google_generativeai-0.5.4-py3-none-any.whl", hash = "sha256:036d63ee35e7c8aedceda4f81c390a5102808af09ff3a6e57e27ed0be0708f3c"},
 ]
 
 [package.dependencies]
-google-ai-generativelanguage = "0.4.0"
+google-ai-generativelanguage = "0.6.4"
 google-api-core = "*"
+google-api-python-client = "*"
 google-auth = ">=2.15.0"
 protobuf = "*"
 pydantic = "*"
@@ -4120,64 +4084,28 @@ adal = ["adal (>=1.0.2)"]
 
 [[package]]
 name = "langchain"
-<<<<<<< HEAD
-version = "0.2.5"
-=======
-version = "0.1.19"
->>>>>>> 12fe36b99 (initial commit for ragstack-main)
+version = "0.2.3"
 description = "Building applications with LLMs through composability"
 optional = false
 python-versions = "<4.0,>=3.8.1"
 files = [
-<<<<<<< HEAD
-    {file = "langchain-0.2.5-py3-none-any.whl", hash = "sha256:9aded9a65348254e1c93dcdaacffe4d1b6a5e7f74ef80c160c88ff78ad299228"},
-    {file = "langchain-0.2.5.tar.gz", hash = "sha256:ffdbf4fcea46a10d461bcbda2402220fcfd72a0c70e9f4161ae0510067b9b3bd"},
-=======
-    {file = "langchain-0.1.19-py3-none-any.whl", hash = "sha256:a1270b70139344a09f91c8a1b117c4300d9920d6d88aaaaf5ba729625ac68801"},
-    {file = "langchain-0.1.19.tar.gz", hash = "sha256:7d2ffb66944a84dcac99901c4fd33f6d92aa7f794d17b5ba9a29c55a7306e32c"},
->>>>>>> 12fe36b99 (initial commit for ragstack-main)
+    {file = "langchain-0.2.3-py3-none-any.whl", hash = "sha256:5dc33cd9c8008693d328b7cb698df69073acecc89ad9c2a95f243b3314f8d834"},
+    {file = "langchain-0.2.3.tar.gz", hash = "sha256:81962cc72cce6515f7bd71e01542727870789bf8b666c6913d85559080c1a201"},
 ]
 
 [package.dependencies]
 aiohttp = ">=3.8.3,<4.0.0"
 async-timeout = {version = ">=4.0.0,<5.0.0", markers = "python_version < \"3.11\""}
-<<<<<<< HEAD
-langchain-core = ">=0.2.7,<0.3.0"
+langchain-core = ">=0.2.0,<0.3.0"
 langchain-text-splitters = ">=0.2.0,<0.3.0"
-=======
-dataclasses-json = ">=0.5.7,<0.7"
-langchain-community = ">=0.0.38,<0.1"
-langchain-core = ">=0.1.52,<0.2.0"
-langchain-text-splitters = ">=0.0.1,<0.1"
->>>>>>> 12fe36b99 (initial commit for ragstack-main)
 langsmith = ">=0.1.17,<0.2.0"
-numpy = [
-    {version = ">=1,<2", markers = "python_version < \"3.12\""},
-    {version = ">=1.26.0,<2.0.0", markers = "python_version >= \"3.12\""},
-]
+numpy = ">=1,<2"
 pydantic = ">=1,<3"
 PyYAML = ">=5.3"
 requests = ">=2,<3"
 SQLAlchemy = ">=1.4,<3"
 tenacity = ">=8.1.0,<9.0.0"
 
-<<<<<<< HEAD
-=======
-[package.extras]
-azure = ["azure-ai-formrecognizer (>=3.2.1,<4.0.0)", "azure-ai-textanalytics (>=5.3.0,<6.0.0)", "azure-cognitiveservices-speech (>=1.28.0,<2.0.0)", "azure-core (>=1.26.4,<2.0.0)", "azure-cosmos (>=4.4.0b1,<5.0.0)", "azure-identity (>=1.12.0,<2.0.0)", "azure-search-documents (==11.4.0b8)", "openai (<2)"]
-clarifai = ["clarifai (>=9.1.0)"]
-cli = ["typer (>=0.9.0,<0.10.0)"]
-cohere = ["cohere (>=4,<6)"]
-docarray = ["docarray[hnswlib] (>=0.32.0,<0.33.0)"]
-embeddings = ["sentence-transformers (>=2,<3)"]
-extended-testing = ["aiosqlite (>=0.19.0,<0.20.0)", "aleph-alpha-client (>=2.15.0,<3.0.0)", "anthropic (>=0.3.11,<0.4.0)", "arxiv (>=1.4,<2.0)", "assemblyai (>=0.17.0,<0.18.0)", "atlassian-python-api (>=3.36.0,<4.0.0)", "beautifulsoup4 (>=4,<5)", "bibtexparser (>=1.4.0,<2.0.0)", "cassio (>=0.1.0,<0.2.0)", "chardet (>=5.1.0,<6.0.0)", "cohere (>=4,<6)", "couchbase (>=4.1.9,<5.0.0)", "dashvector (>=1.0.1,<2.0.0)", "databricks-vectorsearch (>=0.21,<0.22)", "datasets (>=2.15.0,<3.0.0)", "dgml-utils (>=0.3.0,<0.4.0)", "esprima (>=4.0.1,<5.0.0)", "faiss-cpu (>=1,<2)", "feedparser (>=6.0.10,<7.0.0)", "fireworks-ai (>=0.9.0,<0.10.0)", "geopandas (>=0.13.1,<0.14.0)", "gitpython (>=3.1.32,<4.0.0)", "google-cloud-documentai (>=2.20.1,<3.0.0)", "gql (>=3.4.1,<4.0.0)", "hologres-vector (>=0.0.6,<0.0.7)", "html2text (>=2020.1.16,<2021.0.0)", "javelin-sdk (>=0.1.8,<0.2.0)", "jinja2 (>=3,<4)", "jq (>=1.4.1,<2.0.0)", "jsonschema (>1)", "langchain-openai (>=0.0.2,<0.1)", "lxml (>=4.9.3,<6.0)", "markdownify (>=0.11.6,<0.12.0)", "motor (>=3.3.1,<4.0.0)", "msal (>=1.25.0,<2.0.0)", "mwparserfromhell (>=0.6.4,<0.7.0)", "mwxml (>=0.3.3,<0.4.0)", "newspaper3k (>=0.2.8,<0.3.0)", "numexpr (>=2.8.6,<3.0.0)", "openai (<2)", "openapi-pydantic (>=0.3.2,<0.4.0)", "pandas (>=2.0.1,<3.0.0)", "pdfminer-six (>=20221105,<20221106)", "pgvector (>=0.1.6,<0.2.0)", "praw (>=7.7.1,<8.0.0)", "psychicapi (>=0.8.0,<0.9.0)", "py-trello (>=0.19.0,<0.20.0)", "pymupdf (>=1.22.3,<2.0.0)", "pypdf (>=3.4.0,<4.0.0)", "pypdfium2 (>=4.10.0,<5.0.0)", "pyspark (>=3.4.0,<4.0.0)", "rank-bm25 (>=0.2.2,<0.3.0)", "rapidfuzz (>=3.1.1,<4.0.0)", "rapidocr-onnxruntime (>=1.3.2,<2.0.0)", "rdflib (==7.0.0)", "requests-toolbelt (>=1.0.0,<2.0.0)", "rspace_client (>=2.5.0,<3.0.0)", "scikit-learn (>=1.2.2,<2.0.0)", "sqlite-vss (>=0.1.2,<0.2.0)", "streamlit (>=1.18.0,<2.0.0)", "sympy (>=1.12,<2.0)", "telethon (>=1.28.5,<2.0.0)", "timescale-vector (>=0.0.1,<0.0.2)", "tqdm (>=4.48.0)", "upstash-redis (>=0.15.0,<0.16.0)", "xata (>=1.0.0a7,<2.0.0)", "xmltodict (>=0.13.0,<0.14.0)"]
-javascript = ["esprima (>=4.0.1,<5.0.0)"]
-llms = ["clarifai (>=9.1.0)", "cohere (>=4,<6)", "huggingface_hub (>=0,<1)", "manifest-ml (>=0.0.1,<0.0.2)", "nlpcloud (>=1,<2)", "openai (<2)", "openlm (>=0.0.5,<0.0.6)", "torch (>=1,<3)", "transformers (>=4,<5)"]
-openai = ["openai (<2)", "tiktoken (>=0.3.2,<0.6.0)"]
-qdrant = ["qdrant-client (>=1.3.1,<2.0.0)"]
-text-helpers = ["chardet (>=5.1.0,<6.0.0)"]
-
->>>>>>> 12fe36b99 (initial commit for ragstack-main)
 [[package]]
 name = "langchain-anthropic"
 version = "0.1.15"
@@ -4244,121 +4172,71 @@ langchain-core = ">=0.2.0,<0.3"
 
 [[package]]
 name = "langchain-community"
-<<<<<<< HEAD
-version = "0.2.5"
-=======
-version = "0.0.38"
->>>>>>> 12fe36b99 (initial commit for ragstack-main)
+version = "0.2.4"
 description = "Community contributed LangChain integrations."
 optional = false
 python-versions = "<4.0,>=3.8.1"
 files = [
-<<<<<<< HEAD
-    {file = "langchain_community-0.2.5-py3-none-any.whl", hash = "sha256:bf37a334952e42c7676d083cf2d2c4cbfbb7de1949c4149fe19913e2b06c485f"},
-    {file = "langchain_community-0.2.5.tar.gz", hash = "sha256:476787b8c8c213b67e7b0eceb53346e787f00fbae12d8e680985bd4f93b0bf64"},
-=======
-    {file = "langchain_community-0.0.38-py3-none-any.whl", hash = "sha256:ecb48660a70a08c90229be46b0cc5f6bc9f38f2833ee44c57dfab9bf3a2c121a"},
-    {file = "langchain_community-0.0.38.tar.gz", hash = "sha256:127fc4b75bc67b62fe827c66c02e715a730fef8fe69bd2023d466bab06b5810d"},
->>>>>>> 12fe36b99 (initial commit for ragstack-main)
+    {file = "langchain_community-0.2.4-py3-none-any.whl", hash = "sha256:8582e9800f4837660dc297cccd2ee1ddc1d8c440d0fe8b64edb07620f0373b0e"},
+    {file = "langchain_community-0.2.4.tar.gz", hash = "sha256:2bb6a1a36b8500a564d25d76469c02457b1a7c3afea6d4a609a47c06b993e3e4"},
 ]
 
 [package.dependencies]
 aiohttp = ">=3.8.3,<4.0.0"
 dataclasses-json = ">=0.5.7,<0.7"
-<<<<<<< HEAD
-langchain = ">=0.2.5,<0.3.0"
-langchain-core = ">=0.2.7,<0.3.0"
-=======
-langchain-core = ">=0.1.52,<0.2.0"
->>>>>>> 12fe36b99 (initial commit for ragstack-main)
+langchain = ">=0.2.0,<0.3.0"
+langchain-core = ">=0.2.0,<0.3.0"
 langsmith = ">=0.1.0,<0.2.0"
-numpy = [
-    {version = ">=1,<2", markers = "python_version < \"3.12\""},
-    {version = ">=1.26.0,<2.0.0", markers = "python_version >= \"3.12\""},
-]
+numpy = ">=1,<2"
 PyYAML = ">=5.3"
 requests = ">=2,<3"
 SQLAlchemy = ">=1.4,<3"
 tenacity = ">=8.1.0,<9.0.0"
 
-<<<<<<< HEAD
 [[package]]
 name = "langchain-core"
-version = "0.2.8"
-=======
-[package.extras]
-cli = ["typer (>=0.9.0,<0.10.0)"]
-extended-testing = ["aiosqlite (>=0.19.0,<0.20.0)", "aleph-alpha-client (>=2.15.0,<3.0.0)", "anthropic (>=0.3.11,<0.4.0)", "arxiv (>=1.4,<2.0)", "assemblyai (>=0.17.0,<0.18.0)", "atlassian-python-api (>=3.36.0,<4.0.0)", "azure-ai-documentintelligence (>=1.0.0b1,<2.0.0)", "azure-identity (>=1.15.0,<2.0.0)", "azure-search-documents (==11.4.0)", "beautifulsoup4 (>=4,<5)", "bibtexparser (>=1.4.0,<2.0.0)", "cassio (>=0.1.6,<0.2.0)", "chardet (>=5.1.0,<6.0.0)", "cloudpickle (>=2.0.0)", "cohere (>=4,<5)", "databricks-vectorsearch (>=0.21,<0.22)", "datasets (>=2.15.0,<3.0.0)", "dgml-utils (>=0.3.0,<0.4.0)", "elasticsearch (>=8.12.0,<9.0.0)", "esprima (>=4.0.1,<5.0.0)", "faiss-cpu (>=1,<2)", "feedparser (>=6.0.10,<7.0.0)", "fireworks-ai (>=0.9.0,<0.10.0)", "friendli-client (>=1.2.4,<2.0.0)", "geopandas (>=0.13.1,<0.14.0)", "gitpython (>=3.1.32,<4.0.0)", "google-cloud-documentai (>=2.20.1,<3.0.0)", "gql (>=3.4.1,<4.0.0)", "gradientai (>=1.4.0,<2.0.0)", "hdbcli (>=2.19.21,<3.0.0)", "hologres-vector (>=0.0.6,<0.0.7)", "html2text (>=2020.1.16,<2021.0.0)", "httpx (>=0.24.1,<0.25.0)", "httpx-sse (>=0.4.0,<0.5.0)", "javelin-sdk (>=0.1.8,<0.2.0)", "jinja2 (>=3,<4)", "jq (>=1.4.1,<2.0.0)", "jsonschema (>1)", "lxml (>=4.9.3,<6.0)", "markdownify (>=0.11.6,<0.12.0)", "motor (>=3.3.1,<4.0.0)", "msal (>=1.25.0,<2.0.0)", "mwparserfromhell (>=0.6.4,<0.7.0)", "mwxml (>=0.3.3,<0.4.0)", "newspaper3k (>=0.2.8,<0.3.0)", "numexpr (>=2.8.6,<3.0.0)", "nvidia-riva-client (>=2.14.0,<3.0.0)", "oci (>=2.119.1,<3.0.0)", "openai (<2)", "openapi-pydantic (>=0.3.2,<0.4.0)", "oracle-ads (>=2.9.1,<3.0.0)", "oracledb (>=2.2.0,<3.0.0)", "pandas (>=2.0.1,<3.0.0)", "pdfminer-six (>=20221105,<20221106)", "pgvector (>=0.1.6,<0.2.0)", "praw (>=7.7.1,<8.0.0)", "premai (>=0.3.25,<0.4.0)", "psychicapi (>=0.8.0,<0.9.0)", "py-trello (>=0.19.0,<0.20.0)", "pyjwt (>=2.8.0,<3.0.0)", "pymupdf (>=1.22.3,<2.0.0)", "pypdf (>=3.4.0,<4.0.0)", "pypdfium2 (>=4.10.0,<5.0.0)", "pyspark (>=3.4.0,<4.0.0)", "rank-bm25 (>=0.2.2,<0.3.0)", "rapidfuzz (>=3.1.1,<4.0.0)", "rapidocr-onnxruntime (>=1.3.2,<2.0.0)", "rdflib (==7.0.0)", "requests-toolbelt (>=1.0.0,<2.0.0)", "rspace_client (>=2.5.0,<3.0.0)", "scikit-learn (>=1.2.2,<2.0.0)", "sqlite-vss (>=0.1.2,<0.2.0)", "streamlit (>=1.18.0,<2.0.0)", "sympy (>=1.12,<2.0)", "telethon (>=1.28.5,<2.0.0)", "tidb-vector (>=0.0.3,<1.0.0)", "timescale-vector (>=0.0.1,<0.0.2)", "tqdm (>=4.48.0)", "tree-sitter (>=0.20.2,<0.21.0)", "tree-sitter-languages (>=1.8.0,<2.0.0)", "upstash-redis (>=0.15.0,<0.16.0)", "vdms (>=0.0.20,<0.0.21)", "xata (>=1.0.0a7,<2.0.0)", "xmltodict (>=0.13.0,<0.14.0)"]
-
-[[package]]
-name = "langchain-core"
-version = "0.1.52"
->>>>>>> 12fe36b99 (initial commit for ragstack-main)
+version = "0.2.5"
 description = "Building applications with LLMs through composability"
 optional = false
 python-versions = "<4.0,>=3.8.1"
 files = [
-<<<<<<< HEAD
-    {file = "langchain_core-0.2.8-py3-none-any.whl", hash = "sha256:172c81c858dc1f3123cc72b7e44e10f44c92f8a761cae18c364081f6c208e9f6"},
-    {file = "langchain_core-0.2.8.tar.gz", hash = "sha256:2db866a4514672c4875b69d5590aa2ed50aa0d144874268bef68d74b5e7f33f9"},
-=======
-    {file = "langchain_core-0.1.52-py3-none-any.whl", hash = "sha256:62566749c92e8a1181c255c788548dc16dbc319d896cd6b9c95dc17af9b2a6db"},
-    {file = "langchain_core-0.1.52.tar.gz", hash = "sha256:084c3fc452f5a6966c28ab3ec5dbc8b8d26fc3f63378073928f4e29d90b6393f"},
->>>>>>> 12fe36b99 (initial commit for ragstack-main)
+    {file = "langchain_core-0.2.5-py3-none-any.whl", hash = "sha256:abe5138f22acff23a079ec538be5268bbf97cf023d51987a0dd474d2a16cae3e"},
+    {file = "langchain_core-0.2.5.tar.gz", hash = "sha256:4a5c2f56b22396a63ef4790043660e393adbfa6832b978f023ca996a04b8e752"},
 ]
 
 [package.dependencies]
 jsonpatch = ">=1.33,<2.0"
-langsmith = ">=0.1.75,<0.2.0"
-packaging = ">=23.2,<25"
+langsmith = ">=0.1.66,<0.2.0"
+packaging = ">=23.2,<24.0"
 pydantic = ">=1,<3"
 PyYAML = ">=5.3"
 tenacity = ">=8.1.0,<9.0.0"
 
 [[package]]
 name = "langchain-experimental"
-<<<<<<< HEAD
-version = "0.0.61"
-=======
-version = "0.0.58"
->>>>>>> 12fe36b99 (initial commit for ragstack-main)
+version = "0.0.60"
 description = "Building applications with LLMs through composability"
 optional = false
 python-versions = "<4.0,>=3.8.1"
 files = [
-<<<<<<< HEAD
-    {file = "langchain_experimental-0.0.61-py3-none-any.whl", hash = "sha256:f9c516f528f55919743bd56fe1689a53bf74ae7f8902d64b9d8aebc61249cbe2"},
-    {file = "langchain_experimental-0.0.61.tar.gz", hash = "sha256:e9538efb994be5db3045cc582cddb9787c8299c86ffeee9d3779b7f58eef2226"},
+    {file = "langchain_experimental-0.0.60-py3-none-any.whl", hash = "sha256:ef3b6b6b84fe2bfe19eba6d1a98005e27d96576514c6415f5afe4ace5bf477d8"},
+    {file = "langchain_experimental-0.0.60.tar.gz", hash = "sha256:a16cbcd18cda6b86be8f41fed7963c13569295def0d8b4c6324b806d878d442c"},
 ]
 
 [package.dependencies]
-langchain-community = ">=0.2.5,<0.3.0"
-langchain-core = ">=0.2.7,<0.3.0"
-
-[[package]]
-name = "langchain-google-genai"
-version = "1.0.6"
-=======
-    {file = "langchain_experimental-0.0.58-py3-none-any.whl", hash = "sha256:106d3bc7df3dd20687378db7534c2fc21e2589201d43de42f832a1e3913dd55b"},
-    {file = "langchain_experimental-0.0.58.tar.gz", hash = "sha256:8ef10ff6b39f44ef468f8f21beb3749957d2262ec64d05db2719934936ca0285"},
-]
-
-[package.dependencies]
-langchain = ">=0.1.17,<0.2.0"
-langchain-core = ">=0.1.52,<0.2.0"
+langchain-community = ">=0.2,<0.3"
+langchain-core = ">=0.2,<0.3"
 
 [package.extras]
 extended-testing = ["faker (>=19.3.1,<20.0.0)", "jinja2 (>=3,<4)", "pandas (>=2.0.1,<3.0.0)", "presidio-analyzer (>=2.2.352,<3.0.0)", "presidio-anonymizer (>=2.2.352,<3.0.0)", "sentence-transformers (>=2,<3)", "tabulate (>=0.9.0,<0.10.0)", "vowpal-wabbit-next (==0.6.0)"]
 
 [[package]]
 name = "langchain-google-genai"
-version = "0.0.11"
->>>>>>> 12fe36b99 (initial commit for ragstack-main)
+version = "1.0.6"
 description = "An integration package connecting Google's genai package and LangChain"
 optional = false
-python-versions = ">=3.9,<4.0"
+python-versions = "<4.0,>=3.9"
 files = [
-<<<<<<< HEAD
     {file = "langchain_google_genai-1.0.6-py3-none-any.whl", hash = "sha256:65188b3c2867efda78e09c29371499ab0d25c6a111b175365fdae2b5be1502e6"},
     {file = "langchain_google_genai-1.0.6.tar.gz", hash = "sha256:7c964117fa385c490b323ee50ab46907229823d3678b80bfacc8fa0a237fb0b9"},
 ]
@@ -4366,49 +4244,25 @@ files = [
 [package.dependencies]
 google-generativeai = ">=0.5.2,<0.6.0"
 langchain-core = ">=0.2.2,<0.3"
-=======
-    {file = "langchain_google_genai-0.0.11-py3-none-any.whl", hash = "sha256:7e42900bf6850f58a6f9088d885f450ca9a2653c17cee5c19f3599ac17a285bd"},
-    {file = "langchain_google_genai-0.0.11.tar.gz", hash = "sha256:378b080e90d7ea1d6164b65847c5b1053346bb0781e629de9c2a3e4bb725317a"},
-]
-
-[package.dependencies]
-google-generativeai = ">=0.4.1,<0.5.0"
-langchain-core = ">=0.1,<0.2"
->>>>>>> 12fe36b99 (initial commit for ragstack-main)
 
 [package.extras]
 images = ["pillow (>=10.1.0,<11.0.0)"]
 
 [[package]]
 name = "langchain-google-vertexai"
-<<<<<<< HEAD
 version = "1.0.5"
-=======
-version = "1.0.1"
->>>>>>> 12fe36b99 (initial commit for ragstack-main)
 description = "An integration package connecting Google VertexAI and LangChain"
 optional = false
 python-versions = "<4.0,>=3.8.1"
 files = [
-<<<<<<< HEAD
     {file = "langchain_google_vertexai-1.0.5-py3-none-any.whl", hash = "sha256:38f4a39bf35927d744d0883907c4d4a59eef059e9b36f28bb5c737c2aae6963b"},
     {file = "langchain_google_vertexai-1.0.5.tar.gz", hash = "sha256:50005dc12ff9d66bbbab9e1ab660574b1584eee3e7b5a647dc8a009a94f0c500"},
-=======
-    {file = "langchain_google_vertexai-1.0.1-py3-none-any.whl", hash = "sha256:29dc243098a6a5a6972578bc5543c281b871c772a9969abb905d31a4ea39d019"},
-    {file = "langchain_google_vertexai-1.0.1.tar.gz", hash = "sha256:a3eb99f1001181f5fa6ccb95c28cd8a3202379775cc7366f5c64e5421a537482"},
->>>>>>> 12fe36b99 (initial commit for ragstack-main)
 ]
 
 [package.dependencies]
 google-cloud-aiplatform = ">=1.47.0,<2.0.0"
 google-cloud-storage = ">=2.14.0,<3.0.0"
-<<<<<<< HEAD
 langchain-core = ">=0.2.2,<0.3"
-=======
-langchain-core = ">=0.1.42,<0.2.0"
-types-protobuf = ">=4.24.0.4,<5.0.0.0"
-types-requests = ">=2.31.0,<3.0.0"
->>>>>>> 12fe36b99 (initial commit for ragstack-main)
 
 [package.extras]
 anthropic = ["anthropic[vertexai] (>=0.23.0,<1)"]
@@ -4447,19 +4301,19 @@ tokenizers = ">=0.15.1,<1"
 
 [[package]]
 name = "langchain-openai"
-version = "0.1.3"
+version = "0.1.8"
 description = "An integration package connecting OpenAI and LangChain"
 optional = false
 python-versions = "<4.0,>=3.8.1"
 files = [
-    {file = "langchain_openai-0.1.3-py3-none-any.whl", hash = "sha256:fa1f27815649291447e5370cb08e2f5a84e5c7c6121d0c055a6e296bd16d1e47"},
-    {file = "langchain_openai-0.1.3.tar.gz", hash = "sha256:7f6e377d6bf88d6c2b1969fe5eecc1326271757512739e2f17c855cd7af53345"},
+    {file = "langchain_openai-0.1.8-py3-none-any.whl", hash = "sha256:8125c84223e9f43b05defbca64eedbcf362fd78a680de6c25e64f973b34a8063"},
+    {file = "langchain_openai-0.1.8.tar.gz", hash = "sha256:a11fcce15def7917c44232abda6baaa63dfc79fe44be1531eea650d39a44cd95"},
 ]
 
 [package.dependencies]
-langchain-core = ">=0.1.42,<0.2.0"
-openai = ">=1.10.0,<2.0.0"
-tiktoken = ">=0.5.2,<1"
+langchain-core = ">=0.2.2,<0.3"
+openai = ">=1.26.0,<2.0.0"
+tiktoken = ">=0.7,<1"
 
 [[package]]
 name = "langchain-pinecone"
@@ -4479,26 +4333,17 @@ pinecone-client = ">=3.2.2,<4.0.0"
 
 [[package]]
 name = "langchain-text-splitters"
-<<<<<<< HEAD
 version = "0.2.1"
-=======
-version = "0.0.2"
->>>>>>> 12fe36b99 (initial commit for ragstack-main)
 description = "LangChain text splitting utilities"
 optional = false
 python-versions = "<4.0,>=3.8.1"
 files = [
-<<<<<<< HEAD
     {file = "langchain_text_splitters-0.2.1-py3-none-any.whl", hash = "sha256:c2774a85f17189eaca50339629d2316d13130d4a8d9f1a1a96f3a03670c4a138"},
     {file = "langchain_text_splitters-0.2.1.tar.gz", hash = "sha256:06853d17d7241ecf5c97c7b6ef01f600f9b0fb953dd997838142a527a4f32ea4"},
-=======
-    {file = "langchain_text_splitters-0.0.2-py3-none-any.whl", hash = "sha256:13887f32705862c1e1454213cb7834a63aae57c26fcd80346703a1d09c46168d"},
-    {file = "langchain_text_splitters-0.0.2.tar.gz", hash = "sha256:ac8927dc0ba08eba702f6961c9ed7df7cead8de19a9f7101ab2b5ea34201b3c1"},
->>>>>>> 12fe36b99 (initial commit for ragstack-main)
 ]
 
 [package.dependencies]
-langchain-core = ">=0.1.28,<0.3"
+langchain-core = ">=0.2.0,<0.3.0"
 
 [package.extras]
 extended-testing = ["beautifulsoup4 (>=4.12.3,<5.0.0)", "lxml (>=4.9.3,<6.0)"]
@@ -4523,7 +4368,6 @@ types-requests = ">=2.31.0.2,<3.0.0.0"
 name = "langdetect"
 version = "1.0.9"
 description = "Language detection library ported from Google's language-detection."
-<<<<<<< HEAD
 optional = false
 python-versions = "*"
 files = [
@@ -4533,73 +4377,6 @@ files = [
 
 [package.dependencies]
 six = "*"
-
-[[package]]
-name = "langflow-base"
-version = "0.0.72"
-description = "A Python package with a built-in web application"
-=======
->>>>>>> 12fe36b99 (initial commit for ragstack-main)
-optional = false
-python-versions = "*"
-files = [
-    {file = "langdetect-1.0.9-py2-none-any.whl", hash = "sha256:7cbc0746252f19e76f77c0b1690aadf01963be835ef0cd4b56dddf2a8f1dfc2a"},
-    {file = "langdetect-1.0.9.tar.gz", hash = "sha256:cbc1fef89f8d062739774bd51eda3da3274006b3661d199c2655f6b3f6d605a0"},
-]
-
-[package.dependencies]
-<<<<<<< HEAD
-alembic = "^1.13.0"
-asyncer = "^0.0.5"
-bcrypt = "4.0.1"
-cachetools = "^5.3.1"
-chardet = "^5.2.0"
-cryptography = "^42.0.5"
-docstring-parser = "^0.15"
-duckdb = "^1.0.0"
-emoji = "^2.12.0"
-fastapi = "^0.111.0"
-gunicorn = "^22.0.0"
-httpx = "*"
-jq = {version = "^1.7.0", markers = "sys_platform != \"win32\""}
-langchain = "~0.2.0"
-langchain-experimental = "*"
-langchainhub = "~0.1.15"
-loguru = "^0.7.1"
-multiprocess = "^0.70.14"
-nest-asyncio = "^1.6.0"
-orjson = "3.10.0"
-pandas = "2.2.0"
-passlib = "^1.7.4"
-pillow = "^10.2.0"
-platformdirs = "^4.2.0"
-pydantic = "^2.7.0"
-pydantic-settings = "^2.2.0"
-pypdf = "^4.2.0"
-pyperclip = "^1.8.2"
-python-docx = "^1.1.0"
-python-jose = "^3.3.0"
-python-multipart = "^0.0.7"
-python-socketio = "^5.11.0"
-rich = "^13.7.0"
-sentry-sdk = {version = "^2.5.1", extras = ["fastapi", "loguru"]}
-sqlmodel = "^0.0.18"
-typer = "^0.12.0"
-uncurl = "^0.0.11"
-uvicorn = "^0.30.0"
-websockets = "*"
-
-[package.extras]
-all = []
-deploy = []
-local = []
-
-[package.source]
-type = "directory"
-url = "src/backend/base"
-=======
-six = "*"
->>>>>>> 12fe36b99 (initial commit for ragstack-main)
 
 [[package]]
 name = "langfuse"
@@ -4627,13 +4404,13 @@ openai = ["openai (>=0.27.8)"]
 
 [[package]]
 name = "langsmith"
-version = "0.1.78"
+version = "0.1.79"
 description = "Client library to connect to the LangSmith LLM Tracing and Evaluation Platform."
 optional = false
 python-versions = "<4.0,>=3.8.1"
 files = [
-    {file = "langsmith-0.1.78-py3-none-any.whl", hash = "sha256:87bc5d9072bfcb6392d7552cbcd6089dcc1faed36d688b1587d80bd48a1acba2"},
-    {file = "langsmith-0.1.78.tar.gz", hash = "sha256:d9112d2e9298ec6b02d3b1afec6ed557df9db3746c79d34ef3b448fc18e116cd"},
+    {file = "langsmith-0.1.79-py3-none-any.whl", hash = "sha256:c7f2c23981917713b5515b773f37c84ff68a7adf803476e2ebb5adcb36a04202"},
+    {file = "langsmith-0.1.79.tar.gz", hash = "sha256:d215718cfdcdf4a011126b7a3d4a37eee96d887e59ac1e628a57e24b2bfa3163"},
 ]
 
 [package.dependencies]
@@ -4643,27 +4420,19 @@ requests = ">=2,<3"
 
 [[package]]
 name = "litellm"
-<<<<<<< HEAD
-version = "1.40.15"
-=======
-version = "1.39.5"
->>>>>>> 12fe36b99 (initial commit for ragstack-main)
+version = "1.40.16"
 description = "Library to easily interface with LLM API providers"
 optional = false
 python-versions = "!=2.7.*,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,!=3.5.*,!=3.6.*,!=3.7.*,>=3.8"
 files = [
-<<<<<<< HEAD
-    {file = "litellm-1.40.15-py3-none-any.whl", hash = "sha256:4f51376535857c109723cede78f50e0794be3814b6da1f02ea8263fe5480dc42"},
-    {file = "litellm-1.40.15.tar.gz", hash = "sha256:bd3ca27c69deb47c5d11c69a6c2f7a618512720bd2d94ff64d055c09d9fba366"},
-=======
-    {file = "litellm-1.39.5-py3-none-any.whl", hash = "sha256:1e8dd43c5d257fa8d7a0039b20aed7aeed4463d53608d1ba4ac233f1967a5330"},
-    {file = "litellm-1.39.5.tar.gz", hash = "sha256:8f4ea9fe21d67890e81a578e12c30b4172260ff35971dc7c3edf7eb69167d3be"},
->>>>>>> 12fe36b99 (initial commit for ragstack-main)
+    {file = "litellm-1.40.16-py3-none-any.whl", hash = "sha256:b78571a39a3b7819ca9cb96278f4b15b97557e2cd50e9aeee9210a7e744b8667"},
+    {file = "litellm-1.40.16.tar.gz", hash = "sha256:b32cd15c7cf9084aa0f92eb7103323741d63cc8a14e28b739054b0cb6682c431"},
 ]
 
 [package.dependencies]
 aiohttp = "*"
 click = "*"
+ijson = "*"
 importlib-metadata = ">=6.8.0"
 jinja2 = ">=3.1.2,<4.0.0"
 openai = ">=1.27.0"
@@ -6922,22 +6691,13 @@ pyasn1 = ">=0.4.6,<0.7.0"
 
 [[package]]
 name = "pyautogen"
-<<<<<<< HEAD
 version = "0.2.29"
-=======
-version = "0.2.28"
->>>>>>> 12fe36b99 (initial commit for ragstack-main)
 description = "Enabling Next-Gen LLM Applications via Multi-Agent Conversation Framework"
 optional = false
 python-versions = "<3.13,>=3.8"
 files = [
-<<<<<<< HEAD
     {file = "pyautogen-0.2.29-py3-none-any.whl", hash = "sha256:633ed65cadf9580db31f653762f9d796003e4208befdb33a19d9624fb478222c"},
     {file = "pyautogen-0.2.29.tar.gz", hash = "sha256:dec1eb362dd195103d30fca30215f195d7c996bce2d74f22429eb18b43d1d4c3"},
-=======
-    {file = "pyautogen-0.2.28-py3-none-any.whl", hash = "sha256:69dffa4053096f496a50c8a252bbe23105b58fd6ffbb422fa8c043ecf3fc732b"},
-    {file = "pyautogen-0.2.28.tar.gz", hash = "sha256:f74686a981f2b6046a9cf6aff5a5e61615ec60d5559a49e7474467fbdf4e077b"},
->>>>>>> 12fe36b99 (initial commit for ragstack-main)
 ]
 
 [package.dependencies]
@@ -7898,36 +7658,32 @@ data-clean = ["emoji", "ltp", "sentencepiece", "torch", "torch (<=1.13.1)"]
 langchain = ["langchain (>=0.0.321)"]
 
 [[package]]
-<<<<<<< HEAD
-name = "rapidfuzz"
-version = "3.9.3"
-=======
 name = "ragstack-ai-langchain"
-version = "1.0.7"
+version = "1.1.1"
 description = "DataStax RAGStack Langchain"
 optional = false
 python-versions = "<3.13,>=3.9"
 files = [
-    {file = "ragstack_ai_langchain-1.0.7-py3-none-any.whl", hash = "sha256:74bd48d2043ac17df8993e5f55a02e026bfdb51982ce891adbaf5380526152ac"},
-    {file = "ragstack_ai_langchain-1.0.7.tar.gz", hash = "sha256:04a2d8377496c122e26447c66063b6ea99e0d4cd895e629a300f09292e53c84a"},
+    {file = "ragstack_ai_langchain-1.1.1-py3-none-any.whl", hash = "sha256:d489d192460f3c87b37a363c5fe29a7e872101c3f318d72efdcbfd835eb3d1fe"},
+    {file = "ragstack_ai_langchain-1.1.1.tar.gz", hash = "sha256:d98061cc7489217376a3cf43c816bf8146e39c4dc31fcd5136827efca27c3603"},
 ]
 
 [package.dependencies]
 astrapy = ">=1,<2"
 cassio = ">=0.1.4,<0.2.0"
-langchain = "0.1.19"
+langchain = "0.2.3"
 langchain-astradb = "0.3.3"
-langchain-community = "0.0.38"
-langchain-core = "0.1.52"
-langchain-google-genai = {version = "0.0.11", optional = true, markers = "extra == \"google\""}
-langchain-google-vertexai = {version = "1.0.1", optional = true, markers = "extra == \"google\""}
-langchain-openai = "0.1.3"
-unstructured = "0.14.2"
+langchain-community = "0.2.4"
+langchain-core = "0.2.5"
+langchain-google-genai = {version = "1.0.6", optional = true, markers = "extra == \"google\""}
+langchain-google-vertexai = {version = "1.0.5", optional = true, markers = "extra == \"google\""}
+langchain-openai = "0.1.8"
+unstructured = "0.14.5"
 
 [package.extras]
 colbert = ["ragstack-ai-colbert (==1.0.5)"]
-google = ["langchain-google-genai (==0.0.11)", "langchain-google-vertexai (==1.0.1)"]
-nvidia = ["langchain-nvidia-ai-endpoints (==0.0.9)"]
+google = ["langchain-google-genai (==1.0.6)", "langchain-google-vertexai (==1.0.5)"]
+nvidia = ["langchain-nvidia-ai-endpoints (==0.1.1)"]
 
 [[package]]
 name = "ragstack-ai-langflow-base"
@@ -7943,9 +7699,10 @@ alembic = "^1.13.0"
 asyncer = "^0.0.5"
 bcrypt = "4.0.1"
 cachetools = "^5.3.1"
+chardet = "^5.2.0"
 cryptography = "^42.0.5"
 docstring-parser = "^0.15"
-duckdb = "^0.10.2"
+duckdb = "^1.0.0"
 emoji = "^2.12.0"
 fastapi = "^0.111.0"
 gunicorn = "^22.0.0"
@@ -7969,12 +7726,13 @@ python-docx = "^1.1.0"
 python-jose = "^3.3.0"
 python-multipart = "^0.0.7"
 python-socketio = "^5.11.0"
-ragstack-ai-langchain = {version = "1.0.7", extras = ["google"]}
+ragstack-ai-langchain = {version = "1.1.1", extras = ["google"]}
 rich = "^13.7.0"
+sentry-sdk = {version = "^2.5.1", extras = ["fastapi", "loguru"]}
 sqlmodel = "^0.0.18"
 typer = "^0.12.0"
 uncurl = "^0.0.11"
-uvicorn = "^0.29.0"
+uvicorn = "^0.30.0"
 websockets = "*"
 
 [package.extras]
@@ -7988,13 +7746,11 @@ url = "src/backend/base"
 
 [[package]]
 name = "rapidfuzz"
-version = "3.9.2"
->>>>>>> 12fe36b99 (initial commit for ragstack-main)
+version = "3.9.3"
 description = "rapid fuzzy string matching"
 optional = false
 python-versions = ">=3.8"
 files = [
-<<<<<<< HEAD
     {file = "rapidfuzz-3.9.3-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:bdb8c5b8e29238ec80727c2ba3b301efd45aa30c6a7001123a6647b8e6f77ea4"},
     {file = "rapidfuzz-3.9.3-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:b3bd0d9632088c63a241f217742b1cf86e2e8ae573e01354775bd5016d12138c"},
     {file = "rapidfuzz-3.9.3-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:153f23c03d4917f6a1fc2fb56d279cc6537d1929237ff08ee7429d0e40464a18"},
@@ -8088,101 +7844,6 @@ files = [
     {file = "rapidfuzz-3.9.3-pp39-pypy39_pp73-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:3d8a57261ef7996d5ced7c8cba9189ada3fbeffd1815f70f635e4558d93766cb"},
     {file = "rapidfuzz-3.9.3-pp39-pypy39_pp73-win_amd64.whl", hash = "sha256:67201c02efc596923ad950519e0b75ceb78d524177ea557134d6567b9ac2c283"},
     {file = "rapidfuzz-3.9.3.tar.gz", hash = "sha256:b398ea66e8ed50451bce5997c430197d5e4b06ac4aa74602717f792d8d8d06e2"},
-=======
-    {file = "rapidfuzz-3.9.2-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:45e0c3e279e70589381f47ad410de7211bac943e827eb09eb8339d2124abca90"},
-    {file = "rapidfuzz-3.9.2-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:280ef2f3066df9c486ffd3874d2489978fb8021044c47c006eb96be8d47917d7"},
-    {file = "rapidfuzz-3.9.2-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:fe128ac0e05ca3a71d8ff18e70884a64fde00b6fbd2b4d9f59f7a4d798257c55"},
-    {file = "rapidfuzz-3.9.2-cp310-cp310-manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:8fbc0f6e1b6f4063b937d0edcf0a56cbc1d7179ade9b7d6c849c94e44a7b20f6"},
-    {file = "rapidfuzz-3.9.2-cp310-cp310-manylinux_2_17_ppc64le.manylinux2014_ppc64le.whl", hash = "sha256:df19455c2fb85e86a721111b84ac8dd3685194f0edc9faefb226731ad3e134a7"},
-    {file = "rapidfuzz-3.9.2-cp310-cp310-manylinux_2_17_s390x.manylinux2014_s390x.whl", hash = "sha256:801a5d97c465a3467b3cdf50cdcdadec129ddca582b24430f5d24c715c80be9b"},
-    {file = "rapidfuzz-3.9.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:81f218524596d261a6cb33cda965687e62dd30def478d39f0befa243642c3985"},
-    {file = "rapidfuzz-3.9.2-cp310-cp310-musllinux_1_2_aarch64.whl", hash = "sha256:5c61d53f293b4e3286919b0e081513367afabcb5aef0b6f899d006117778e558"},
-    {file = "rapidfuzz-3.9.2-cp310-cp310-musllinux_1_2_i686.whl", hash = "sha256:0ed70fc6627ae37319f822e5d8d21d561044e0b3331b6f0e6904476faa8d8ed7"},
-    {file = "rapidfuzz-3.9.2-cp310-cp310-musllinux_1_2_ppc64le.whl", hash = "sha256:96fa229d06ee005d2f46374fb2af65590a590a6fa2fd56e66474829f5fa9adfe"},
-    {file = "rapidfuzz-3.9.2-cp310-cp310-musllinux_1_2_s390x.whl", hash = "sha256:6609e881b57cabb40d515cc226bbf570e32e768bd2cc688ba026a45ffbc60875"},
-    {file = "rapidfuzz-3.9.2-cp310-cp310-musllinux_1_2_x86_64.whl", hash = "sha256:204fd4d293ef4d409c4142ddf830b7613924b998670f67e512ab1f880a60218a"},
-    {file = "rapidfuzz-3.9.2-cp310-cp310-win32.whl", hash = "sha256:5b331a09446bc8f8971cf488c9e6c0f7dbf2739828588e063cf08fd400638a24"},
-    {file = "rapidfuzz-3.9.2-cp310-cp310-win_amd64.whl", hash = "sha256:01a9975984953fe549649e6a4c3f0d9c60707acf458184ec09678d6a57560112"},
-    {file = "rapidfuzz-3.9.2-cp310-cp310-win_arm64.whl", hash = "sha256:ca4af5d7fc9c17bdc498aa1cab9ecf5140c8535c9cedeba1990bbe4b8be75098"},
-    {file = "rapidfuzz-3.9.2-cp311-cp311-macosx_10_9_x86_64.whl", hash = "sha256:300ab53981a5d6831fe7e0f30c407c79520ad0f0ab51b2cece8717689026f495"},
-    {file = "rapidfuzz-3.9.2-cp311-cp311-macosx_11_0_arm64.whl", hash = "sha256:f4828642acdb075154ce2ff3260f8afb6a17b5b0c8a437efbadac06e9995dd7b"},
-    {file = "rapidfuzz-3.9.2-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:9b262883c3ce93dee1a9a974992961c8098e96b8142e2e01cabdb15ea8105c4a"},
-    {file = "rapidfuzz-3.9.2-cp311-cp311-manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:cf8582d85e35641734d6c1f43eb37c1f2a5eda338d3cfa8e651e078246b9ec58"},
-    {file = "rapidfuzz-3.9.2-cp311-cp311-manylinux_2_17_ppc64le.manylinux2014_ppc64le.whl", hash = "sha256:e33b61ef87e1876d216c479fa2256233b3bb0424465ab2db1d94ab7b8649ae1c"},
-    {file = "rapidfuzz-3.9.2-cp311-cp311-manylinux_2_17_s390x.manylinux2014_s390x.whl", hash = "sha256:0fa1b3eb21756003a6a3977847dd4e0e9a26e2e02731d9daa5e92a9258e7f0db"},
-    {file = "rapidfuzz-3.9.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:923ae0301a56356364f1159e3005fbeb2191e7a0e8705d5cc1b481d9eea27b97"},
-    {file = "rapidfuzz-3.9.2-cp311-cp311-musllinux_1_2_aarch64.whl", hash = "sha256:d8e4041cfd87f0a022aa8a9a187d3b0824e35be2bd9b3bceada11578ddd9ad65"},
-    {file = "rapidfuzz-3.9.2-cp311-cp311-musllinux_1_2_i686.whl", hash = "sha256:1f832b430f976727bdbba009ee64acda25412602976fbfb2113d41e765d81849"},
-    {file = "rapidfuzz-3.9.2-cp311-cp311-musllinux_1_2_ppc64le.whl", hash = "sha256:6ce5e57e0c6acf5a98ffbdfaf8bccb6e41fbddb9eda3e041f4cc69b7cade5fa0"},
-    {file = "rapidfuzz-3.9.2-cp311-cp311-musllinux_1_2_s390x.whl", hash = "sha256:d65f34e71102d9cbe733d4ba1c645e7623eef850562501bab1ac79d217831436"},
-    {file = "rapidfuzz-3.9.2-cp311-cp311-musllinux_1_2_x86_64.whl", hash = "sha256:5dd9ba4df0db46b9f909289e4687cc7721c622985c4cd169969005dd30fc1e24"},
-    {file = "rapidfuzz-3.9.2-cp311-cp311-win32.whl", hash = "sha256:34c8bca3fef33d7e71f290de68be2184fac7a9e136fa0ed22b17ec597e181406"},
-    {file = "rapidfuzz-3.9.2-cp311-cp311-win_amd64.whl", hash = "sha256:91e1a8872c0b8aef95c33db86d25e8bdea6f557b9cdf683123c25035b2bcfb8e"},
-    {file = "rapidfuzz-3.9.2-cp311-cp311-win_arm64.whl", hash = "sha256:ed02d73e46b7a4604d2bc1e0364b25f204862d40dd162f6b36ee22b9bf6d9df2"},
-    {file = "rapidfuzz-3.9.2-cp312-cp312-macosx_10_9_x86_64.whl", hash = "sha256:ae6c4ba2778b097397968130f2b0cb795cdc415c115539a49ce798f606152ad5"},
-    {file = "rapidfuzz-3.9.2-cp312-cp312-macosx_11_0_arm64.whl", hash = "sha256:7270556ddebaa98fb777f493f17ed6a733b3527de16c43342bce1db109042845"},
-    {file = "rapidfuzz-3.9.2-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:4625273447bdd94f2ab06b2951cd8b74356c3a48552208279a3ec2947ceee141"},
-    {file = "rapidfuzz-3.9.2-cp312-cp312-manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:5107b5ec8821453f7cac70b2d0bc4866699b25bff4819ada8b28bf2b11e87f65"},
-    {file = "rapidfuzz-3.9.2-cp312-cp312-manylinux_2_17_ppc64le.manylinux2014_ppc64le.whl", hash = "sha256:b04c851d309df8261ed42951444db657936234ceddf4032f4409b0214c95ecbe"},
-    {file = "rapidfuzz-3.9.2-cp312-cp312-manylinux_2_17_s390x.manylinux2014_s390x.whl", hash = "sha256:aeefff80f3f5d6841c30ffe0cdc84d62874de5a64cff509ae26fbd7478297af8"},
-    {file = "rapidfuzz-3.9.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:4cdc106b5a99edd46443449c767287dbb5d4464a7536475a365e368e7ee4d651"},
-    {file = "rapidfuzz-3.9.2-cp312-cp312-musllinux_1_2_aarch64.whl", hash = "sha256:ce253a2b7a71a01a4abac71ac31fd05f6ac1f1cd2af2d98fa80fe5c402175e54"},
-    {file = "rapidfuzz-3.9.2-cp312-cp312-musllinux_1_2_i686.whl", hash = "sha256:5c30407cadbfe99753b7a996f0dd6da490b1e27d318c01db227e8f49770a01ec"},
-    {file = "rapidfuzz-3.9.2-cp312-cp312-musllinux_1_2_ppc64le.whl", hash = "sha256:fb3fc387783f70387a91aababd8a5faeb230931b655ad99bcf838cd72404ba66"},
-    {file = "rapidfuzz-3.9.2-cp312-cp312-musllinux_1_2_s390x.whl", hash = "sha256:c409852a89535ec8720301a847bab198c1c14d0f34ed07dfabbb90b1dbfc506d"},
-    {file = "rapidfuzz-3.9.2-cp312-cp312-musllinux_1_2_x86_64.whl", hash = "sha256:8603050e547249c1cc8a8dc6a49917076572ea69b04bc51eb1748c403cfc9f46"},
-    {file = "rapidfuzz-3.9.2-cp312-cp312-win32.whl", hash = "sha256:77bdb96e82d8831f0dd6db83e2ff0d4a731cff53e926d029c65a1dc3ae0f160a"},
-    {file = "rapidfuzz-3.9.2-cp312-cp312-win_amd64.whl", hash = "sha256:09f354fa28e0fd170c6e4eea5e97eea0dba43761067df93109f49a5414ca8584"},
-    {file = "rapidfuzz-3.9.2-cp312-cp312-win_arm64.whl", hash = "sha256:168299c9a2b4f20f10c1bb96d8da0bb05bf1f3b9957be3a0bae5db65ce9f095f"},
-    {file = "rapidfuzz-3.9.2-cp38-cp38-macosx_10_9_x86_64.whl", hash = "sha256:d87621d60078f87cb52082b1cbf9849afeaa1cb6d0a2b072fce25fe21c8675b4"},
-    {file = "rapidfuzz-3.9.2-cp38-cp38-macosx_11_0_arm64.whl", hash = "sha256:c447d0e534418ef3eaabcd890d85c7e9f289c1c6ef6e060a0b1f239799781747"},
-    {file = "rapidfuzz-3.9.2-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:b7161b205f25eff5f88ab809fb05a2a102634e06f452c0deb9535c9f41cd7b0a"},
-    {file = "rapidfuzz-3.9.2-cp38-cp38-manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:f13a6bbadba8fdd42676c1213ebc692bba9fac00f7db0ae92acc06bb734294c4"},
-    {file = "rapidfuzz-3.9.2-cp38-cp38-manylinux_2_17_ppc64le.manylinux2014_ppc64le.whl", hash = "sha256:54534743820a15bd0dc30a0a0010825be337973236550fd63587700a7950bbca"},
-    {file = "rapidfuzz-3.9.2-cp38-cp38-manylinux_2_17_s390x.manylinux2014_s390x.whl", hash = "sha256:bea61851a4c2f93148aa2779458fb3f70a62342d77c9ec3d9d08445c8485b738"},
-    {file = "rapidfuzz-3.9.2-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:e941f81a60351a842976fea208e6a6701a5899eb8a80b907e57d7c3099337900"},
-    {file = "rapidfuzz-3.9.2-cp38-cp38-musllinux_1_2_aarch64.whl", hash = "sha256:1bbfaf439e48efe3a48cada946cf7678b09c818ce9668e09dac40d05b772f6f8"},
-    {file = "rapidfuzz-3.9.2-cp38-cp38-musllinux_1_2_i686.whl", hash = "sha256:574f464da18d660712e9776072572d462cf6a26144c833d18d9c93778286e023"},
-    {file = "rapidfuzz-3.9.2-cp38-cp38-musllinux_1_2_ppc64le.whl", hash = "sha256:8a56c494246d29aacf5ac93ca3cf338d79588a1a5c05d8f496c3f4d7127e9031"},
-    {file = "rapidfuzz-3.9.2-cp38-cp38-musllinux_1_2_s390x.whl", hash = "sha256:2943b0f17195c000948a7668bb11979ea0e50079a3d3db9d139e51b68c3a7c26"},
-    {file = "rapidfuzz-3.9.2-cp38-cp38-musllinux_1_2_x86_64.whl", hash = "sha256:27214f93555d4f9b7b1baf107a6ba13e9daee21f1ec6e36418556d04a7ee4d9b"},
-    {file = "rapidfuzz-3.9.2-cp38-cp38-win32.whl", hash = "sha256:876c6628fec6241262c27f8fda3c73bab88e205e9b9394c8868361e2eda59048"},
-    {file = "rapidfuzz-3.9.2-cp38-cp38-win_amd64.whl", hash = "sha256:cf1952b486589ffcfbde2015ca9be15e0f4b0e63d1e2c25f3daec0263fda4e69"},
-    {file = "rapidfuzz-3.9.2-cp39-cp39-macosx_10_9_x86_64.whl", hash = "sha256:1ca9a135060ee4d887d6af86493c3e0eb1c99ca205bca943fe5994dc93e648d5"},
-    {file = "rapidfuzz-3.9.2-cp39-cp39-macosx_11_0_arm64.whl", hash = "sha256:723518c9a18e8bda996d77aa9307b6f8b0e77905702b2772b020adf24191073a"},
-    {file = "rapidfuzz-3.9.2-cp39-cp39-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:65eb9aeae73ac60e53a9d6c509daaa217ea256a5e184eb8920c9b15295c48677"},
-    {file = "rapidfuzz-3.9.2-cp39-cp39-manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:ef2964f4eb9a37487c96e5e32167a3c4fa51bf8e899853d0ac67e0465a27702c"},
-    {file = "rapidfuzz-3.9.2-cp39-cp39-manylinux_2_17_ppc64le.manylinux2014_ppc64le.whl", hash = "sha256:c64a252c96f29667c206726903bb9705c5195f01850360c9b9268de92ac878dc"},
-    {file = "rapidfuzz-3.9.2-cp39-cp39-manylinux_2_17_s390x.manylinux2014_s390x.whl", hash = "sha256:e1b32b03398517b5e33c7f36d625a00fcb1c955b9fe3c939325688175fb21730"},
-    {file = "rapidfuzz-3.9.2-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:ec5f7b1bac77439b624f5acbd8bfe61e7b833678701068b43f7a489c151427c0"},
-    {file = "rapidfuzz-3.9.2-cp39-cp39-musllinux_1_2_aarch64.whl", hash = "sha256:5fd1b49fba8b4b9172eed5b131c1e9864d4d76bebea34359274f16a3591e5f44"},
-    {file = "rapidfuzz-3.9.2-cp39-cp39-musllinux_1_2_i686.whl", hash = "sha256:c05b033fc3ff043f48e744f67038af7fd34003047c7810f24bec7c01ce7da05b"},
-    {file = "rapidfuzz-3.9.2-cp39-cp39-musllinux_1_2_ppc64le.whl", hash = "sha256:c3bea20db89b510d78d017b349b9d87159c32418693ddf091d9035dbe20b4dc0"},
-    {file = "rapidfuzz-3.9.2-cp39-cp39-musllinux_1_2_s390x.whl", hash = "sha256:77226a77590f83ee073f4f8cc86a1232da88e24d19d349361faa169fb17ba1cd"},
-    {file = "rapidfuzz-3.9.2-cp39-cp39-musllinux_1_2_x86_64.whl", hash = "sha256:83ed8bc2c942dc61ab739bbca1ead791143b4639dc92156d3060bd0b6f4541ea"},
-    {file = "rapidfuzz-3.9.2-cp39-cp39-win32.whl", hash = "sha256:2db70f64974c10b76ae37d5cff6124dce791def815d4fdf5ac16fe60be88d905"},
-    {file = "rapidfuzz-3.9.2-cp39-cp39-win_amd64.whl", hash = "sha256:bdead23114206dea4a22ed3aad6565b99a9e4b3fff9837c423afc556d2814b1a"},
-    {file = "rapidfuzz-3.9.2-cp39-cp39-win_arm64.whl", hash = "sha256:0ec69ad076cfc7c88323d671613e40bb8754ba95a203556d9a7759e60f0544e8"},
-    {file = "rapidfuzz-3.9.2-pp310-pypy310_pp73-macosx_10_9_x86_64.whl", hash = "sha256:018360654881e75131b227aa96cdaba543c438da881c70a12ca0c86e2c4083b2"},
-    {file = "rapidfuzz-3.9.2-pp310-pypy310_pp73-macosx_11_0_arm64.whl", hash = "sha256:eaa8178ec9238f32f15b6e49f70b852accda0a848448c4e30bce77c6624ebaba"},
-    {file = "rapidfuzz-3.9.2-pp310-pypy310_pp73-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:32dd79b0f90ce609df96d0d48ef4327cf1f0415b9274588a466d3610a775d2f9"},
-    {file = "rapidfuzz-3.9.2-pp310-pypy310_pp73-manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:04a1c38a72a50f3e6d346a33d53fa51ba390552b3592fca64a07e54d749b439b"},
-    {file = "rapidfuzz-3.9.2-pp310-pypy310_pp73-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:77ca96eec40e815f0cf10b00008f295fd26ca43792a844cf62588a8ea614e160"},
-    {file = "rapidfuzz-3.9.2-pp310-pypy310_pp73-win_amd64.whl", hash = "sha256:c01c515a928f295f49d588b6523f44b474f047f9f2de0079bc57bcd00b870778"},
-    {file = "rapidfuzz-3.9.2-pp38-pypy38_pp73-macosx_10_9_x86_64.whl", hash = "sha256:07e14ef260b6f4ee03dff07a0ac95a16aff1ddbc7e6171e07e49d2d61526f3be"},
-    {file = "rapidfuzz-3.9.2-pp38-pypy38_pp73-macosx_11_0_arm64.whl", hash = "sha256:64f3480bddc12b89969930f12a50a1aeb53e09aad41cf8b27694d83ca1cc7864"},
-    {file = "rapidfuzz-3.9.2-pp38-pypy38_pp73-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:d3c9e33ec21755bda1878095537cb84848e9cf6510d4837d22144ba04e33df29"},
-    {file = "rapidfuzz-3.9.2-pp38-pypy38_pp73-manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:a70045e84225697ddf67d656aa25b70d6802e2ff339d51f9545fca5b9b13fb8c"},
-    {file = "rapidfuzz-3.9.2-pp38-pypy38_pp73-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:b9ec1fd328518c33adb9171afe8735137cb7b492e4a81cddc23568f9980c235c"},
-    {file = "rapidfuzz-3.9.2-pp38-pypy38_pp73-win_amd64.whl", hash = "sha256:1fd8458fdac232766d55593c1228c70968f382fdc376c25685273f99b5d1d921"},
-    {file = "rapidfuzz-3.9.2-pp39-pypy39_pp73-macosx_10_9_x86_64.whl", hash = "sha256:a373748fddb5403b562b6d682082de360bb08395f44e3cb7e74819461e39a16c"},
-    {file = "rapidfuzz-3.9.2-pp39-pypy39_pp73-macosx_11_0_arm64.whl", hash = "sha256:45f80856db3e22cb5f96ad1572aa1d004714514625ed4668144661d8a7c7e61f"},
-    {file = "rapidfuzz-3.9.2-pp39-pypy39_pp73-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:663e52cf878e0ccbbad0744eb3e2bb83a784645b146f15611bac225bc218f19b"},
-    {file = "rapidfuzz-3.9.2-pp39-pypy39_pp73-manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:5fbe4d3034a8cfe59a2b477375ad7d739b3e5935f10af08abdf64aae55780cad"},
-    {file = "rapidfuzz-3.9.2-pp39-pypy39_pp73-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:dd38abfda97e42b30093f207108dcba944beab1edf6624ba757cf57354063177"},
-    {file = "rapidfuzz-3.9.2-pp39-pypy39_pp73-win_amd64.whl", hash = "sha256:16b41fe360387283a3184ce72d4d26d1928e7ce809268a88e8491a776dd770af"},
-    {file = "rapidfuzz-3.9.2.tar.gz", hash = "sha256:c899d78709f8d4bd0059784fa27a9f6c53d04fc4aeaa21de7c0c8e34a7154e88"},
->>>>>>> 12fe36b99 (initial commit for ragstack-main)
 ]
 
 [package.extras]
@@ -9638,17 +9299,6 @@ files = [
 ]
 
 [[package]]
-name = "types-protobuf"
-version = "4.25.0.20240417"
-description = "Typing stubs for protobuf"
-optional = false
-python-versions = ">=3.8"
-files = [
-    {file = "types-protobuf-4.25.0.20240417.tar.gz", hash = "sha256:c34eff17b9b3a0adb6830622f0f302484e4c089f533a46e3f147568313544352"},
-    {file = "types_protobuf-4.25.0.20240417-py3-none-any.whl", hash = "sha256:e9b613227c2127e3d4881d75d93c93b4d6fd97b5f6a099a0b654a05351c8685d"},
-]
-
-[[package]]
 name = "types-pyasn1"
 version = "0.6.0.20240402"
 description = "Typing stubs for pyasn1"
@@ -9902,22 +9552,13 @@ six = "*"
 
 [[package]]
 name = "unstructured"
-<<<<<<< HEAD
-version = "0.14.6"
-=======
-version = "0.14.2"
->>>>>>> 12fe36b99 (initial commit for ragstack-main)
+version = "0.14.5"
 description = "A library that prepares raw documents for downstream ML tasks."
 optional = false
 python-versions = "<3.13,>=3.9.0"
 files = [
-<<<<<<< HEAD
-    {file = "unstructured-0.14.6-py3-none-any.whl", hash = "sha256:ab7d83016e46d3c221f6dae8b1040492ee69f7a97cb53c0f2109b54f0b764d19"},
-    {file = "unstructured-0.14.6.tar.gz", hash = "sha256:5dddf44908faa0f5250c02f41768fd4ce3792496d3e00258fd33f68c24b902c1"},
-=======
-    {file = "unstructured-0.14.2-py3-none-any.whl", hash = "sha256:2d00463d6406c2a07d54c049e4d7323d2f5c112752f060d6f83bfbb335e676f1"},
-    {file = "unstructured-0.14.2.tar.gz", hash = "sha256:fd1889ea6630b0172c769efc2afc607562707f41f94eb6d734df1a987a1a4be0"},
->>>>>>> 12fe36b99 (initial commit for ragstack-main)
+    {file = "unstructured-0.14.5-py3-none-any.whl", hash = "sha256:2286180ac089b691e1effb73c2ab17b7809011fbf7f751439301b12a4c984131"},
+    {file = "unstructured-0.14.5.tar.gz", hash = "sha256:f37975273cdcf8f05768ef2f86abaf3d8f805992f6acb0441c2be00fa4ef6588"},
 ]
 
 [package.dependencies]
@@ -9929,7 +9570,6 @@ emoji = "*"
 filetype = "*"
 langdetect = "*"
 lxml = "*"
-<<<<<<< HEAD
 markdown = {version = "*", optional = true, markers = "extra == \"md\""}
 nltk = "*"
 numpy = "*"
@@ -9940,27 +9580,13 @@ python-pptx = {version = "<=0.6.23", optional = true, markers = "extra == \"pptx
 rapidfuzz = "*"
 requests = "*"
 tabulate = "*"
-tqdm = "*"
-=======
-nltk = "*"
-numpy = "*"
-python-iso639 = "*"
-python-magic = "*"
-rapidfuzz = "*"
-requests = "*"
-tabulate = "*"
->>>>>>> 12fe36b99 (initial commit for ragstack-main)
 typing-extensions = "*"
 unstructured-client = "*"
 wrapt = "*"
 
 [package.extras]
 airtable = ["pyairtable"]
-<<<<<<< HEAD
-all-docs = ["effdet", "google-cloud-vision", "markdown", "networkx", "onnx", "openpyxl", "pandas", "pdf2image", "pdfminer.six", "pikepdf", "pillow-heif", "pypandoc", "pypdf", "pytesseract", "python-docx (>=1.1.2)", "python-oxmsg", "python-pptx (<=0.6.23)", "unstructured-inference (==0.7.35)", "unstructured.pytesseract (>=0.3.12)", "xlrd"]
-=======
-all-docs = ["effdet", "google-cloud-vision", "markdown", "msg-parser", "networkx", "onnx", "openpyxl", "pandas", "pdf2image", "pdfminer.six", "pikepdf", "pillow-heif", "pypandoc", "pypdf", "pytesseract", "python-docx", "python-pptx (<=0.6.23)", "unstructured-inference (==0.7.33)", "unstructured.pytesseract (>=0.3.12)", "xlrd"]
->>>>>>> 12fe36b99 (initial commit for ragstack-main)
+all-docs = ["effdet", "google-cloud-vision", "markdown", "networkx", "onnx", "openpyxl", "pandas", "pdf2image", "pdfminer.six", "pikepdf", "pillow-heif", "pypandoc", "pypdf", "pytesseract", "python-docx (>=1.1.2)", "python-oxmsg", "python-pptx (<=0.6.23)", "unstructured-inference (==0.7.33)", "unstructured.pytesseract (>=0.3.12)", "xlrd"]
 astra = ["astrapy"]
 azure = ["adlfs", "fsspec"]
 azure-cognitive-search = ["azure-search-documents"]
@@ -9974,22 +9600,14 @@ csv = ["pandas"]
 databricks-volumes = ["databricks-sdk"]
 delta-table = ["deltalake", "fsspec"]
 discord = ["discord-py"]
-<<<<<<< HEAD
 doc = ["python-docx (>=1.1.2)"]
 docx = ["python-docx (>=1.1.2)"]
-=======
-doc = ["python-docx"]
-docx = ["python-docx"]
->>>>>>> 12fe36b99 (initial commit for ragstack-main)
 dropbox = ["dropboxdrivefs", "fsspec"]
 elasticsearch = ["elasticsearch"]
 embed-huggingface = ["huggingface", "langchain-community", "sentence-transformers"]
 embed-octoai = ["openai", "tiktoken"]
 embed-vertexai = ["langchain", "langchain-community", "langchain-google-vertexai"]
-<<<<<<< HEAD
 embed-voyageai = ["langchain", "langchain-voyageai"]
-=======
->>>>>>> 12fe36b99 (initial commit for ragstack-main)
 epub = ["pypandoc"]
 gcs = ["bs4", "fsspec", "gcsfs"]
 github = ["pygithub (>1.58.0)"]
@@ -9997,36 +9615,21 @@ gitlab = ["python-gitlab"]
 google-drive = ["google-api-python-client"]
 hubspot = ["hubspot-api-client", "urllib3"]
 huggingface = ["langdetect", "sacremoses", "sentencepiece", "torch", "transformers"]
-<<<<<<< HEAD
-image = ["effdet", "google-cloud-vision", "onnx", "pdf2image", "pdfminer.six", "pikepdf", "pillow-heif", "pypdf", "pytesseract", "unstructured-inference (==0.7.35)", "unstructured.pytesseract (>=0.3.12)"]
+image = ["effdet", "google-cloud-vision", "onnx", "pdf2image", "pdfminer.six", "pikepdf", "pillow-heif", "pypdf", "pytesseract", "unstructured-inference (==0.7.33)", "unstructured.pytesseract (>=0.3.12)"]
 jira = ["atlassian-python-api"]
-local-inference = ["effdet", "google-cloud-vision", "markdown", "networkx", "onnx", "openpyxl", "pandas", "pdf2image", "pdfminer.six", "pikepdf", "pillow-heif", "pypandoc", "pypdf", "pytesseract", "python-docx (>=1.1.2)", "python-oxmsg", "python-pptx (<=0.6.23)", "unstructured-inference (==0.7.35)", "unstructured.pytesseract (>=0.3.12)", "xlrd"]
+local-inference = ["effdet", "google-cloud-vision", "markdown", "networkx", "onnx", "openpyxl", "pandas", "pdf2image", "pdfminer.six", "pikepdf", "pillow-heif", "pypandoc", "pypdf", "pytesseract", "python-docx (>=1.1.2)", "python-oxmsg", "python-pptx (<=0.6.23)", "unstructured-inference (==0.7.33)", "unstructured.pytesseract (>=0.3.12)", "xlrd"]
 md = ["markdown"]
 mongodb = ["pymongo"]
 msg = ["python-oxmsg"]
 notion = ["htmlBuilder", "notion-client"]
 odt = ["pypandoc", "python-docx (>=1.1.2)"]
-=======
-image = ["effdet", "google-cloud-vision", "onnx", "pdf2image", "pdfminer.six", "pikepdf", "pillow-heif", "pypdf", "pytesseract", "unstructured-inference (==0.7.33)", "unstructured.pytesseract (>=0.3.12)"]
-jira = ["atlassian-python-api"]
-local-inference = ["effdet", "google-cloud-vision", "markdown", "msg-parser", "networkx", "onnx", "openpyxl", "pandas", "pdf2image", "pdfminer.six", "pikepdf", "pillow-heif", "pypandoc", "pypdf", "pytesseract", "python-docx", "python-pptx (<=0.6.23)", "unstructured-inference (==0.7.33)", "unstructured.pytesseract (>=0.3.12)", "xlrd"]
-md = ["markdown"]
-mongodb = ["pymongo"]
-msg = ["msg-parser"]
-notion = ["htmlBuilder", "notion-client"]
-odt = ["pypandoc", "python-docx"]
->>>>>>> 12fe36b99 (initial commit for ragstack-main)
 onedrive = ["Office365-REST-Python-Client", "bs4", "msal"]
 openai = ["langchain-community", "openai", "tiktoken"]
 opensearch = ["opensearch-py"]
 org = ["pypandoc"]
 outlook = ["Office365-REST-Python-Client", "msal"]
 paddleocr = ["unstructured.paddleocr (==2.6.1.3)"]
-<<<<<<< HEAD
-pdf = ["effdet", "google-cloud-vision", "onnx", "pdf2image", "pdfminer.six", "pikepdf", "pillow-heif", "pypdf", "pytesseract", "unstructured-inference (==0.7.35)", "unstructured.pytesseract (>=0.3.12)"]
-=======
 pdf = ["effdet", "google-cloud-vision", "onnx", "pdf2image", "pdfminer.six", "pikepdf", "pillow-heif", "pypdf", "pytesseract", "unstructured-inference (==0.7.33)", "unstructured.pytesseract (>=0.3.12)"]
->>>>>>> 12fe36b99 (initial commit for ragstack-main)
 pinecone = ["pinecone-client (>=3.7.1)"]
 postgres = ["psycopg2-binary"]
 ppt = ["python-pptx (<=0.6.23)"]
@@ -10047,22 +9650,13 @@ xlsx = ["networkx", "openpyxl", "pandas", "xlrd"]
 
 [[package]]
 name = "unstructured-client"
-<<<<<<< HEAD
 version = "0.23.7"
-=======
-version = "0.22.0"
->>>>>>> 12fe36b99 (initial commit for ragstack-main)
 description = "Python Client SDK for Unstructured API"
 optional = false
 python-versions = ">=3.8"
 files = [
-<<<<<<< HEAD
     {file = "unstructured-client-0.23.7.tar.gz", hash = "sha256:9161ca25365764712b66cbb50e7cb22bc59a89a613de2bb2e2b171ef7b17e5b0"},
     {file = "unstructured_client-0.23.7-py3-none-any.whl", hash = "sha256:95df14697b1f79cc2a4580c7f143bd463d3dd5fab605220d2e4888321342decb"},
-=======
-    {file = "unstructured-client-0.22.0.tar.gz", hash = "sha256:d76351c456fcf4067f59135c09a35008a120103621a1ac94cf9448db28ef2e1e"},
-    {file = "unstructured_client-0.22.0-py3-none-any.whl", hash = "sha256:140f7dd8515cc9be3276f66d6fb08d235ea35a50d4eb38a6ef82b60fc3d2fea0"},
->>>>>>> 12fe36b99 (initial commit for ragstack-main)
 ]
 
 [package.dependencies]
@@ -10070,37 +9664,24 @@ certifi = ">=2023.7.22"
 charset-normalizer = ">=3.2.0"
 dataclasses-json = ">=0.6.4"
 deepdiff = ">=6.0"
-<<<<<<< HEAD
 httpx = ">=0.27.0"
-=======
->>>>>>> 12fe36b99 (initial commit for ragstack-main)
 idna = ">=3.4"
 jsonpath-python = ">=1.0.6"
 marshmallow = ">=3.19.0"
 mypy-extensions = ">=1.0.0"
-<<<<<<< HEAD
 nest-asyncio = ">=1.6.0"
-=======
->>>>>>> 12fe36b99 (initial commit for ragstack-main)
 packaging = ">=23.1"
 pypdf = ">=4.0"
 python-dateutil = ">=2.8.2"
 requests = ">=2.31.0"
-<<<<<<< HEAD
 requests-toolbelt = ">=1.0.0"
-=======
->>>>>>> 12fe36b99 (initial commit for ragstack-main)
 six = ">=1.16.0"
 typing-extensions = ">=4.7.1"
 typing-inspect = ">=0.9.0"
 urllib3 = ">=1.26.18"
 
 [package.extras]
-<<<<<<< HEAD
 dev = ["pylint (==3.1.0)"]
-=======
-dev = ["pylint (==2.16.2)"]
->>>>>>> 12fe36b99 (initial commit for ragstack-main)
 
 [[package]]
 name = "upstash-vector"
@@ -10990,8 +10571,4 @@ local = ["ctransformers", "llama-cpp-python", "sentence-transformers"]
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.10,<3.13"
-<<<<<<< HEAD
-content-hash = "6cfa9f164710bf283b50a8e12e9d0c91c58f5d0176bbb277b5f5d3630ec8b2cb"
-=======
-content-hash = "53e97484aef8b00571f4fce8e1d262a5aed055dd68310f60e34d3fb4d462143d"
->>>>>>> 12fe36b99 (initial commit for ragstack-main)
+content-hash = "aa42f28080d79d51b119032b0fb4f35ba4cff8ebee17d554767c50407d3bd6fb"

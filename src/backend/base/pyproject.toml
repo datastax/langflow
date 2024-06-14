@@ -21,7 +21,7 @@ fastapi = "^0.111.0"
 httpx = "*"
 uvicorn = "^0.30.0"
 gunicorn = "^22.0.0"
-ragstack-ai-langchain = { version = "1.0.7", extras = ["google"] }
+ragstack-ai-langchain = { version = "1.1.1", extras = ["google"] }
 langchainhub = "~0.1.15"
 sqlmodel = "^0.0.18"
 loguru = "^0.7.1"
