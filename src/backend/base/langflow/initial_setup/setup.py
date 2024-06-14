@@ -370,6 +370,7 @@ def create_or_update_starter_projects():
     components_paths = get_settings_service().settings.components_path
     try:
         all_types_dict = get_all_components(components_paths, as_dict=True)
+        get_all_types_dict(components_paths)
     except Exception as e:
         logger.exception(f"Error loading components: {e}")
         raise e
