@@ -12,12 +12,11 @@ from loguru import logger
 from sqlmodel import select
 
 from langflow.base.constants import FIELD_FORMAT_ATTRIBUTES, NODE_FORMAT_ATTRIBUTES
-from langflow.interface.types import get_all_components
+from langflow.interface.types import get_all_components, get_all_types_dict
 from langflow.services.auth.utils import create_super_user
 from langflow.services.database.models.flow.model import Flow, FlowCreate
 from langflow.services.database.models.folder.model import Folder, FolderCreate
 from langflow.services.database.models.user.crud import get_user_by_username
-from langflow.services.deps import get_settings_service, session_scope
 
 from langflow.services.database.models.folder.utils import create_default_folder_if_it_doesnt_exist
 from langflow.services.deps import get_settings_service, session_scope, get_variable_service
@@ -221,6 +220,7 @@ def _is_valid_uuid(val):
         return False
     return str(uuid_obj) == val
 
+
 def load_flows_from_directory():
     settings_service = get_settings_service()
     flows_path = settings_service.settings.load_flows_path
@@ -262,6 +262,7 @@ def load_flows_from_directory():
                     session.add(flow)
                 session.commit()
 
+
 def find_existing_flow(session, flow_id, flow_endpoint_name):
     if flow_endpoint_name:
         stmt = select(Flow).where(Flow.endpoint_name == flow_endpoint_name)
@@ -271,10 +272,13 @@ def find_existing_flow(session, flow_id, flow_endpoint_name):
     if existing := session.exec(stmt).first():
         return existing
     return None
+
+
 def create_or_update_starter_projects():
     components_paths = get_settings_service().settings.components_path
     try:
         all_types_dict = get_all_components(components_paths, as_dict=True)
+        get_all_types_dict(components_paths)
     except Exception as e:
         logger.exception(f"Error loading components: {e}")
         raise e
