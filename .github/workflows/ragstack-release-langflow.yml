@@ -28,7 +28,8 @@ jobs:
           cache: "poetry"
       - name: Build project for distribution
         run: |
-          make build main=true
+          poetry lock
+          poetry build
       - name: Check Version
         id: check-version
         run: |
