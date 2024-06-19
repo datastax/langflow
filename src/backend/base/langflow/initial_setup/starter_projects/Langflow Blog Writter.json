@@ -622,7 +622,7 @@
                                 "list": false,
                                 "show": true,
                                 "multiline": false,
-                                "value": true,
+                                "value": false,
                                 "fileTypes": [],
                                 "file_path": "",
                                 "password": false,
