@@ -1,0 +1,50 @@
+name: Release RAGStack Langflow Image Patch
+
+on:
+  pull_request:
+    branches:
+      - 'backend-image**' # This will match branches like backend-image-1, backend-image-fix-xyz
+    types: [opened, reopened, synchronize]
+
+env:
+  image-version: "0.0.11b" # Set the to-be-released ragstack-ai-langflow docker image version
+  POETRY_VERSION: "1.8.2"
+
+jobs:
+  docker_image_patch_release:
+    runs-on: ubuntu-latest
+    permissions: write-all
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install poetry
+        run: pipx install poetry==$POETRY_VERSION
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "poetry"
+
+      - name: "Login to GitHub Container Registry"
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build backend docker images
+        shell: bash
+        run: |
+          ./ragstack/docker/build-backend.sh
+
+      - name: Deploy backend docker images
+        shell: bash
+        run: |
+          backend_full_name=ghcr.io/datastax/ragstack-ai-langflow-backend
+          backend_ep_full_name=ghcr.io/datastax/ragstack-ai-langflow-backend-ep
+          v="${{ env.image-version }}"
+
+          docker tag ragstack-ai-langflow-backend:latest $backend_full_name:$v
+          docker push $backend_full_name:$v
+
+          docker tag ragstack-ai-langflow-backend-ep:latest $backend_ep_full_name:$v
+          docker push $backend_ep_full_name:$v
