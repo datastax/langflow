@@ -1,6 +1,7 @@
 from typing import TYPE_CHECKING, Any, Dict, Optional, Type, Union
 
 import duckdb
+import time
 from loguru import logger
 from pydantic import BaseModel
 
@@ -63,10 +64,17 @@ def drop_and_create_table_if_schema_mismatch(db_path: str, table_name: str, mode
             conn.execute(f"DROP TABLE IF EXISTS {table_name}")
             if INDEX_KEY in desired_schema.keys():
                 # Create a sequence for the id column
-                try:
-                    conn.execute(f"CREATE SEQUENCE seq_{table_name} START 1;")
-                except duckdb.CatalogException:
-                    pass
+                max_retries = 3
+                for attempt in range(max_retries):
+                    try:
+                        conn.execute(f"CREATE SEQUENCE IF NOT EXISTS seq_{table_name} START 1;")
+                    except duckdb.CatalogException:
+                        pass
+                    except duckdb.TransactionException:
+                        if attempt < max_retries - 1:
+                            time.sleep(2 * attempt)
+                        else:
+                            raise
                 desired_schema[INDEX_KEY] = f"INTEGER PRIMARY KEY DEFAULT NEXTVAL('seq_{table_name}')"
             columns_sql = ", ".join(f"{name} {data_type}" for name, data_type in desired_schema.items())
             create_table_sql = f"CREATE TABLE {table_name} ({columns_sql})"
