@@ -77,7 +77,7 @@ def drop_and_create_table_if_schema_mismatch(db_path: str, table_name: str, mode
                             raise
                 desired_schema[INDEX_KEY] = f"INTEGER PRIMARY KEY DEFAULT NEXTVAL('seq_{table_name}')"
             columns_sql = ", ".join(f"{name} {data_type}" for name, data_type in desired_schema.items())
-            create_table_sql = f"CREATE TABLE {table_name} ({columns_sql})"
+            create_table_sql = f"CREATE TABLE IF NOT EXISTS {table_name} ({columns_sql})"
             conn.execute(create_table_sql)
 
 
