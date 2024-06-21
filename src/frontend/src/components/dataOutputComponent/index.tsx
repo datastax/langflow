@@ -4,7 +4,7 @@ import "ag-grid-community/styles/ag-theme-balham.css"; // Optional Theme applied
 import { extractColumnsFromRows } from "../../utils/utils";
 import TableComponent from "../tableComponent";
 
-function RecordsOutputComponent({
+function DataOutputComponent({
   pagination,
   rows,
   columnMode = "union",
@@ -13,19 +13,17 @@ function RecordsOutputComponent({
   rows: any;
   columnMode?: "intersection" | "union";
 }) {
-  console.log("rows", rows);
   const columns = extractColumnsFromRows(rows, columnMode);
-  console.log("columns", columns);
 
   const columnDefs = columns.map((col, idx) => ({
     ...col,
-    resizable: idx !== columns.length - 1,
-    flex: idx !== columns.length - 1 ? 1 : 2,
+    resizable: true,
   })) as (ColDef<any> | ColGroupDef<any>)[];
 
   return (
     <TableComponent
-      key={"recordsOutputComponent"}
+      autoSizeStrategy={{ type: "fitGridWidth", defaultMinWidth: 100 }}
+      key={"dataOutputComponent"}
       overlayNoRowsTemplate="No data available"
       suppressRowClickSelection={true}
       pagination={pagination}
@@ -35,4 +33,4 @@ function RecordsOutputComponent({
   );
 }
 
-export default RecordsOutputComponent;
+export default DataOutputComponent;
