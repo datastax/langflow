@@ -2,13 +2,13 @@ name: Release RAGStack Langflow Image Patch
 
 on:
   pull_request:
-    branches: ['**'] # Matches pull requests to any branch
+    branches: ["**"] # Matches pull requests to any branch
   push:
-    branches: ['**'] # Matches push to any branch
+    branches: ["**"] # Matches push to any branch
 
 env:
   version: 0.0.11 # Set the ragstack-ai-langflow base version to be released
-  image-version: "0.0.11e" # Set the to-be-released ragstack-ai-langflow docker image version
+  image-version: "0.0.11f" # Set the to-be-released ragstack-ai-langflow docker image version
   POETRY_VERSION: "1.8.2"
 
 jobs:
