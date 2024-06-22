@@ -1,9 +1,9 @@
 {
-  "id": "c1e162a2-8110-4414-bf9a-54fd266efc11",
+  "id": "0d5704e2-e159-491d-bc50-fb9856c24070",
   "data": {
     "nodes": [
       {
-        "id": "ChatInput-QkSkU",
+        "id": "ChatInput-T7ZsZ",
         "type": "genericNode",
         "position": { "x": -222, "y": -36.140625 },
         "data": {
@@ -148,14 +148,14 @@
             "beta": false,
             "name": "Chat Input"
           },
-          "id": "ChatInput-QkSkU"
+          "id": "ChatInput-T7ZsZ"
         },
         "selected": false,
         "width": 384,
         "height": 375
       },
       {
-        "id": "Prompt-66zSg",
+        "id": "Prompt-FHorS",
         "type": "genericNode",
         "position": { "x": 323, "y": 57.859375 },
         "data": {
@@ -241,7 +241,7 @@
             "beta": false,
             "error": null
           },
-          "id": "Prompt-66zSg",
+          "id": "Prompt-FHorS",
           "description": "Create a prompt template with dynamic variables.",
           "display_name": "Prompt"
         },
@@ -250,7 +250,7 @@
         "height": 383
       },
       {
-        "id": "OpenAIModel-kv9w3",
+        "id": "OpenAIModel-JANMq",
         "type": "genericNode",
         "position": { "x": 872, "y": -5.140625 },
         "data": {
@@ -393,7 +393,7 @@
                 "advanced": false,
                 "dynamic": false,
                 "info": "The OpenAI API Key to use for the OpenAI model.",
-                "load_from_db": false,
+                "load_from_db": true,
                 "title_case": false,
                 "input_types": ["Text"],
                 "value": ""
@@ -496,16 +496,14 @@
             "beta": false,
             "name": "OpenAI"
           },
-          "id": "OpenAIModel-kv9w3"
+          "id": "OpenAIModel-JANMq"
         },
-        "selected": true,
+        "selected": false,
         "width": 384,
-        "height": 563,
-        "positionAbsolute": { "x": 872, "y": -5.140625 },
-        "dragging": false
+        "height": 563
       },
       {
-        "id": "ChatOutput-R82YW",
+        "id": "ChatOutput-rmtGJ",
         "type": "genericNode",
         "position": { "x": 1331, "y": 110.859375 },
         "data": {
@@ -670,31 +668,31 @@
             "beta": false,
             "name": "Chat Output"
           },
-          "id": "ChatOutput-R82YW"
+          "id": "ChatOutput-rmtGJ"
         },
         "selected": false,
         "width": 384,
-        "height": 381
+        "height": 383
       }
     ],
     "edges": [
       {
-        "source": "ChatInput-QkSkU",
-        "target": "Prompt-66zSg",
-        "sourceHandle": "{œbaseClassesœ:[œobjectœ,œRecordœ,œstrœ,œTextœ],œdataTypeœ:œChatInputœ,œidœ:œChatInput-QkSkUœ}",
-        "targetHandle": "{œfieldNameœ:œuser_inputœ,œidœ:œPrompt-66zSgœ,œinputTypesœ:[œDocumentœ,œRecordœ,œTextœ],œtypeœ:œstrœ}",
-        "id": "reactflow__edge-ChatInput-QkSkU{œbaseClassesœ:[œobjectœ,œRecordœ,œstrœ,œTextœ],œdataTypeœ:œChatInputœ,œidœ:œChatInput-QkSkUœ}-Prompt-66zSg{œfieldNameœ:œuser_inputœ,œidœ:œPrompt-66zSgœ,œinputTypesœ:[œDocumentœ,œRecordœ,œTextœ],œtypeœ:œstrœ}",
+        "source": "ChatInput-T7ZsZ",
+        "target": "Prompt-FHorS",
+        "sourceHandle": "{œbaseClassesœ:[œobjectœ,œRecordœ,œstrœ,œTextœ],œdataTypeœ:œChatInputœ,œidœ:œChatInput-T7ZsZœ}",
+        "targetHandle": "{œfieldNameœ:œuser_inputœ,œidœ:œPrompt-FHorSœ,œinputTypesœ:[œDocumentœ,œRecordœ,œTextœ],œtypeœ:œstrœ}",
+        "id": "reactflow__edge-ChatInput-T7ZsZ{œbaseClassesœ:[œobjectœ,œRecordœ,œstrœ,œTextœ],œdataTypeœ:œChatInputœ,œidœ:œChatInput-T7ZsZœ}-Prompt-FHorS{œfieldNameœ:œuser_inputœ,œidœ:œPrompt-FHorSœ,œinputTypesœ:[œDocumentœ,œRecordœ,œTextœ],œtypeœ:œstrœ}",
         "data": {
           "targetHandle": {
             "fieldName": "user_input",
-            "id": "Prompt-66zSg",
+            "id": "Prompt-FHorS",
             "inputTypes": ["Document", "Record", "Text"],
             "type": "str"
           },
           "sourceHandle": {
             "baseClasses": ["object", "Record", "str", "Text"],
             "dataType": "ChatInput",
-            "id": "ChatInput-QkSkU"
+            "id": "ChatInput-T7ZsZ"
           }
         },
         "style": { "stroke": "#555" },
@@ -702,22 +700,22 @@
         "selected": false
       },
       {
-        "source": "Prompt-66zSg",
-        "target": "OpenAIModel-kv9w3",
-        "sourceHandle": "{œbaseClassesœ:[œobjectœ,œstrœ,œTextœ],œdataTypeœ:œPromptœ,œidœ:œPrompt-66zSgœ}",
-        "targetHandle": "{œfieldNameœ:œinput_valueœ,œidœ:œOpenAIModel-kv9w3œ,œinputTypesœ:[œTextœ],œtypeœ:œstrœ}",
-        "id": "reactflow__edge-Prompt-66zSg{œbaseClassesœ:[œobjectœ,œstrœ,œTextœ],œdataTypeœ:œPromptœ,œidœ:œPrompt-66zSgœ}-OpenAIModel-kv9w3{œfieldNameœ:œinput_valueœ,œidœ:œOpenAIModel-kv9w3œ,œinputTypesœ:[œTextœ],œtypeœ:œstrœ}",
+        "source": "Prompt-FHorS",
+        "target": "OpenAIModel-JANMq",
+        "sourceHandle": "{œbaseClassesœ:[œobjectœ,œstrœ,œTextœ],œdataTypeœ:œPromptœ,œidœ:œPrompt-FHorSœ}",
+        "targetHandle": "{œfieldNameœ:œinput_valueœ,œidœ:œOpenAIModel-JANMqœ,œinputTypesœ:[œTextœ],œtypeœ:œstrœ}",
+        "id": "reactflow__edge-Prompt-FHorS{œbaseClassesœ:[œobjectœ,œstrœ,œTextœ],œdataTypeœ:œPromptœ,œidœ:œPrompt-FHorSœ}-OpenAIModel-JANMq{œfieldNameœ:œinput_valueœ,œidœ:œOpenAIModel-JANMqœ,œinputTypesœ:[œTextœ],œtypeœ:œstrœ}",
         "data": {
           "targetHandle": {
             "fieldName": "input_value",
-            "id": "OpenAIModel-kv9w3",
+            "id": "OpenAIModel-JANMq",
             "inputTypes": ["Text"],
             "type": "str"
           },
           "sourceHandle": {
             "baseClasses": ["object", "str", "Text"],
             "dataType": "Prompt",
-            "id": "Prompt-66zSg"
+            "id": "Prompt-FHorS"
           }
         },
         "style": { "stroke": "#555" },
@@ -725,22 +723,22 @@
         "selected": false
       },
       {
-        "source": "OpenAIModel-kv9w3",
-        "target": "ChatOutput-R82YW",
-        "sourceHandle": "{œbaseClassesœ:[œobjectœ,œstrœ,œTextœ],œdataTypeœ:œOpenAIModelœ,œidœ:œOpenAIModel-kv9w3œ}",
-        "targetHandle": "{œfieldNameœ:œinput_valueœ,œidœ:œChatOutput-R82YWœ,œinputTypesœ:[œTextœ],œtypeœ:œstrœ}",
-        "id": "reactflow__edge-OpenAIModel-kv9w3{œbaseClassesœ:[œobjectœ,œstrœ,œTextœ],œdataTypeœ:œOpenAIModelœ,œidœ:œOpenAIModel-kv9w3œ}-ChatOutput-R82YW{œfieldNameœ:œinput_valueœ,œidœ:œChatOutput-R82YWœ,œinputTypesœ:[œTextœ],œtypeœ:œstrœ}",
+        "source": "OpenAIModel-JANMq",
+        "target": "ChatOutput-rmtGJ",
+        "sourceHandle": "{œbaseClassesœ:[œobjectœ,œstrœ,œTextœ],œdataTypeœ:œOpenAIModelœ,œidœ:œOpenAIModel-JANMqœ}",
+        "targetHandle": "{œfieldNameœ:œinput_valueœ,œidœ:œChatOutput-rmtGJœ,œinputTypesœ:[œTextœ],œtypeœ:œstrœ}",
+        "id": "reactflow__edge-OpenAIModel-JANMq{œbaseClassesœ:[œobjectœ,œstrœ,œTextœ],œdataTypeœ:œOpenAIModelœ,œidœ:œOpenAIModel-JANMqœ}-ChatOutput-rmtGJ{œfieldNameœ:œinput_valueœ,œidœ:œChatOutput-rmtGJœ,œinputTypesœ:[œTextœ],œtypeœ:œstrœ}",
         "data": {
           "targetHandle": {
             "fieldName": "input_value",
-            "id": "ChatOutput-R82YW",
+            "id": "ChatOutput-rmtGJ",
             "inputTypes": ["Text"],
             "type": "str"
           },
           "sourceHandle": {
             "baseClasses": ["object", "str", "Text"],
             "dataType": "OpenAIModel",
-            "id": "OpenAIModel-kv9w3"
+            "id": "OpenAIModel-JANMq"
           }
         },
         "style": { "stroke": "#555" },
@@ -748,10 +746,14 @@
         "selected": false
       }
     ],
-    "viewport": { "x": 277, "y": 178, "zoom": 1 }
+    "viewport": {
+      "x": 274.2713966138269,
+      "y": 253.2340477764248,
+      "zoom": 0.6381643844144764
+    }
   },
   "description": "This flow will get you experimenting with the basics of the UI, the Chat and the Prompt component. \n\nTry changing the Template in it to see how the model behaves. \nYou can change it to this and a Text Input into the `type_of_person` variable : \"Answer the user as if you were a pirate.",
-  "name": "Basic Prompt",
+  "name": "Basic Prompting (Hello, World)",
   "last_tested_version": "0.0.11",
   "is_component": false
 }
