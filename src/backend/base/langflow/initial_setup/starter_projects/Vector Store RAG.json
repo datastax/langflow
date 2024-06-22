@@ -1,9 +1,9 @@
 {
-  "id": "7dd31dea-b02e-4bf0-b036-1e458a2b7b9f",
+  "id": "223d445f-cb88-4208-a7e7-c30f9d601a2f",
   "data": {
     "nodes": [
       {
-        "id": "ChatInput-UeQ6p",
+        "id": "ChatInput-Lwjuf",
         "type": "genericNode",
         "position": { "x": -221.87907609878675, "y": -93 },
         "data": {
@@ -147,14 +147,14 @@
             "field_order": [],
             "beta": false
           },
-          "id": "ChatInput-UeQ6p"
+          "id": "ChatInput-Lwjuf"
         },
         "selected": false,
         "width": 384,
         "height": 375
       },
       {
-        "id": "TextOutput-o279U",
+        "id": "TextOutput-5ZHeD",
         "type": "genericNode",
         "position": { "x": 905.1938986130147, "y": 302.5248557442569 },
         "data": {
@@ -233,14 +233,14 @@
             "field_order": [],
             "beta": false
           },
-          "id": "TextOutput-o279U"
+          "id": "TextOutput-5ZHeD"
         },
         "selected": false,
         "width": 384,
         "height": 289
       },
       {
-        "id": "Prompt-aTTxz",
+        "id": "Prompt-p5lQC",
         "type": "genericNode",
         "position": { "x": 1551.6194219242655, "y": 139.7394899809069 },
         "data": {
@@ -357,7 +357,7 @@
             "beta": false,
             "error": null
           },
-          "id": "Prompt-aTTxz",
+          "id": "Prompt-p5lQC",
           "description": "Create a prompt template with dynamic variables.",
           "display_name": "Prompt"
         },
@@ -366,7 +366,7 @@
         "height": 477
       },
       {
-        "id": "ChatOutput-832rt",
+        "id": "ChatOutput-VKVHb",
         "type": "genericNode",
         "position": { "x": 2469.800592546284, "y": 286.0582475794856 },
         "data": {
@@ -530,14 +530,14 @@
             "field_order": [],
             "beta": false
           },
-          "id": "ChatOutput-832rt"
+          "id": "ChatOutput-VKVHb"
         },
         "selected": false,
         "width": 384,
         "height": 383
       },
       {
-        "id": "AstraDBSearch-h4NUi",
+        "id": "AstraDBSearch-yOq4H",
         "type": "genericNode",
         "position": { "x": 364.10000825849966, "y": 6.894169595180756 },
         "data": {
@@ -903,7 +903,7 @@
                 "advanced": false,
                 "dynamic": false,
                 "info": "Authentication token for accessing Astra DB.",
-                "load_from_db": true,
+                "load_from_db": false,
                 "title_case": false,
                 "input_types": ["Text"],
                 "value": ""
@@ -948,15 +948,15 @@
             "beta": false,
             "name": "Astra DB Search"
           },
-          "id": "AstraDBSearch-h4NUi"
+          "id": "AstraDBSearch-yOq4H"
         },
         "selected": false,
         "width": 384,
-        "height": 783,
+        "height": 807,
         "dragging": false
       },
       {
-        "id": "OpenAIEmbeddings-xdrwr",
+        "id": "OpenAIEmbeddings-axRkr",
         "type": "genericNode",
         "position": { "x": -222, "y": 443.06161760150576 },
         "data": {
@@ -1432,14 +1432,14 @@
             "beta": false,
             "name": "OpenAI Embeddings"
           },
-          "id": "OpenAIEmbeddings-xdrwr"
+          "id": "OpenAIEmbeddings-axRkr"
         },
         "selected": false,
         "width": 384,
         "height": 383
       },
       {
-        "id": "OpenAIModel-Wl8nW",
+        "id": "OpenAIModel-gME3t",
         "type": "genericNode",
         "position": { "x": 2005.180031382298, "y": 102.30579884656424 },
         "data": {
@@ -1583,7 +1583,7 @@
                 "advanced": false,
                 "dynamic": false,
                 "info": "The OpenAI API Key to use for the OpenAI model.",
-                "load_from_db": false,
+                "load_from_db": true,
                 "title_case": false,
                 "input_types": ["Text"],
                 "value": ""
@@ -1686,14 +1686,14 @@
             "beta": false,
             "name": "OpenAI"
           },
-          "id": "OpenAIModel-Wl8nW"
+          "id": "OpenAIModel-gME3t"
         },
         "selected": false,
         "width": 384,
         "height": 563
       },
       {
-        "id": "File-rkDZa",
+        "id": "File-mrYr8",
         "type": "genericNode",
         "position": { "x": 808.4455959149434, "y": 1476.2332600664893 },
         "data": {
@@ -1790,14 +1790,14 @@
             "beta": false,
             "name": "File"
           },
-          "id": "File-rkDZa"
+          "id": "File-mrYr8"
         },
         "selected": false,
         "width": 384,
         "height": 281
       },
       {
-        "id": "OpenAIEmbeddings-JCg79",
+        "id": "OpenAIEmbeddings-rfgeT",
         "type": "genericNode",
         "position": { "x": 1378.189324873206, "y": 1699.7690771697307 },
         "data": {
@@ -2055,7 +2055,7 @@
                 "advanced": false,
                 "dynamic": false,
                 "info": "",
-                "load_from_db": false,
+                "load_from_db": true,
                 "title_case": false,
                 "input_types": ["Text"],
                 "value": ""
@@ -2273,14 +2273,14 @@
             "beta": false,
             "name": "OpenAI Embeddings"
           },
-          "id": "OpenAIEmbeddings-JCg79"
+          "id": "OpenAIEmbeddings-rfgeT"
         },
         "selected": false,
         "width": 384,
         "height": 383
       },
       {
-        "id": "AstraDB-2tnRj",
+        "id": "AstraDB-PnnLz",
         "type": "genericNode",
         "position": { "x": 1937.08023562845, "y": 1362.0993870450395 },
         "data": {
@@ -2604,7 +2604,7 @@
                 "advanced": false,
                 "dynamic": false,
                 "info": "Authentication token for accessing Astra DB.",
-                "load_from_db": true,
+                "load_from_db": false,
                 "title_case": false,
                 "input_types": ["Text"],
                 "value": ""
@@ -2655,14 +2655,14 @@
             "beta": false,
             "name": "Astra DB"
           },
-          "id": "AstraDB-2tnRj"
+          "id": "AstraDB-PnnLz"
         },
         "selected": false,
         "width": 384,
-        "height": 643
+        "height": 667
       },
       {
-        "id": "RecursiveCharacterTextSplitter-OGKFa",
+        "id": "RecursiveCharacterTextSplitter-BgA5f",
         "type": "genericNode",
         "position": { "x": 1370.8992790913996, "y": 1155.1363732152352 },
         "data": {
@@ -2782,7 +2782,7 @@
             "beta": false,
             "name": "Recursive Character Text Splitter"
           },
-          "id": "RecursiveCharacterTextSplitter-OGKFa"
+          "id": "RecursiveCharacterTextSplitter-BgA5f"
         },
         "selected": false,
         "width": 384,
@@ -2791,217 +2791,239 @@
     ],
     "edges": [
       {
-        "source": "TextOutput-o279U",
-        "target": "Prompt-aTTxz",
-        "sourceHandle": "{œbaseClassesœ:[œobjectœ,œTextœ,œstrœ],œdataTypeœ:œTextOutputœ,œidœ:œTextOutput-o279Uœ}",
-        "targetHandle": "{œfieldNameœ:œcontextœ,œidœ:œPrompt-aTTxzœ,œinputTypesœ:[œDocumentœ,œBaseOutputParserœ,œRecordœ,œTextœ],œtypeœ:œstrœ}",
-        "id": "reactflow__edge-TextOutput-o279U{œbaseClassesœ:[œobjectœ,œTextœ,œstrœ],œdataTypeœ:œTextOutputœ,œidœ:œTextOutput-o279Uœ}-Prompt-aTTxz{œfieldNameœ:œcontextœ,œidœ:œPrompt-aTTxzœ,œinputTypesœ:[œDocumentœ,œBaseOutputParserœ,œRecordœ,œTextœ],œtypeœ:œstrœ}",
+        "source": "TextOutput-5ZHeD",
+        "target": "Prompt-p5lQC",
+        "sourceHandle": "{œbaseClassesœ:[œobjectœ,œTextœ,œstrœ],œdataTypeœ:œTextOutputœ,œidœ:œTextOutput-5ZHeDœ}",
+        "targetHandle": "{œfieldNameœ:œcontextœ,œidœ:œPrompt-p5lQCœ,œinputTypesœ:[œDocumentœ,œBaseOutputParserœ,œRecordœ,œTextœ],œtypeœ:œstrœ}",
+        "id": "reactflow__edge-TextOutput-5ZHeD{œbaseClassesœ:[œobjectœ,œTextœ,œstrœ],œdataTypeœ:œTextOutputœ,œidœ:œTextOutput-5ZHeDœ}-Prompt-p5lQC{œfieldNameœ:œcontextœ,œidœ:œPrompt-p5lQCœ,œinputTypesœ:[œDocumentœ,œBaseOutputParserœ,œRecordœ,œTextœ],œtypeœ:œstrœ}",
         "data": {
           "targetHandle": {
             "fieldName": "context",
-            "id": "Prompt-aTTxz",
+            "id": "Prompt-p5lQC",
             "inputTypes": ["Document", "BaseOutputParser", "Record", "Text"],
             "type": "str"
           },
           "sourceHandle": {
             "baseClasses": ["object", "Text", "str"],
             "dataType": "TextOutput",
-            "id": "TextOutput-o279U"
+            "id": "TextOutput-5ZHeD"
           }
         },
         "style": { "stroke": "#555" },
-        "className": "stroke-gray-900 ",
+        "className": "stroke-gray-900 stroke-connection",
         "selected": false
       },
       {
-        "source": "ChatInput-UeQ6p",
-        "target": "Prompt-aTTxz",
-        "sourceHandle": "{œbaseClassesœ:[œTextœ,œstrœ,œobjectœ,œRecordœ],œdataTypeœ:œChatInputœ,œidœ:œChatInput-UeQ6pœ}",
-        "targetHandle": "{œfieldNameœ:œquestionœ,œidœ:œPrompt-aTTxzœ,œinputTypesœ:[œDocumentœ,œBaseOutputParserœ,œRecordœ,œTextœ],œtypeœ:œstrœ}",
-        "id": "reactflow__edge-ChatInput-UeQ6p{œbaseClassesœ:[œTextœ,œstrœ,œobjectœ,œRecordœ],œdataTypeœ:œChatInputœ,œidœ:œChatInput-UeQ6pœ}-Prompt-aTTxz{œfieldNameœ:œquestionœ,œidœ:œPrompt-aTTxzœ,œinputTypesœ:[œDocumentœ,œBaseOutputParserœ,œRecordœ,œTextœ],œtypeœ:œstrœ}",
+        "source": "ChatInput-Lwjuf",
+        "target": "Prompt-p5lQC",
+        "sourceHandle": "{œbaseClassesœ:[œTextœ,œstrœ,œobjectœ,œRecordœ],œdataTypeœ:œChatInputœ,œidœ:œChatInput-Lwjufœ}",
+        "targetHandle": "{œfieldNameœ:œquestionœ,œidœ:œPrompt-p5lQCœ,œinputTypesœ:[œDocumentœ,œBaseOutputParserœ,œRecordœ,œTextœ],œtypeœ:œstrœ}",
+        "id": "reactflow__edge-ChatInput-Lwjuf{œbaseClassesœ:[œTextœ,œstrœ,œobjectœ,œRecordœ],œdataTypeœ:œChatInputœ,œidœ:œChatInput-Lwjufœ}-Prompt-p5lQC{œfieldNameœ:œquestionœ,œidœ:œPrompt-p5lQCœ,œinputTypesœ:[œDocumentœ,œBaseOutputParserœ,œRecordœ,œTextœ],œtypeœ:œstrœ}",
         "data": {
           "targetHandle": {
             "fieldName": "question",
-            "id": "Prompt-aTTxz",
+            "id": "Prompt-p5lQC",
             "inputTypes": ["Document", "BaseOutputParser", "Record", "Text"],
             "type": "str"
           },
           "sourceHandle": {
             "baseClasses": ["Text", "str", "object", "Record"],
             "dataType": "ChatInput",
-            "id": "ChatInput-UeQ6p"
+            "id": "ChatInput-Lwjuf"
           }
         },
         "style": { "stroke": "#555" },
-        "className": "stroke-gray-900 ",
+        "className": "stroke-gray-900 stroke-connection",
         "selected": false
       },
       {
-        "source": "AstraDBSearch-h4NUi",
-        "target": "TextOutput-o279U",
-        "sourceHandle": "{œbaseClassesœ:[œRecordœ],œdataTypeœ:œAstraDBSearchœ,œidœ:œAstraDBSearch-h4NUiœ}",
-        "targetHandle": "{œfieldNameœ:œinput_valueœ,œidœ:œTextOutput-o279Uœ,œinputTypesœ:[œRecordœ,œTextœ],œtypeœ:œstrœ}",
-        "id": "reactflow__edge-AstraDBSearch-h4NUi{œbaseClassesœ:[œRecordœ],œdataTypeœ:œAstraDBSearchœ,œidœ:œAstraDBSearch-h4NUiœ}-TextOutput-o279U{œfieldNameœ:œinput_valueœ,œidœ:œTextOutput-o279Uœ,œinputTypesœ:[œRecordœ,œTextœ],œtypeœ:œstrœ}",
+        "source": "AstraDBSearch-yOq4H",
+        "target": "TextOutput-5ZHeD",
+        "sourceHandle": "{œbaseClassesœ:[œRecordœ],œdataTypeœ:œAstraDBSearchœ,œidœ:œAstraDBSearch-yOq4Hœ}",
+        "targetHandle": "{œfieldNameœ:œinput_valueœ,œidœ:œTextOutput-5ZHeDœ,œinputTypesœ:[œRecordœ,œTextœ],œtypeœ:œstrœ}",
+        "id": "reactflow__edge-AstraDBSearch-yOq4H{œbaseClassesœ:[œRecordœ],œdataTypeœ:œAstraDBSearchœ,œidœ:œAstraDBSearch-yOq4Hœ}-TextOutput-5ZHeD{œfieldNameœ:œinput_valueœ,œidœ:œTextOutput-5ZHeDœ,œinputTypesœ:[œRecordœ,œTextœ],œtypeœ:œstrœ}",
         "data": {
           "targetHandle": {
             "fieldName": "input_value",
-            "id": "TextOutput-o279U",
+            "id": "TextOutput-5ZHeD",
             "inputTypes": ["Record", "Text"],
             "type": "str"
           },
           "sourceHandle": {
             "baseClasses": ["Record"],
             "dataType": "AstraDBSearch",
-            "id": "AstraDBSearch-h4NUi"
+            "id": "AstraDBSearch-yOq4H"
           }
         },
         "style": { "stroke": "#555" },
-        "className": "stroke-gray-900 ",
+        "className": "stroke-gray-900 stroke-connection",
         "selected": false
       },
       {
-        "source": "OpenAIEmbeddings-xdrwr",
-        "target": "AstraDBSearch-h4NUi",
-        "sourceHandle": "{œbaseClassesœ:[œEmbeddingsœ],œdataTypeœ:œOpenAIEmbeddingsœ,œidœ:œOpenAIEmbeddings-xdrwrœ}",
-        "targetHandle": "{œfieldNameœ:œembeddingœ,œidœ:œAstraDBSearch-h4NUiœ,œinputTypesœ:null,œtypeœ:œEmbeddingsœ}",
-        "id": "reactflow__edge-OpenAIEmbeddings-xdrwr{œbaseClassesœ:[œEmbeddingsœ],œdataTypeœ:œOpenAIEmbeddingsœ,œidœ:œOpenAIEmbeddings-xdrwrœ}-AstraDBSearch-h4NUi{œfieldNameœ:œembeddingœ,œidœ:œAstraDBSearch-h4NUiœ,œinputTypesœ:null,œtypeœ:œEmbeddingsœ}",
+        "source": "OpenAIEmbeddings-axRkr",
+        "target": "AstraDBSearch-yOq4H",
+        "sourceHandle": "{œbaseClassesœ:[œEmbeddingsœ],œdataTypeœ:œOpenAIEmbeddingsœ,œidœ:œOpenAIEmbeddings-axRkrœ}",
+        "targetHandle": "{œfieldNameœ:œembeddingœ,œidœ:œAstraDBSearch-yOq4Hœ,œinputTypesœ:null,œtypeœ:œEmbeddingsœ}",
+        "id": "reactflow__edge-OpenAIEmbeddings-axRkr{œbaseClassesœ:[œEmbeddingsœ],œdataTypeœ:œOpenAIEmbeddingsœ,œidœ:œOpenAIEmbeddings-axRkrœ}-AstraDBSearch-yOq4H{œfieldNameœ:œembeddingœ,œidœ:œAstraDBSearch-yOq4Hœ,œinputTypesœ:null,œtypeœ:œEmbeddingsœ}",
         "data": {
           "targetHandle": {
             "fieldName": "embedding",
-            "id": "AstraDBSearch-h4NUi",
+            "id": "AstraDBSearch-yOq4H",
             "inputTypes": null,
             "type": "Embeddings"
           },
           "sourceHandle": {
             "baseClasses": ["Embeddings"],
             "dataType": "OpenAIEmbeddings",
-            "id": "OpenAIEmbeddings-xdrwr"
+            "id": "OpenAIEmbeddings-axRkr"
           }
         },
         "style": { "stroke": "#555" },
-        "className": "stroke-gray-900 ",
+        "className": "stroke-gray-900 stroke-connection",
         "selected": false
       },
       {
-        "source": "Prompt-aTTxz",
-        "target": "OpenAIModel-Wl8nW",
-        "sourceHandle": "{œbaseClassesœ:[œobjectœ,œTextœ,œstrœ],œdataTypeœ:œPromptœ,œidœ:œPrompt-aTTxzœ}",
-        "targetHandle": "{œfieldNameœ:œinput_valueœ,œidœ:œOpenAIModel-Wl8nWœ,œinputTypesœ:[œTextœ],œtypeœ:œstrœ}",
-        "id": "reactflow__edge-Prompt-aTTxz{œbaseClassesœ:[œobjectœ,œTextœ,œstrœ],œdataTypeœ:œPromptœ,œidœ:œPrompt-aTTxzœ}-OpenAIModel-Wl8nW{œfieldNameœ:œinput_valueœ,œidœ:œOpenAIModel-Wl8nWœ,œinputTypesœ:[œTextœ],œtypeœ:œstrœ}",
+        "source": "Prompt-p5lQC",
+        "target": "OpenAIModel-gME3t",
+        "sourceHandle": "{œbaseClassesœ:[œobjectœ,œTextœ,œstrœ],œdataTypeœ:œPromptœ,œidœ:œPrompt-p5lQCœ}",
+        "targetHandle": "{œfieldNameœ:œinput_valueœ,œidœ:œOpenAIModel-gME3tœ,œinputTypesœ:[œTextœ],œtypeœ:œstrœ}",
+        "id": "reactflow__edge-Prompt-p5lQC{œbaseClassesœ:[œobjectœ,œTextœ,œstrœ],œdataTypeœ:œPromptœ,œidœ:œPrompt-p5lQCœ}-OpenAIModel-gME3t{œfieldNameœ:œinput_valueœ,œidœ:œOpenAIModel-gME3tœ,œinputTypesœ:[œTextœ],œtypeœ:œstrœ}",
         "data": {
           "targetHandle": {
             "fieldName": "input_value",
-            "id": "OpenAIModel-Wl8nW",
+            "id": "OpenAIModel-gME3t",
             "inputTypes": ["Text"],
             "type": "str"
           },
           "sourceHandle": {
             "baseClasses": ["object", "Text", "str"],
             "dataType": "Prompt",
-            "id": "Prompt-aTTxz"
+            "id": "Prompt-p5lQC"
           }
         },
         "style": { "stroke": "#555" },
-        "className": "stroke-gray-900 ",
+        "className": "stroke-gray-900 stroke-connection",
         "selected": false
       },
       {
-        "source": "OpenAIModel-Wl8nW",
-        "target": "ChatOutput-832rt",
-        "sourceHandle": "{œbaseClassesœ:[œobjectœ,œstrœ,œTextœ],œdataTypeœ:œOpenAIModelœ,œidœ:œOpenAIModel-Wl8nWœ}",
-        "targetHandle": "{œfieldNameœ:œinput_valueœ,œidœ:œChatOutput-832rtœ,œinputTypesœ:[œTextœ],œtypeœ:œstrœ}",
-        "id": "reactflow__edge-OpenAIModel-Wl8nW{œbaseClassesœ:[œobjectœ,œstrœ,œTextœ],œdataTypeœ:œOpenAIModelœ,œidœ:œOpenAIModel-Wl8nWœ}-ChatOutput-832rt{œfieldNameœ:œinput_valueœ,œidœ:œChatOutput-832rtœ,œinputTypesœ:[œTextœ],œtypeœ:œstrœ}",
+        "source": "OpenAIModel-gME3t",
+        "target": "ChatOutput-VKVHb",
+        "sourceHandle": "{œbaseClassesœ:[œobjectœ,œstrœ,œTextœ],œdataTypeœ:œOpenAIModelœ,œidœ:œOpenAIModel-gME3tœ}",
+        "targetHandle": "{œfieldNameœ:œinput_valueœ,œidœ:œChatOutput-VKVHbœ,œinputTypesœ:[œTextœ],œtypeœ:œstrœ}",
+        "id": "reactflow__edge-OpenAIModel-gME3t{œbaseClassesœ:[œobjectœ,œstrœ,œTextœ],œdataTypeœ:œOpenAIModelœ,œidœ:œOpenAIModel-gME3tœ}-ChatOutput-VKVHb{œfieldNameœ:œinput_valueœ,œidœ:œChatOutput-VKVHbœ,œinputTypesœ:[œTextœ],œtypeœ:œstrœ}",
         "data": {
           "targetHandle": {
             "fieldName": "input_value",
-            "id": "ChatOutput-832rt",
+            "id": "ChatOutput-VKVHb",
             "inputTypes": ["Text"],
             "type": "str"
           },
           "sourceHandle": {
             "baseClasses": ["object", "str", "Text"],
             "dataType": "OpenAIModel",
-            "id": "OpenAIModel-Wl8nW"
+            "id": "OpenAIModel-gME3t"
           }
         },
         "style": { "stroke": "#555" },
-        "className": "stroke-gray-900 ",
+        "className": "stroke-gray-900 stroke-connection",
         "selected": false
       },
       {
-        "source": "OpenAIEmbeddings-JCg79",
-        "target": "AstraDB-2tnRj",
-        "sourceHandle": "{œbaseClassesœ:[œEmbeddingsœ],œdataTypeœ:œOpenAIEmbeddingsœ,œidœ:œOpenAIEmbeddings-JCg79œ}",
-        "targetHandle": "{œfieldNameœ:œembeddingœ,œidœ:œAstraDB-2tnRjœ,œinputTypesœ:null,œtypeœ:œEmbeddingsœ}",
-        "id": "reactflow__edge-OpenAIEmbeddings-JCg79{œbaseClassesœ:[œEmbeddingsœ],œdataTypeœ:œOpenAIEmbeddingsœ,œidœ:œOpenAIEmbeddings-JCg79œ}-AstraDB-2tnRj{œfieldNameœ:œembeddingœ,œidœ:œAstraDB-2tnRjœ,œinputTypesœ:null,œtypeœ:œEmbeddingsœ}",
+        "source": "OpenAIEmbeddings-rfgeT",
+        "target": "AstraDB-PnnLz",
+        "sourceHandle": "{œbaseClassesœ:[œEmbeddingsœ],œdataTypeœ:œOpenAIEmbeddingsœ,œidœ:œOpenAIEmbeddings-rfgeTœ}",
+        "targetHandle": "{œfieldNameœ:œembeddingœ,œidœ:œAstraDB-PnnLzœ,œinputTypesœ:null,œtypeœ:œEmbeddingsœ}",
+        "id": "reactflow__edge-OpenAIEmbeddings-rfgeT{œbaseClassesœ:[œEmbeddingsœ],œdataTypeœ:œOpenAIEmbeddingsœ,œidœ:œOpenAIEmbeddings-rfgeTœ}-AstraDB-PnnLz{œfieldNameœ:œembeddingœ,œidœ:œAstraDB-PnnLzœ,œinputTypesœ:null,œtypeœ:œEmbeddingsœ}",
         "data": {
           "targetHandle": {
             "fieldName": "embedding",
-            "id": "AstraDB-2tnRj",
+            "id": "AstraDB-PnnLz",
             "inputTypes": null,
             "type": "Embeddings"
           },
           "sourceHandle": {
             "baseClasses": ["Embeddings"],
             "dataType": "OpenAIEmbeddings",
-            "id": "OpenAIEmbeddings-JCg79"
+            "id": "OpenAIEmbeddings-rfgeT"
           }
         },
         "style": { "stroke": "#555" },
-        "className": "stroke-gray-900 ",
+        "className": "stroke-gray-900 stroke-connection",
         "selected": false
       },
       {
-        "source": "File-rkDZa",
-        "target": "RecursiveCharacterTextSplitter-OGKFa",
-        "sourceHandle": "{œbaseClassesœ:[œRecordœ],œdataTypeœ:œFileœ,œidœ:œFile-rkDZaœ}",
-        "targetHandle": "{œfieldNameœ:œinputsœ,œidœ:œRecursiveCharacterTextSplitter-OGKFaœ,œinputTypesœ:[œDocumentœ,œRecordœ],œtypeœ:œDocumentœ}",
-        "id": "reactflow__edge-File-rkDZa{œbaseClassesœ:[œRecordœ],œdataTypeœ:œFileœ,œidœ:œFile-rkDZaœ}-RecursiveCharacterTextSplitter-OGKFa{œfieldNameœ:œinputsœ,œidœ:œRecursiveCharacterTextSplitter-OGKFaœ,œinputTypesœ:[œDocumentœ,œRecordœ],œtypeœ:œDocumentœ}",
+        "source": "File-mrYr8",
+        "target": "RecursiveCharacterTextSplitter-BgA5f",
+        "sourceHandle": "{œbaseClassesœ:[œRecordœ],œdataTypeœ:œFileœ,œidœ:œFile-mrYr8œ}",
+        "targetHandle": "{œfieldNameœ:œinputsœ,œidœ:œRecursiveCharacterTextSplitter-BgA5fœ,œinputTypesœ:[œDocumentœ,œRecordœ],œtypeœ:œDocumentœ}",
+        "id": "reactflow__edge-File-mrYr8{œbaseClassesœ:[œRecordœ],œdataTypeœ:œFileœ,œidœ:œFile-mrYr8œ}-RecursiveCharacterTextSplitter-BgA5f{œfieldNameœ:œinputsœ,œidœ:œRecursiveCharacterTextSplitter-BgA5fœ,œinputTypesœ:[œDocumentœ,œRecordœ],œtypeœ:œDocumentœ}",
         "data": {
           "targetHandle": {
             "fieldName": "inputs",
-            "id": "RecursiveCharacterTextSplitter-OGKFa",
+            "id": "RecursiveCharacterTextSplitter-BgA5f",
             "inputTypes": ["Document", "Record"],
             "type": "Document"
           },
           "sourceHandle": {
             "baseClasses": ["Record"],
             "dataType": "File",
-            "id": "File-rkDZa"
+            "id": "File-mrYr8"
           }
         },
         "style": { "stroke": "#555" },
-        "className": "stroke-gray-900 ",
+        "className": "stroke-gray-900 stroke-connection",
         "selected": false
       },
       {
-        "source": "RecursiveCharacterTextSplitter-OGKFa",
-        "target": "AstraDB-2tnRj",
-        "sourceHandle": "{œbaseClassesœ:[œRecordœ],œdataTypeœ:œRecursiveCharacterTextSplitterœ,œidœ:œRecursiveCharacterTextSplitter-OGKFaœ}",
-        "targetHandle": "{œfieldNameœ:œinputsœ,œidœ:œAstraDB-2tnRjœ,œinputTypesœ:null,œtypeœ:œRecordœ}",
-        "id": "reactflow__edge-RecursiveCharacterTextSplitter-OGKFa{œbaseClassesœ:[œRecordœ],œdataTypeœ:œRecursiveCharacterTextSplitterœ,œidœ:œRecursiveCharacterTextSplitter-OGKFaœ}-AstraDB-2tnRj{œfieldNameœ:œinputsœ,œidœ:œAstraDB-2tnRjœ,œinputTypesœ:null,œtypeœ:œRecordœ}",
+        "source": "RecursiveCharacterTextSplitter-BgA5f",
+        "target": "AstraDB-PnnLz",
+        "sourceHandle": "{œbaseClassesœ:[œRecordœ],œdataTypeœ:œRecursiveCharacterTextSplitterœ,œidœ:œRecursiveCharacterTextSplitter-BgA5fœ}",
+        "targetHandle": "{œfieldNameœ:œinputsœ,œidœ:œAstraDB-PnnLzœ,œinputTypesœ:null,œtypeœ:œRecordœ}",
+        "id": "reactflow__edge-RecursiveCharacterTextSplitter-BgA5f{œbaseClassesœ:[œRecordœ],œdataTypeœ:œRecursiveCharacterTextSplitterœ,œidœ:œRecursiveCharacterTextSplitter-BgA5fœ}-AstraDB-PnnLz{œfieldNameœ:œinputsœ,œidœ:œAstraDB-PnnLzœ,œinputTypesœ:null,œtypeœ:œRecordœ}",
         "data": {
           "targetHandle": {
             "fieldName": "inputs",
-            "id": "AstraDB-2tnRj",
+            "id": "AstraDB-PnnLz",
             "inputTypes": null,
             "type": "Record"
           },
           "sourceHandle": {
             "baseClasses": ["Record"],
             "dataType": "RecursiveCharacterTextSplitter",
-            "id": "RecursiveCharacterTextSplitter-OGKFa"
+            "id": "RecursiveCharacterTextSplitter-BgA5f"
           }
         },
         "style": { "stroke": "#555" },
-        "className": "stroke-gray-900 ",
+        "className": "stroke-gray-900 stroke-connection",
         "selected": false
+      },
+      {
+        "source": "ChatInput-Lwjuf",
+        "sourceHandle": "{œbaseClassesœ:[œTextœ,œstrœ,œobjectœ,œRecordœ],œdataTypeœ:œChatInputœ,œidœ:œChatInput-Lwjufœ}",
+        "target": "AstraDBSearch-yOq4H",
+        "targetHandle": "{œfieldNameœ:œinput_valueœ,œidœ:œAstraDBSearch-yOq4Hœ,œinputTypesœ:[œTextœ],œtypeœ:œstrœ}",
+        "data": {
+          "targetHandle": {
+            "fieldName": "input_value",
+            "id": "AstraDBSearch-yOq4H",
+            "inputTypes": ["Text"],
+            "type": "str"
+          },
+          "sourceHandle": {
+            "baseClasses": ["Text", "str", "object", "Record"],
+            "dataType": "ChatInput",
+            "id": "ChatInput-Lwjuf"
+          }
+        },
+        "style": { "stroke": "#555" },
+        "className": "stroke-foreground stroke-connection",
+        "id": "reactflow__edge-ChatInput-Lwjuf{œbaseClassesœ:[œTextœ,œstrœ,œobjectœ,œRecordœ],œdataTypeœ:œChatInputœ,œidœ:œChatInput-Lwjufœ}-AstraDBSearch-yOq4H{œfieldNameœ:œinput_valueœ,œidœ:œAstraDBSearch-yOq4Hœ,œinputTypesœ:[œTextœ],œtypeœ:œstrœ}"
       }
     ],
     "viewport": {
-      "x": 290.5155616505144,
-      "y": 66.07774910110282,
-      "zoom": 0.6671115848388846
+      "x": 382.62355034228506,
+      "y": 216.6790111817665,
+      "zoom": 0.45187636337554304
     }
   },
   "description": "This project give you both Ingestion and RAG in a single file. \nRunning this project requires you to add a file in the Files component, then define a Collection Name and click on the Play icon on the Astra DB component. ",
