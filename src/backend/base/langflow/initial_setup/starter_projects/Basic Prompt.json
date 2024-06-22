@@ -1,11 +1,11 @@
 {
-  "id": "a836bfca-0857-4521-9e7c-ec01dcac79e8",
+  "id": "c1e162a2-8110-4414-bf9a-54fd266efc11",
   "data": {
     "nodes": [
       {
-        "id": "ChatInput-jvhK1",
+        "id": "ChatInput-QkSkU",
         "type": "genericNode",
-        "position": { "x": 205, "y": 117 },
+        "position": { "x": -222, "y": -36.140625 },
         "data": {
           "type": "ChatInput",
           "node": {
@@ -45,7 +45,8 @@
                 "dynamic": false,
                 "info": "",
                 "load_from_db": false,
-                "title_case": false
+                "title_case": false,
+                "value": ""
               },
               "return_record": {
                 "type": "bool",
@@ -147,17 +148,16 @@
             "beta": false,
             "name": "Chat Input"
           },
-          "id": "ChatInput-jvhK1"
+          "id": "ChatInput-QkSkU"
         },
         "selected": false,
         "width": 384,
-        "height": 375,
-        "dragging": false
+        "height": 375
       },
       {
-        "id": "Prompt-r8mRI",
+        "id": "Prompt-66zSg",
         "type": "genericNode",
-        "position": { "x": 750, "y": 211 },
+        "position": { "x": 323, "y": 57.859375 },
         "data": {
           "type": "Prompt",
           "node": {
@@ -241,19 +241,18 @@
             "beta": false,
             "error": null
           },
-          "id": "Prompt-r8mRI",
+          "id": "Prompt-66zSg",
           "description": "Create a prompt template with dynamic variables.",
           "display_name": "Prompt"
         },
         "selected": false,
         "width": 384,
-        "height": 383,
-        "dragging": false
+        "height": 383
       },
       {
-        "id": "OpenAIModel-xtl7L",
+        "id": "OpenAIModel-kv9w3",
         "type": "genericNode",
-        "position": { "x": 1298, "y": 149 },
+        "position": { "x": 872, "y": -5.140625 },
         "data": {
           "type": "OpenAIModel",
           "node": {
@@ -394,7 +393,7 @@
                 "advanced": false,
                 "dynamic": false,
                 "info": "The OpenAI API Key to use for the OpenAI model.",
-                "load_from_db": true,
+                "load_from_db": false,
                 "title_case": false,
                 "input_types": ["Text"],
                 "value": ""
@@ -497,17 +496,18 @@
             "beta": false,
             "name": "OpenAI"
           },
-          "id": "OpenAIModel-xtl7L"
+          "id": "OpenAIModel-kv9w3"
         },
         "selected": true,
         "width": 384,
         "height": 563,
+        "positionAbsolute": { "x": 872, "y": -5.140625 },
         "dragging": false
       },
       {
-        "id": "ChatOutput-EOTaX",
+        "id": "ChatOutput-R82YW",
         "type": "genericNode",
-        "position": { "x": 1758, "y": 264 },
+        "position": { "x": 1331, "y": 110.859375 },
         "data": {
           "type": "ChatOutput",
           "node": {
@@ -670,89 +670,88 @@
             "beta": false,
             "name": "Chat Output"
           },
-          "id": "ChatOutput-EOTaX"
+          "id": "ChatOutput-R82YW"
         },
         "selected": false,
         "width": 384,
-        "height": 383
+        "height": 381
       }
     ],
     "edges": [
       {
-        "source": "ChatInput-jvhK1",
-        "sourceHandle": "{œbaseClassesœ:[œobjectœ,œRecordœ,œstrœ,œTextœ],œdataTypeœ:œChatInputœ,œidœ:œChatInput-jvhK1œ}",
-        "target": "Prompt-r8mRI",
-        "targetHandle": "{œfieldNameœ:œuser_inputœ,œidœ:œPrompt-r8mRIœ,œinputTypesœ:[œDocumentœ,œRecordœ,œTextœ],œtypeœ:œstrœ}",
+        "source": "ChatInput-QkSkU",
+        "target": "Prompt-66zSg",
+        "sourceHandle": "{œbaseClassesœ:[œobjectœ,œRecordœ,œstrœ,œTextœ],œdataTypeœ:œChatInputœ,œidœ:œChatInput-QkSkUœ}",
+        "targetHandle": "{œfieldNameœ:œuser_inputœ,œidœ:œPrompt-66zSgœ,œinputTypesœ:[œDocumentœ,œRecordœ,œTextœ],œtypeœ:œstrœ}",
+        "id": "reactflow__edge-ChatInput-QkSkU{œbaseClassesœ:[œobjectœ,œRecordœ,œstrœ,œTextœ],œdataTypeœ:œChatInputœ,œidœ:œChatInput-QkSkUœ}-Prompt-66zSg{œfieldNameœ:œuser_inputœ,œidœ:œPrompt-66zSgœ,œinputTypesœ:[œDocumentœ,œRecordœ,œTextœ],œtypeœ:œstrœ}",
         "data": {
           "targetHandle": {
             "fieldName": "user_input",
-            "id": "Prompt-r8mRI",
+            "id": "Prompt-66zSg",
             "inputTypes": ["Document", "Record", "Text"],
             "type": "str"
           },
           "sourceHandle": {
             "baseClasses": ["object", "Record", "str", "Text"],
             "dataType": "ChatInput",
-            "id": "ChatInput-jvhK1"
+            "id": "ChatInput-QkSkU"
           }
         },
         "style": { "stroke": "#555" },
-        "className": "stroke-foreground stroke-connection",
-        "id": "reactflow__edge-ChatInput-jvhK1{œbaseClassesœ:[œobjectœ,œRecordœ,œstrœ,œTextœ],œdataTypeœ:œChatInputœ,œidœ:œChatInput-jvhK1œ}-Prompt-r8mRI{œfieldNameœ:œuser_inputœ,œidœ:œPrompt-r8mRIœ,œinputTypesœ:[œDocumentœ,œRecordœ,œTextœ],œtypeœ:œstrœ}"
+        "className": "stroke-gray-900 ",
+        "selected": false
       },
       {
-        "source": "Prompt-r8mRI",
-        "sourceHandle": "{œbaseClassesœ:[œobjectœ,œstrœ,œTextœ],œdataTypeœ:œPromptœ,œidœ:œPrompt-r8mRIœ}",
-        "target": "OpenAIModel-xtl7L",
-        "targetHandle": "{œfieldNameœ:œinput_valueœ,œidœ:œOpenAIModel-xtl7Lœ,œinputTypesœ:[œTextœ],œtypeœ:œstrœ}",
+        "source": "Prompt-66zSg",
+        "target": "OpenAIModel-kv9w3",
+        "sourceHandle": "{œbaseClassesœ:[œobjectœ,œstrœ,œTextœ],œdataTypeœ:œPromptœ,œidœ:œPrompt-66zSgœ}",
+        "targetHandle": "{œfieldNameœ:œinput_valueœ,œidœ:œOpenAIModel-kv9w3œ,œinputTypesœ:[œTextœ],œtypeœ:œstrœ}",
+        "id": "reactflow__edge-Prompt-66zSg{œbaseClassesœ:[œobjectœ,œstrœ,œTextœ],œdataTypeœ:œPromptœ,œidœ:œPrompt-66zSgœ}-OpenAIModel-kv9w3{œfieldNameœ:œinput_valueœ,œidœ:œOpenAIModel-kv9w3œ,œinputTypesœ:[œTextœ],œtypeœ:œstrœ}",
         "data": {
           "targetHandle": {
             "fieldName": "input_value",
-            "id": "OpenAIModel-xtl7L",
+            "id": "OpenAIModel-kv9w3",
             "inputTypes": ["Text"],
             "type": "str"
           },
           "sourceHandle": {
             "baseClasses": ["object", "str", "Text"],
             "dataType": "Prompt",
-            "id": "Prompt-r8mRI"
+            "id": "Prompt-66zSg"
           }
         },
         "style": { "stroke": "#555" },
-        "className": "stroke-foreground stroke-connection",
-        "id": "reactflow__edge-Prompt-r8mRI{œbaseClassesœ:[œobjectœ,œstrœ,œTextœ],œdataTypeœ:œPromptœ,œidœ:œPrompt-r8mRIœ}-OpenAIModel-xtl7L{œfieldNameœ:œinput_valueœ,œidœ:œOpenAIModel-xtl7Lœ,œinputTypesœ:[œTextœ],œtypeœ:œstrœ}"
+        "className": "stroke-gray-900 ",
+        "selected": false
       },
       {
-        "source": "OpenAIModel-xtl7L",
-        "sourceHandle": "{œbaseClassesœ:[œobjectœ,œstrœ,œTextœ],œdataTypeœ:œOpenAIModelœ,œidœ:œOpenAIModel-xtl7Lœ}",
-        "target": "ChatOutput-EOTaX",
-        "targetHandle": "{œfieldNameœ:œinput_valueœ,œidœ:œChatOutput-EOTaXœ,œinputTypesœ:[œTextœ],œtypeœ:œstrœ}",
+        "source": "OpenAIModel-kv9w3",
+        "target": "ChatOutput-R82YW",
+        "sourceHandle": "{œbaseClassesœ:[œobjectœ,œstrœ,œTextœ],œdataTypeœ:œOpenAIModelœ,œidœ:œOpenAIModel-kv9w3œ}",
+        "targetHandle": "{œfieldNameœ:œinput_valueœ,œidœ:œChatOutput-R82YWœ,œinputTypesœ:[œTextœ],œtypeœ:œstrœ}",
+        "id": "reactflow__edge-OpenAIModel-kv9w3{œbaseClassesœ:[œobjectœ,œstrœ,œTextœ],œdataTypeœ:œOpenAIModelœ,œidœ:œOpenAIModel-kv9w3œ}-ChatOutput-R82YW{œfieldNameœ:œinput_valueœ,œidœ:œChatOutput-R82YWœ,œinputTypesœ:[œTextœ],œtypeœ:œstrœ}",
         "data": {
           "targetHandle": {
             "fieldName": "input_value",
-            "id": "ChatOutput-EOTaX",
+            "id": "ChatOutput-R82YW",
             "inputTypes": ["Text"],
             "type": "str"
           },
           "sourceHandle": {
             "baseClasses": ["object", "str", "Text"],
             "dataType": "OpenAIModel",
-            "id": "OpenAIModel-xtl7L"
+            "id": "OpenAIModel-kv9w3"
           }
         },
         "style": { "stroke": "#555" },
-        "className": "stroke-foreground stroke-connection",
-        "id": "reactflow__edge-OpenAIModel-xtl7L{œbaseClassesœ:[œobjectœ,œstrœ,œTextœ],œdataTypeœ:œOpenAIModelœ,œidœ:œOpenAIModel-xtl7Lœ}-ChatOutput-EOTaX{œfieldNameœ:œinput_valueœ,œidœ:œChatOutput-EOTaXœ,œinputTypesœ:[œTextœ],œtypeœ:œstrœ}"
+        "className": "stroke-gray-900 ",
+        "selected": false
       }
     ],
-    "viewport": {
-      "x": 418.7109023744234,
-      "y": -52.36242395593829,
-      "zoom": 0.5494271087884398
-    }
+    "viewport": { "x": 277, "y": 178, "zoom": 1 }
   },
-  "description": "his flow will get you experimenting with the basics of the UI, the Chat and the Prompt component. \n\nTry changing the Template in it to see how the model behaves. \nYou can change it to this and a Text Input into the `type_of_person` variable : \"Answer the user as if you were a pirate.\n\nUser: {user_input}\n\nAnswer: \" ",
-  "name": "Basic Prompting",
+  "description": "This flow will get you experimenting with the basics of the UI, the Chat and the Prompt component. \n\nTry changing the Template in it to see how the model behaves. \nYou can change it to this and a Text Input into the `type_of_person` variable : \"Answer the user as if you were a pirate.",
+  "name": "Basic Prompt",
   "last_tested_version": "0.0.11",
   "is_component": false
 }
