@@ -41,7 +41,13 @@ class DatabaseService(Service):
             connect_args = {"check_same_thread": False}
         else:
             connect_args = {}
-        return create_engine(self.database_url, connect_args=connect_args)
+        return create_engine(
+            self.database_url,
+            pool_size=20,
+            max_overflow=40,
+            pool_timeout=60,
+            connect_args=connect_args,
+        )
 
     def __enter__(self):
         self._session = Session(self.engine)
