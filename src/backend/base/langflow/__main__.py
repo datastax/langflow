@@ -28,6 +28,11 @@ from langflow.services.utils import initialize_services
 from langflow.utils.logger import configure, logger
 from langflow.utils.util import update_settings
 
+LANGFLOW_MAIN_PACKAGE_NAME = "ragstack-ai-langflow"
+LANGFLOW_MAIN_PRODUCT_NAME = "Langflow"
+LANGFLOW_BASE_PACKAGE_NAME = "ragstack-ai-langflow-base"
+LANGFLOW_BASE_PRODUCT_NAME = "Langflow base"
+
 console = Console()
 
 app = typer.Typer(no_args_is_help=True)
