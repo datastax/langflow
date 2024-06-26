@@ -7710,61 +7710,54 @@ nvidia = ["langchain-nvidia-ai-endpoints (==0.1.1)"]
 
 [[package]]
 name = "ragstack-ai-langflow-base"
-version = "1.0.4"
+version = "1.0.5"
 description = "RAGStack Langflow base"
 optional = false
-python-versions = ">=3.10,<3.13"
-files = []
-develop = true
+python-versions = "<3.13,>=3.10"
+files = [
+    {file = "ragstack_ai_langflow_base-1.0.5-py3-none-any.whl", hash = "sha256:302dc609623729c5b67db0a5424910030769fdc2148435c140782abb62e45542"},
+    {file = "ragstack_ai_langflow_base-1.0.5.tar.gz", hash = "sha256:32b176a79a4884cb84b5e1e92d6b78c4c1042ac1895dad5182715fd5586fc041"},
+]
 
 [package.dependencies]
-alembic = "^1.13.0"
-asyncer = "^0.0.5"
+alembic = ">=1.13.0,<2.0.0"
+asyncer = ">=0.0.5,<0.0.6"
 bcrypt = "4.0.1"
-cachetools = "^5.3.1"
-chardet = "^5.2.0"
-cryptography = "^42.0.5"
-docstring-parser = "^0.15"
-duckdb = "^1.0.0"
-emoji = "^2.12.0"
-fastapi = "^0.111.0"
-gunicorn = "^22.0.0"
+cachetools = ">=5.3.1,<6.0.0"
+chardet = ">=5.2.0,<6.0.0"
+cryptography = ">=42.0.5,<43.0.0"
+docstring-parser = ">=0.15,<0.16"
+duckdb = ">=1.0.0,<2.0.0"
+emoji = ">=2.12.0,<3.0.0"
+fastapi = ">=0.111.0,<0.112.0"
+gunicorn = ">=22.0.0,<23.0.0"
 httpx = "*"
-jq = {version = "^1.7.0", markers = "sys_platform != \"win32\""}
+jq = {version = ">=1.7.0,<2.0.0", markers = "sys_platform != \"win32\""}
 langchain-experimental = "*"
-langchainhub = "~0.1.15"
-loguru = "^0.7.1"
-multiprocess = "^0.70.14"
-nest-asyncio = "^1.6.0"
+langchainhub = ">=0.1.15,<0.2.0"
+loguru = ">=0.7.1,<0.8.0"
+multiprocess = ">=0.70.14,<0.71.0"
+nest-asyncio = ">=1.6.0,<2.0.0"
 orjson = "3.10.0"
 pandas = "2.2.0"
-passlib = "^1.7.4"
-pillow = "^10.2.0"
-platformdirs = "^4.2.0"
-pydantic = "^2.7.0"
-pydantic-settings = "^2.2.0"
-pypdf = "^4.2.0"
-pyperclip = "^1.8.2"
-python-docx = "^1.1.0"
-python-jose = "^3.3.0"
-python-multipart = "^0.0.7"
+passlib = ">=1.7.4,<2.0.0"
+pillow = ">=10.2.0,<11.0.0"
+platformdirs = ">=4.2.0,<5.0.0"
+pydantic = ">=2.7.0,<3.0.0"
+pydantic-settings = ">=2.2.0,<3.0.0"
+pypdf = ">=4.2.0,<5.0.0"
+pyperclip = ">=1.8.2,<2.0.0"
+python-docx = ">=1.1.0,<2.0.0"
+python-jose = ">=3.3.0,<4.0.0"
+python-multipart = ">=0.0.7,<0.0.8"
 ragstack-ai-langchain = {version = "1.1.1", extras = ["google"]}
-rich = "^13.7.0"
-sentry-sdk = {version = "^2.5.1", extras = ["fastapi", "loguru"]}
-sqlmodel = "^0.0.18"
-typer = "^0.12.0"
-uncurl = "^0.0.11"
-uvicorn = "^0.30.0"
+rich = ">=13.7.0,<14.0.0"
+sentry-sdk = {version = ">=2.5.1,<3.0.0", extras = ["fastapi", "loguru"]}
+sqlmodel = ">=0.0.18,<0.0.19"
+typer = ">=0.12.0,<0.13.0"
+uncurl = ">=0.0.11,<0.0.12"
+uvicorn = ">=0.30.0,<0.31.0"
 websockets = "*"
-
-[package.extras]
-all = []
-deploy = []
-local = []
-
-[package.source]
-type = "directory"
-url = "src/backend/base"
 
 [[package]]
 name = "rapidfuzz"
@@ -10572,4 +10565,4 @@ local = ["ctransformers", "llama-cpp-python", "sentence-transformers"]
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.10,<3.13"
-content-hash = "dd2ac34aaadae730d457739a82461cc0de9eab152a7970e0e250c68ba0adedf7"
+content-hash = "deacb1b12077cdb52012b425e37099353b83863ec690b75053ebad6e24eb91ca"
