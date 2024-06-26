@@ -52,6 +52,8 @@ git pull $remote_name ragstack-dev
 echo ":: Bumping version to $version for package $package"
 poetry version $version
 git commit -am "Release $package $version"
+
+echo ":: Tagging $tag"
 git tag $tag
 git push $remote_name ragstack-dev
 git push $remote_name $tag
