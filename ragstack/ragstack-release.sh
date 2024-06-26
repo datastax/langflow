@@ -31,10 +31,10 @@ if [ -z "$remote_name" ]; then
 fi
 echo "Identified remote $remote_name"
 
-if git rev-parse $tag >/dev/null 2>&1; then
-    echo "Git tag $tag already exists"
-    exit 1
-fi
+# if git rev-parse $tag >/dev/null 2>&1; then
+#    echo "Git tag $tag already exists"
+#    exit 1
+# fi
 
 cd $directory
 if [ "$package" == "ragstack-ai-langflow" ]; then
