@@ -11,10 +11,13 @@ This implies that every release of `ragstack-ai-langflow-base` will also need a 
   ```
   The script will take care of updating the version in `ragstack-ai-langflow-base` and pushing the changes to the repository. CI will automatically release the package on PyPI.
 
-## Release `ragstack-ai-langflow`
+## Pre-Release `ragstack-ai-langflow`
 
 - Update the `ragstack-ai-langflow-base` version under the `[ttol.poetry.dependencies]` in the `pyproject.toml` file.
 - Run `poetry lock` and open a PR to trigger the tests. Once merged, proceed with the next steps.
+
+## Release `ragstack-ai-langflow`
+
 - Run the release script:
   ```shell
   ./ragstack/ragstack-release.sh 0.0.2 ragstack-ai-langflow
