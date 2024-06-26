@@ -7710,13 +7710,13 @@ nvidia = ["langchain-nvidia-ai-endpoints (==0.1.1)"]
 
 [[package]]
 name = "ragstack-ai-langflow-base"
-version = "1.0.5"
+version = "1.0.6"
 description = "RAGStack Langflow base"
 optional = false
 python-versions = "<3.13,>=3.10"
 files = [
-    {file = "ragstack_ai_langflow_base-1.0.5-py3-none-any.whl", hash = "sha256:302dc609623729c5b67db0a5424910030769fdc2148435c140782abb62e45542"},
-    {file = "ragstack_ai_langflow_base-1.0.5.tar.gz", hash = "sha256:32b176a79a4884cb84b5e1e92d6b78c4c1042ac1895dad5182715fd5586fc041"},
+    {file = "ragstack_ai_langflow_base-1.0.6-py3-none-any.whl", hash = "sha256:68feee15b6f111e9d52e98ef4323a6df769539602b2d0fc0d445cb81a65ada23"},
+    {file = "ragstack_ai_langflow_base-1.0.6.tar.gz", hash = "sha256:cab30cd37927c7c5edb25c20430ffd39a7e52911f4360156de406a3cc162a0f6"},
 ]
 
 [package.dependencies]
@@ -10565,4 +10565,4 @@ local = ["ctransformers", "llama-cpp-python", "sentence-transformers"]
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.10,<3.13"
-content-hash = "deacb1b12077cdb52012b425e37099353b83863ec690b75053ebad6e24eb91ca"
+content-hash = "df8f04d5db65895903dfd2925a6984f7d60c7e5499fcf966188e6bef143ecbdf"
