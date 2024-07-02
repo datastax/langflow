@@ -1,8 +1,8 @@
 [tool.poetry]
-name = "langflow"
-version = "1.0.5"
-description = "A Python package with a built-in web application"
-authors = ["Langflow <contact@langflow.org>"]
+name = "ragstack-ai-langflow"
+version = "1.0.6.post1"
+description = "RAGStack Langflow"
+authors = ["DataStax"]
 maintainers = [
     "Carlos Coelho <carlos@langflow.org>",
     "Cristhian Zanforlin <cristhian.lousa@gmail.com>",
@@ -12,13 +12,13 @@ maintainers = [
     "Otávio Anovazzi <otavio2204@gmail.com>",
     "Rodrigo Nader <rodrigo@langflow.org>",
 ]
-repository = "https://github.com/langflow-ai/langflow"
-license = "MIT"
+repository = "https://github.com/datastax/ragstack-ai-langflow"
+license = "BUSL-1.1"
 readme = "README.md"
 keywords = ["nlp", "langchain", "openai", "gpt", "gui"]
 packages = [{ include = "langflow", from = "src/backend" }]
 include = ["src/backend/langflow/*", "src/backend/langflow/**/*"]
-documentation = "https://docs.langflow.org"
+documentation = "https://docs.datastax.com/en/ragstack"
 
 [tool.poetry.scripts]
 langflow = "langflow.__main__:main"
@@ -26,7 +26,6 @@ langflow = "langflow.__main__:main"
 
 [tool.poetry.dependencies]
 python = ">=3.10,<3.13"
-langflow-base = { path = "./src/backend/base", develop = true }
 beautifulsoup4 = "^4.12.2"
 google-search-results = "^2.4.1"
 google-api-python-client = "^2.130.0"
@@ -93,6 +92,7 @@ langchain-aws = "^0.1.6"
 langchain-mongodb = "^0.1.6"
 kubernetes = "^30.1.0"
 firecrawl-py = "^0.0.16"
+ragstack-ai-langflow-base = {path = "src/backend/base"}
 
 
 [tool.poetry.group.dev.dependencies]

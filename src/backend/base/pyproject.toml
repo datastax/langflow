@@ -1,8 +1,8 @@
 [tool.poetry]
-name = "langflow-base"
-version = "0.0.81"
-description = "A Python package with a built-in web application"
-authors = ["Langflow <contact@langflow.org>"]
+name = "ragstack-ai-langflow-base"
+version = "1.0.6.post1"
+description = "RAGStack Langflow base"
+authors = ["DataStax"]
 maintainers = [
     "Carlos Coelho <carlos@langflow.org>",
     "Cristhian Zanforlin <cristhian.lousa@gmail.com>",
@@ -12,13 +12,13 @@ maintainers = [
     "Otávio Anovazzi <otavio2204@gmail.com>",
     "Rodrigo Nader <rodrigo@langflow.org>",
 ]
-repository = "https://github.com/langflow-ai/langflow"
-license = "MIT"
+repository = "https://github.com/datastax/ragstack-ai-langflow"
+license = "BUSL-1.1"
 readme = "README.md"
 keywords = ["nlp", "langchain", "openai", "gpt", "gui"]
 packages = [{ include = "langflow" }, { include = "langflow/py.typed" }]
 include = ["pyproject.toml", "README.md", "langflow/**/*"]
-documentation = "https://docs.langflow.org"
+documentation = "https://docs.datastax.com/en/ragstack"
 
 
 [tool.poetry.scripts]
@@ -30,7 +30,6 @@ fastapi = "^0.111.0"
 httpx = "*"
 uvicorn = "^0.30.0"
 gunicorn = "^22.0.0"
-langchain = "~0.2.0"
 langchainhub = "~0.1.15"
 sqlmodel = "^0.0.18"
 loguru = "^0.7.1"
@@ -65,6 +64,7 @@ uncurl = "^0.0.11"
 sentry-sdk = {extras = ["fastapi", "loguru"], version = "^2.5.1"}
 chardet = "^5.2.0"
 firecrawl-py = "^0.0.16"
+ragstack-ai-langchain = {version = "1.1.1", extras = ["google"]}
 
 
 [tool.poetry.extras]
