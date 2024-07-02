@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "ragstack-ai-langflow"
-version = "1.0.6.post2"
+version = "1.0.6.post3"
 description = "RAGStack Langflow"
 authors = ["DataStax"]
 maintainers = [
