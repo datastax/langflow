@@ -1913,22 +1913,25 @@ files = [
 
 [[package]]
 name = "langchain"
-version = "0.2.3"
+version = "0.2.5"
 description = "Building applications with LLMs through composability"
 optional = false
 python-versions = "<4.0,>=3.8.1"
 files = [
-    {file = "langchain-0.2.3-py3-none-any.whl", hash = "sha256:5dc33cd9c8008693d328b7cb698df69073acecc89ad9c2a95f243b3314f8d834"},
-    {file = "langchain-0.2.3.tar.gz", hash = "sha256:81962cc72cce6515f7bd71e01542727870789bf8b666c6913d85559080c1a201"},
+    {file = "langchain-0.2.5-py3-none-any.whl", hash = "sha256:9aded9a65348254e1c93dcdaacffe4d1b6a5e7f74ef80c160c88ff78ad299228"},
+    {file = "langchain-0.2.5.tar.gz", hash = "sha256:ffdbf4fcea46a10d461bcbda2402220fcfd72a0c70e9f4161ae0510067b9b3bd"},
 ]
 
 [package.dependencies]
 aiohttp = ">=3.8.3,<4.0.0"
 async-timeout = {version = ">=4.0.0,<5.0.0", markers = "python_version < \"3.11\""}
-langchain-core = ">=0.2.0,<0.3.0"
+langchain-core = ">=0.2.7,<0.3.0"
 langchain-text-splitters = ">=0.2.0,<0.3.0"
 langsmith = ">=0.1.17,<0.2.0"
-numpy = ">=1,<2"
+numpy = [
+    {version = ">=1,<2", markers = "python_version < \"3.12\""},
+    {version = ">=1.26.0,<2.0.0", markers = "python_version >= \"3.12\""},
+]
 pydantic = ">=1,<3"
 PyYAML = ">=5.3"
 requests = ">=2,<3"
@@ -1953,22 +1956,25 @@ numpy = ">=1,<2"
 
 [[package]]
 name = "langchain-community"
-version = "0.2.4"
+version = "0.2.5"
 description = "Community contributed LangChain integrations."
 optional = false
 python-versions = "<4.0,>=3.8.1"
 files = [
-    {file = "langchain_community-0.2.4-py3-none-any.whl", hash = "sha256:8582e9800f4837660dc297cccd2ee1ddc1d8c440d0fe8b64edb07620f0373b0e"},
-    {file = "langchain_community-0.2.4.tar.gz", hash = "sha256:2bb6a1a36b8500a564d25d76469c02457b1a7c3afea6d4a609a47c06b993e3e4"},
+    {file = "langchain_community-0.2.5-py3-none-any.whl", hash = "sha256:bf37a334952e42c7676d083cf2d2c4cbfbb7de1949c4149fe19913e2b06c485f"},
+    {file = "langchain_community-0.2.5.tar.gz", hash = "sha256:476787b8c8c213b67e7b0eceb53346e787f00fbae12d8e680985bd4f93b0bf64"},
 ]
 
 [package.dependencies]
 aiohttp = ">=3.8.3,<4.0.0"
 dataclasses-json = ">=0.5.7,<0.7"
-langchain = ">=0.2.0,<0.3.0"
-langchain-core = ">=0.2.0,<0.3.0"
+langchain = ">=0.2.5,<0.3.0"
+langchain-core = ">=0.2.7,<0.3.0"
 langsmith = ">=0.1.0,<0.2.0"
-numpy = ">=1,<2"
+numpy = [
+    {version = ">=1,<2", markers = "python_version < \"3.12\""},
+    {version = ">=1.26.0,<2.0.0", markers = "python_version >= \"3.12\""},
+]
 PyYAML = ">=5.3"
 requests = ">=2,<3"
 SQLAlchemy = ">=1.4,<3"
@@ -1976,22 +1982,25 @@ tenacity = ">=8.1.0,<9.0.0"
 
 [[package]]
 name = "langchain-core"
-version = "0.2.5"
+version = "0.2.9"
 description = "Building applications with LLMs through composability"
 optional = false
 python-versions = "<4.0,>=3.8.1"
 files = [
-    {file = "langchain_core-0.2.5-py3-none-any.whl", hash = "sha256:abe5138f22acff23a079ec538be5268bbf97cf023d51987a0dd474d2a16cae3e"},
-    {file = "langchain_core-0.2.5.tar.gz", hash = "sha256:4a5c2f56b22396a63ef4790043660e393adbfa6832b978f023ca996a04b8e752"},
+    {file = "langchain_core-0.2.9-py3-none-any.whl", hash = "sha256:426a5a4fea95a5db995ba5ab560b76edd4998fb6fe52ccc28ac987092a4cbfcd"},
+    {file = "langchain_core-0.2.9.tar.gz", hash = "sha256:f1c59082642921727844e1cd0eb36d451edd1872c20e193aa3142aac03495986"},
 ]
 
 [package.dependencies]
 jsonpatch = ">=1.33,<2.0"
-langsmith = ">=0.1.66,<0.2.0"
-packaging = ">=23.2,<24.0"
-pydantic = ">=1,<3"
+langsmith = ">=0.1.75,<0.2.0"
+packaging = ">=23.2,<25"
+pydantic = [
+    {version = ">=1,<3", markers = "python_full_version < \"3.12.4\""},
+    {version = ">=2.7.4,<3.0.0", markers = "python_full_version >= \"3.12.4\""},
+]
 PyYAML = ">=5.3"
-tenacity = ">=8.1.0,<9.0.0"
+tenacity = ">=8.1.0,<8.4.0 || >8.4.0,<9.0.0"
 
 [[package]]
 name = "langchain-experimental"
@@ -3399,32 +3408,31 @@ files = [
 
 [[package]]
 name = "ragstack-ai-langchain"
-version = "1.2.0"
+version = "1.3.0"
 description = "DataStax RAGStack Langchain"
 optional = false
 python-versions = "<3.13,>=3.9"
 files = [
-    {file = "ragstack_ai_langchain-1.2.0-py3-none-any.whl", hash = "sha256:4dee408315805feefaac6d7c0fe38934a99af0b313acfe975330c732c4dda9f6"},
-    {file = "ragstack_ai_langchain-1.2.0.tar.gz", hash = "sha256:b1368c8b50874d8478f0cdfe17e84109ac3de8252bd513eadd7c21689b699906"},
+    {file = "ragstack_ai_langchain-1.3.0-py3-none-any.whl", hash = "sha256:103e531096aee607b057ecd005759f08a36f9a74cacaf5e77b1aab9094997f1f"},
+    {file = "ragstack_ai_langchain-1.3.0.tar.gz", hash = "sha256:e82d79c9a72463fdfc5eda1865bc234d46e0c49d63a01f91fa6bc100b642b063"},
 ]
 
 [package.dependencies]
 astrapy = ">=1,<2"
 cassio = ">=0.1.4,<0.2.0"
-langchain = "0.2.3"
+langchain = "0.2.5"
 langchain-astradb = "0.3.3"
-langchain-community = "0.2.4"
-langchain-core = "0.2.5"
+langchain-community = "0.2.5"
+langchain-core = "0.2.9"
 langchain-google-genai = {version = "1.0.6", optional = true, markers = "extra == \"google\""}
 langchain-google-vertexai = {version = "1.0.5", optional = true, markers = "extra == \"google\""}
 langchain-openai = "0.1.8"
-tenacity = ">=8.1.0,<8.4.0 || >8.4.0"
 unstructured = "0.14.5"
 
 [package.extras]
 colbert = ["ragstack-ai-colbert (==1.0.5)"]
 google = ["langchain-google-genai (==1.0.6)", "langchain-google-vertexai (==1.0.5)"]
-knowledge-store = ["ragstack-ai-knowledge-store (==0.0.5)"]
+knowledge-store = ["ragstack-ai-knowledge-store (==0.1.0)"]
 nvidia = ["langchain-nvidia-ai-endpoints (==0.1.1)"]
 
 [[package]]
@@ -4852,4 +4860,4 @@ local = []
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.10,<3.13"
-content-hash = "c7af096d6280ca35f8f7edc0d36ddd68eb4aec7bd094ba8f82c9c0717e8aeabe"
+content-hash = "0a62b23c8b5347c52fa4aefdd1c29cbe988d1c98264a325fc82855a618dd6a40"

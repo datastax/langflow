@@ -64,7 +64,7 @@ uncurl = "^0.0.11"
 sentry-sdk = {extras = ["fastapi", "loguru"], version = "^2.5.1"}
 chardet = "^5.2.0"
 firecrawl-py = "^0.0.16"
-ragstack-ai-langchain = {version = "1.2.0", extras = ["google"]}
+ragstack-ai-langchain = {version = "1.3.0", extras = ["google"]}
 
 
 [tool.poetry.extras]
