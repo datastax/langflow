@@ -7710,13 +7710,13 @@ langchain = ["langchain (>=0.0.321)"]
 
 [[package]]
 name = "ragstack-ai-langchain"
-version = "1.1.1"
+version = "1.2.0"
 description = "DataStax RAGStack Langchain"
 optional = false
 python-versions = "<3.13,>=3.9"
 files = [
-    {file = "ragstack_ai_langchain-1.1.1-py3-none-any.whl", hash = "sha256:d489d192460f3c87b37a363c5fe29a7e872101c3f318d72efdcbfd835eb3d1fe"},
-    {file = "ragstack_ai_langchain-1.1.1.tar.gz", hash = "sha256:d98061cc7489217376a3cf43c816bf8146e39c4dc31fcd5136827efca27c3603"},
+    {file = "ragstack_ai_langchain-1.2.0-py3-none-any.whl", hash = "sha256:4dee408315805feefaac6d7c0fe38934a99af0b313acfe975330c732c4dda9f6"},
+    {file = "ragstack_ai_langchain-1.2.0.tar.gz", hash = "sha256:b1368c8b50874d8478f0cdfe17e84109ac3de8252bd513eadd7c21689b699906"},
 ]
 
 [package.dependencies]
@@ -7729,16 +7729,18 @@ langchain-core = "0.2.5"
 langchain-google-genai = {version = "1.0.6", optional = true, markers = "extra == \"google\""}
 langchain-google-vertexai = {version = "1.0.5", optional = true, markers = "extra == \"google\""}
 langchain-openai = "0.1.8"
+tenacity = ">=8.1.0,<8.4.0 || >8.4.0"
 unstructured = "0.14.5"
 
 [package.extras]
 colbert = ["ragstack-ai-colbert (==1.0.5)"]
 google = ["langchain-google-genai (==1.0.6)", "langchain-google-vertexai (==1.0.5)"]
+knowledge-store = ["ragstack-ai-knowledge-store (==0.0.5)"]
 nvidia = ["langchain-nvidia-ai-endpoints (==0.1.1)"]
 
 [[package]]
 name = "ragstack-ai-langflow-base"
-version = "1.0.6.post3"
+version = "1.0.6.post4"
 description = "RAGStack Langflow base"
 optional = false
 python-versions = ">=3.10,<3.13"
@@ -7777,7 +7779,7 @@ pyperclip = "^1.8.2"
 python-docx = "^1.1.0"
 python-jose = "^3.3.0"
 python-multipart = "^0.0.7"
-ragstack-ai-langchain = {version = "1.1.1", extras = ["google"]}
+ragstack-ai-langchain = {version = "1.2.0", extras = ["google"]}
 rich = "^13.7.0"
 sentry-sdk = {version = "^2.5.1", extras = ["fastapi", "loguru"]}
 sqlmodel = "^0.0.18"
