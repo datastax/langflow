@@ -93,6 +93,7 @@ langchain-mongodb = "^0.1.6"
 kubernetes = "^30.1.0"
 firecrawl-py = "^0.0.16"
 ragstack-ai-langflow-base = {path = "src/backend/base"}
+langchain-nvidia-ai-endpoints = "^0.1.2"
 
 
 [tool.poetry.group.dev.dependencies]
