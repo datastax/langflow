@@ -1,10 +1,8 @@
 from importlib import metadata
-
+is_pre_release = False
 try:
-    __version__ = metadata.version("langflow")
-    # Check if the version is a pre-release version
-    is_pre_release = any(label in __version__ for label in ["a", "b", "rc", "dev", "post"])
+    __version__ = metadata.version('ragstack-ai-langflow')
 except metadata.PackageNotFoundError:
-    __version__ = ""
-    is_pre_release = False
+    __version__ = ''
 del metadata
+
