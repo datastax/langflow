@@ -5009,6 +5009,75 @@ files = [
 six = "*"
 
 [[package]]
+name = "langflow-base"
+version = "0.0.92"
+description = "A Python package with a built-in web application"
+optional = false
+python-versions = ">=3.10,<3.13"
+files = []
+develop = true
+
+[package.dependencies]
+aiofiles = "^24.1.0"
+alembic = "^1.13.0"
+asyncer = "^0.0.5"
+bcrypt = "4.0.1"
+cachetools = "^5.3.1"
+chardet = "^5.2.0"
+cryptography = "^42.0.5"
+docstring-parser = "^0.16"
+duckdb = "^1.0.0"
+emoji = "^2.12.0"
+fastapi = "^0.111.0"
+filelock = "^3.15.4"
+firecrawl-py = "^0.0.16"
+gunicorn = "^22.0.0"
+httpx = "*"
+jq = {version = "^1.7.0", markers = "sys_platform != \"win32\""}
+langchain = "~0.2.0"
+langchain-core = "0.2.23"
+langchain-experimental = "^0.0.61"
+langchainhub = "~0.1.15"
+loguru = "^0.7.1"
+multiprocess = "^0.70.14"
+nanoid = "^2.0.0"
+nest-asyncio = "^1.6.0"
+opentelemetry-api = "^1.25.0"
+opentelemetry-exporter-prometheus = "^0.46b0"
+opentelemetry-instrumentation-fastapi = "^0.46b0"
+opentelemetry-sdk = "^1.25.0"
+orjson = "3.10.0"
+pandas = "2.2.2"
+passlib = "^1.7.4"
+pillow = "^10.2.0"
+platformdirs = "^4.2.0"
+prometheus-client = "^0.20.0"
+pydantic = "^2.7.0"
+pydantic-settings = "^2.2.0"
+pypdf = "^4.2.0"
+pyperclip = "^1.8.2"
+python-docx = "^1.1.0"
+python-jose = "^3.3.0"
+python-multipart = "^0.0.7"
+rich = "^13.7.0"
+sentry-sdk = {version = "^2.5.1", extras = ["fastapi", "loguru"]}
+setuptools = ">=70"
+sqlmodel = "^0.0.18"
+typer = "^0.12.0"
+uncurl = "^0.0.11"
+uvicorn = "^0.30.0"
+websockets = "*"
+
+[package.extras]
+all = []
+deploy = []
+local = []
+
+[package.source]
+type = "directory"
+url = "src/backend/base"
+
+[[package]]
 name = "langfuse"
 version = "2.39.2"
 description = "A client library for accessing langfuse"
@@ -8588,75 +8657,6 @@ data-clean = ["emoji", "ltp", "sentencepiece", "torch", "torch (<=1.13.1)"]
 langchain = ["langchain (>=0.0.321)"]
 
 [[package]]
-name = "ragstack-ai-langflow-base"
-version = "1.0.14.post0"
-description = "RAGStack Langflow base"
-optional = false
-python-versions = ">=3.10,<3.13"
-files = []
-develop = false
-
-[package.dependencies]
-aiofiles = "^24.1.0"
-alembic = "^1.13.0"
-asyncer = "^0.0.5"
-bcrypt = "4.0.1"
-cachetools = "^5.3.1"
-chardet = "^5.2.0"
-cryptography = "^42.0.5"
-docstring-parser = "^0.16"
-duckdb = "^1.0.0"
-emoji = "^2.12.0"
-fastapi = "^0.111.0"
-filelock = "^3.15.4"
-firecrawl-py = "^0.0.16"
-gunicorn = "^22.0.0"
-httpx = "*"
-jq = {version = "^1.7.0", markers = "sys_platform != \"win32\""}
-langchain = "~0.2.0"
-langchain-core = "0.2.23"
-langchain-experimental = "^0.0.61"
-langchainhub = "~0.1.15"
-loguru = "^0.7.1"
-multiprocess = "^0.70.14"
-nanoid = "^2.0.0"
-nest-asyncio = "^1.6.0"
-opentelemetry-api = "^1.25.0"
-opentelemetry-exporter-prometheus = "^0.46b0"
-opentelemetry-instrumentation-fastapi = "^0.46b0"
-opentelemetry-sdk = "^1.25.0"
-orjson = "3.10.0"
-pandas = "2.2.2"
-passlib = "^1.7.4"
-pillow = "^10.2.0"
-platformdirs = "^4.2.0"
-prometheus-client = "^0.20.0"
-pydantic = "^2.7.0"
-pydantic-settings = "^2.2.0"
-pypdf = "^4.2.0"
-pyperclip = "^1.8.2"
-python-docx = "^1.1.0"
-python-jose = "^3.3.0"
-python-multipart = "^0.0.7"
-rich = "^13.7.0"
-sentry-sdk = {version = "^2.5.1", extras = ["fastapi", "loguru"]}
-setuptools = ">=70"
-sqlmodel = "^0.0.18"
-typer = "^0.12.0"
-uncurl = "^0.0.11"
-uvicorn = "^0.30.0"
-websockets = "*"
-
-[package.extras]
-all = []
-deploy = []
-local = []
-
-[package.source]
-type = "directory"
-url = "src/backend/base"
-
-[[package]]
 name = "rapidfuzz"
 version = "3.9.4"
 description = "rapid fuzzy string matching"
@@ -9467,13 +9467,13 @@ dev = ["pre-commit", "pytest", "ruff (>=0.3.0)"]
 
 [[package]]
 name = "sentry-sdk"
-version = "2.11.0"
+version = "2.10.0"
 description = "Python client for Sentry (https://sentry.io)"
 optional = false
 python-versions = ">=3.6"
 files = [
-    {file = "sentry_sdk-2.11.0-py2.py3-none-any.whl", hash = "sha256:d964710e2dbe015d9dc4ff0ad16225d68c3b36936b742a6fe0504565b760a3b7"},
-    {file = "sentry_sdk-2.11.0.tar.gz", hash = "sha256:4ca16e9f5c7c6bc2fb2d5c956219f4926b148e511fffdbbde711dc94f1e0468f"},
+    {file = "sentry_sdk-2.10.0-py2.py3-none-any.whl", hash = "sha256:87b3d413c87d8e7f816cc9334bff255a83d8b577db2b22042651c30c19c09190"},
+    {file = "sentry_sdk-2.10.0.tar.gz", hash = "sha256:545fcc6e36c335faa6d6cda84669b6e17025f31efbf3b2211ec14efe008b75d1"},
 ]
 
 [package.dependencies]
@@ -11837,4 +11837,4 @@ local = ["ctransformers", "llama-cpp-python", "sentence-transformers"]
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.10,<3.13"
-content-hash = "abfe57a6168c96188c3f67efb996f95e0e2d2715d554d28d6118ff4f2d57c996"
+content-hash = "dc3c3bf982b64e4f8cf62249471bec4a90e76bde0bd010b4e2e6f6ca0d6a551b"
