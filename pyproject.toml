@@ -1,8 +1,8 @@
 [tool.poetry]
-name = "langflow"
-version = "1.0.17.post0"
-description = "A Python package with a built-in web application"
-authors = ["Langflow <contact@langflow.org>"]
+name = "ragstack-ai-langflow"
+version = "1.0.17.post1"
+description = "RAGStack Langflow"
+authors = ["DataStax"]
 maintainers = [
     "Carlos Coelho <carlos@langflow.org>",
     "Cristhian Zanforlin <cristhian.lousa@gmail.com>",
