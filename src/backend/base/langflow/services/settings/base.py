@@ -157,7 +157,7 @@ class Settings(BaseSettings):
     # Config
     auto_saving: bool = True
     """If set to True, Langflow will auto save flows."""
-    auto_saving_interval: int = 300
+    auto_saving_interval: int = 5000
     """The interval in ms at which Langflow will auto save flows."""
 
     @field_validator("dev")

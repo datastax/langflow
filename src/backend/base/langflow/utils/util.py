@@ -429,7 +429,7 @@ def update_settings(
     components_path: Optional[Path] = None,
     store: bool = True,
     auto_saving: bool = True,
-    auto_saving_interval: int = 300,
+    auto_saving_interval: int = 5000,
 ):
     """Update the settings from a config file."""
     from langflow.services.utils import initialize_settings_service
