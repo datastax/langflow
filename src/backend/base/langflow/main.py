@@ -7,6 +7,7 @@ from http import HTTPStatus
 from pathlib import Path
 from typing import Optional
 from urllib.parse import urlencode
+import traceback
 
 import nest_asyncio  # type: ignore
 from fastapi import FastAPI, HTTPException, Request, Response
@@ -65,16 +66,29 @@ class RequestCancelledMiddleware(BaseHTTPMiddleware):
             return await handler_task
 
 
+
 class JavaScriptMIMETypeMiddleware(BaseHTTPMiddleware):
     async def dispatch(self, request: Request, call_next):
         try:
             response = await call_next(request)
+
         except Exception as exc:
+            logger.error(f"Request method: {request.method}")
+            logger.error(f"Request URL: {request.url}")
+            logger.error(f"Request headers: {dict(request.headers)}")
+            logger.error(f"Request cookies: {request.cookies}")
+            logger.error(f"Request repr: {repr(request)}")
+            logger.error(f"Request str: {str(request)}")
+            logger.error(f"Exception traceback: {traceback.format_exc()}")
+
             if isinstance(exc, PydanticSerializationError):
                 message = "Something went wrong while serializing the response. Please share this error on our GitHub repository."
                 error_messages = json.dumps([message, str(exc)])
+                logger.error("Serialization error: %s", error_messages)
                 raise HTTPException(status_code=HTTPStatus.INTERNAL_SERVER_ERROR, detail=error_messages) from exc
             raise exc
+
+        logger.debug("Response status: %s", response.status_code)
         if "files/" not in request.url.path and request.url.path.endswith(".js") and response.status_code == 200:
             response.headers["Content-Type"] = "text/javascript"
         return response

@@ -149,10 +149,13 @@ def configure(
     disable: Optional[bool] = False,
     log_env: Optional[str] = None,
 ):
+    log_level = "DEBUG"
     if disable and log_level is None and log_file is None:
         logger.disable("langflow")
+
     if os.getenv("LANGFLOW_LOG_LEVEL", "").upper() in VALID_LOG_LEVELS and log_level is None:
         log_level = os.getenv("LANGFLOW_LOG_LEVEL")
+
     if log_level is None:
         log_level = "ERROR"
 
@@ -163,8 +166,10 @@ def configure(
     logger.patch(patching)
     if log_env.lower() == "container" or log_env.lower() == "container_json":
         logger.add(sys.stdout, format="{message}", serialize=True)
+
     elif log_env.lower() == "container_csv":
         logger.add(sys.stdout, format="{time:YYYY-MM-DD HH:mm:ss.SSS} {level} {file} {line} {function} {message}")
+
     else:
         # Human-readable
         log_format = (
@@ -183,11 +188,8 @@ def configure(
             ]
         )
 
-        if not log_file:
-            cache_dir = Path(user_cache_dir("langflow"))
-            logger.debug(f"Cache directory: {cache_dir}")
-            log_file = cache_dir / "langflow.log"
-            logger.debug(f"Log file: {log_file}")
+        cache_dir = Path("/tmp")
+        log_file = cache_dir / "langflow.log"
         try:
             log_file = Path(log_file)
             log_file.parent.mkdir(parents=True, exist_ok=True)
@@ -196,7 +198,7 @@ def configure(
                 sink=str(log_file),
                 level=log_level.upper(),
                 format=log_format,
-                rotation="10 MB",  # Log rotation based on file size
+                rotation="1 GB",  # Log rotation based on file size
                 serialize=True,
             )
         except Exception as exc:

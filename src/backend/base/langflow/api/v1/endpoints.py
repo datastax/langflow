@@ -69,6 +69,11 @@ async def get_all(
                 settings_service=settings_service, cache_service=cache_service, force_refresh=force_refresh, lock=lock
             )
 
+            logger.debug(f"all_types_dict: {all_types_dict}")
+            logger.debug(f"all_types_dict type: {type(all_types_dict)}")
+            logger.debug(f"all_types_dict repr: {repr(all_types_dict)}")
+            logger.debug(f"all_types_dict str: {str(all_types_dict)}")
+
             return all_types_dict
     except Exception as exc:
         logger.exception(exc)
