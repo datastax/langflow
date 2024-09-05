@@ -1,7 +1,9 @@
 from enum import Enum
 from typing import AsyncIterator, Generator, Iterator, Literal, Union
 
+from loguru import logger
 from pydantic import BaseModel
+from fastapi.encoders import jsonable_encoder
 from typing_extensions import TypedDict
 
 from langflow.schema import Data
@@ -136,10 +138,21 @@ def recursive_serialize_or_str(obj):
         elif hasattr(obj, "dict"):
             return {k: recursive_serialize_or_str(v) for k, v in obj.dict().items()}
         elif hasattr(obj, "model_dump"):
-            return {k: recursive_serialize_or_str(v) for k, v in obj.model_dump().items()}
+            return {
+                k: recursive_serialize_or_str(v) for k, v in obj.model_dump().items()
+            }
         elif issubclass(obj, BaseModel):
             # This a type BaseModel and not an instance of it
             return repr(obj)
         return str(obj)
     except Exception:
         return str(obj)
+
+
+def serialize_with_fallback(obj):
+    try:
+        jsonable_encoder(obj)
+    except Exception as e:
+        logger.debug(f"Serialized with fallback: {e}")
+        obj = json.loads(json.dumps(obj, default=lambda o: ""))
+    return obj

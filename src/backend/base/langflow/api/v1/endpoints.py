@@ -27,6 +27,7 @@ from langflow.helpers.flow import get_flow_by_id_or_endpoint_name
 from langflow.interface.initialize.loading import update_params_with_load_from_db_fields
 from langflow.processing.process import process_tweaks, run_graph_internal
 from langflow.schema.graph import Tweaks
+from langflow.schema.schema import serialize_with_fallback
 from langflow.services.auth.utils import api_key_security, get_current_active_user
 from langflow.services.cache.utils import save_uploaded_file
 from langflow.services.database.models.flow import Flow
@@ -74,7 +75,7 @@ async def get_all(
             logger.debug(f"all_types_dict repr: {repr(all_types_dict)}")
             logger.debug(f"all_types_dict str: {str(all_types_dict)}")
 
-            return all_types_dict
+            return serialize_with_fallback(all_types_dict)
     except Exception as exc:
         logger.exception(exc)
         raise HTTPException(status_code=500, detail=str(exc)) from exc
