@@ -8766,7 +8766,7 @@ langchain = ["langchain (>=0.0.321)"]
 
 [[package]]
 name = "ragstack-ai-langflow-base"
-version = "1.0.16.post4"
+version = "1.0.16.post5"
 description = "RAGStack Langflow base"
 optional = false
 python-versions = ">=3.10,<3.13"
