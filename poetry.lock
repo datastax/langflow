@@ -8702,7 +8702,7 @@ cassio = ">=0.1.7,<0.2.0"
 
 [[package]]
 name = "ragstack-ai-langflow-base"
-version = "1.0.18.post1"
+version = "1.0.18.dev0"
 description = "RAGStack Langflow base"
 optional = false
 python-versions = ">=3.10,<3.13"
